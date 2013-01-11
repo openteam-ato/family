@@ -1,0 +1,133 @@
+#government_structure
+  margin-top: 20px
+
+  ul, li, div
+    font-size: 11px
+    line-height: 14px
+    position: relative
+
+    &:after
+      content: "."
+      display: block
+      height: 0
+      visibility: hidden
+
+  .employee
+    width: 178px
+    +inline-block
+    background-color: #ededed
+    border: 1px solid #ccc
+    +box-shadow(#ccc 0 -3px 10px -1px)
+
+    .post,
+    .name
+      width: 162px
+      padding: 5px 8px 8px 8px
+      text-align: center
+      vertical-align: middle
+
+    .image
+      width: 178px
+      height: 234px
+
+    .name
+      height: 28px
+
+  .governor
+    float: left
+    &:before
+      border-top: 1px solid gray
+      border-right: 1px solid gray
+      content: ''
+      float: right
+      left: 40px
+      position: relative
+      margin-bottom: -40px
+      top: 19px
+      height: 40px
+      width: 38px
+
+  .clusters
+    top: 40px
+    position: relative
+    margin: 0 0 10px 218px
+    .cluster
+      border-top: 1px dashed #aaa
+      border-left: 1px solid gray
+      .title
+        font-size: 18px
+        line-height: 1.4
+        margin: 20px 0 20px 40px
+      &.empty
+        border-top: none
+        padding: 0
+      &.last
+        border-left: none
+        margin-bottom: 10px
+        &:before
+          border-left: 1px solid gray
+          content: ''
+          float: left
+          top: -20px
+          height: 432px
+          position: relative
+      li
+        margin-bottom: 20px
+        &:before
+          border-top: 1px solid gray
+          content: ''
+          float: left
+          padding: 0
+          position: relative
+          top: 8px
+          width: 40px
+        .subdivision
+          &:before
+            border-left: 1px solid gray
+            content: ''
+            float: left
+            height: 16px
+            left: -1px
+            margin: 0 12px 10px 0
+        .employee
+          vertical-align: top
+        .third
+          +inline-block
+          border-left: 1px solid #808080
+          margin-left: 35px
+          margin-bottom: 30px
+          padding: 0 0 0 40px
+          top: 20px
+          vertical-align: middle
+          position: relative
+          &:before
+            border-top: 1px solid gray
+            content: ''
+            float: left
+            left: -80px
+            padding: 0
+            position: relative
+            top: 0
+            width: 40px
+          li
+            top: 30px
+            width: 420px
+            margin: 10px 0
+            &:before
+              display: block
+              border-top: 1px solid gray
+              content: ''
+              float: none
+              top: 9px
+              left: -40px
+              height: 1px
+              width: 40px
+            .item
+              height: 28px
+              &:before
+                border-left: 1px solid #808080
+                content: ''
+                float: left
+                height: 16px
+                left: -1px
+                margin: 0 12px 0 0

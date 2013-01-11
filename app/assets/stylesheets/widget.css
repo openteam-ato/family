@@ -1,0 +1,9 @@
+#monitoring-widget {
+  left: auto;
+  right: 0;
+  width: 30px;
+}
+
+#monitoring-widget .name-title {
+  background-color: #8AA865;
+}

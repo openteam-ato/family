@@ -1,0 +1,13 @@
+app:
+  secret:       SECRET
+
+errors:
+  key:          KEY
+  url:          http://errors.openteam.ru
+
+cms:
+  url:          http://cms.site.url
+  site_slug:    site
+
+storage:
+  url:          http://storage.url
