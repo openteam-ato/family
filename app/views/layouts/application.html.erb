@@ -4,17 +4,7 @@
   <meta charset="UTF-8">
   <meta name='yandex-verification' content='5b82f8c9e9140b58' />
   <%= favicon_link_tag %>
-  <title><%= raw @page_title %> | <%= strip_tags(@site_name.content.body) %></title>
-
-  <% if Rails.env.production? && request.host.eql?("tomsk.gov.ru") %>
-  <!-- Gosmonitor widget -->
-  <%= javascript_include_tag "http://www.google.com/jsapi" %>
-  <%= javascript_include_tag "http://gosmonitor.ru/widget.php?id=113&amp;clr1=8aa865" %>
-  <%= stylesheet_link_tag "http://dev.monitor.mer.gosbook.ru/widget/widget.css" %>
-  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css" %>
-  <%= stylesheet_link_tag "widget.css" %>
-  <!-- / Gosmonitor widget -->
-  <% end %>
+  <title><%= raw @page_title %> — <%= strip_tags(@site_name.content.body) %></title>
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -34,12 +24,12 @@
   <div class="top">
     <div class="inner">
       <ul class="languages">
-        <li><a href="/">РУ</a></li>
-        <li><a target="_blank" href="http://old.tomsk.gov.ru/en/">EN</a></li>
+        <li><a href="/ru/">РУ</a></li>
+        <li><a href="/en/">EN</a></li>
       </ul>
       <a href="/ru/sitemap/" class='sitemap'>Карта сайта</a>
       <div class="information">
-        <a target="_blank" href="http://old.tomsk.gov.ru/">Старая версия сайта</a>
+        <a target="_blank" href="http://old.family.tomsk.gov.ru/">Старая версия сайта</a>
       </div>
     </div>
   </div>
@@ -117,15 +107,9 @@
       <div class="contacts">
         <h5>Контакты</h5>
         <p>Администрация Томской области</p>
-        <p>634050, г.Томск, пл. Ленина, 6</p>
-        <p>+7 (382-2) 510-505, +7 (382-2) 510-001</p>
-        <p>+7 (382-2) 510-323, <a href='mailto:ato@tomsk.gov.ru'>ato@tomsk.gov.ru</a></p>
-      </div>
-      <div class="social_links">
-        <ul>
-          <li><a href="http://www.facebook.com/pages/%D0%A2%D0%BE%D0%BC%D1%81%D0%BA%D0%B0%D1%8F-%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C/199936583388540" class='facebook' title='Наша страница Facebook'>Facebook</a></li>
-          <li><a href="https://twitter.com/#!/TomskRegion" class='twitter' title='Наш Twitter'>Twitter</a></li>
-        </ul>
+        <p>634050, г.Томск, ул.Тверская, 74</p>
+        <p>тел./факс: +7 (382-2) 71-39-98</p>
+        <p><a href='mailto:dsmd@family.tomsk.gov.ru'>dsmd@family.tomsk.gov.ru</a></p>
       </div>
       <div class="copyrights">
         <ul>
