@@ -1,5 +1,6 @@
 class MainController < ApplicationController
   helper_method :cms_address
+  before_filter :prepare_locale
 
   def index
     render :file => "#{Rails.root}/public/404.html", :layout => false and return if request_status == 404
@@ -16,6 +17,10 @@ class MainController < ApplicationController
   private
     def cms_address
       "#{Settings['cms.url']}/nodes/#{Settings['cms.site_slug']}"
+    end
+
+    def prepare_locale
+      I18n.locale = request.fullpath.gsub(/\?.*$/, '').split('/').map(&:presence).compact.first || 'ru'
     end
 
     def remote_url

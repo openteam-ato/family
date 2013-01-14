@@ -1,5 +1,16 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  locale:
+    ru: РУ
+    en: EN
+  tomsk_gov_ru: Administration of Tomsk region
+  old_version: Old version of site
+  sitemap: Sitemap
+  department_name: The Department of Family and Children Tomsk region
+  search: search
+
+  # footer
+  contacts: 'Contacts'
+  address: '634041, Tomsk, Tverskaya str., 74'
+  phones: 'phone/fax: +7 (382-2) 71-39-98'
+  development: 'Development'
+  design: 'Design'

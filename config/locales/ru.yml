@@ -1,35 +1,16 @@
 ru:
-  administration_of_tomsk_region: Администрация Томской области
-  official_information_internet_portal: Официальный информационный интернет-портал
+  locale:
+    ru: РУ
+    en: EN
+  tomsk_gov_ru: Администрация Томской области
+  old_version: Старая версия сайта
+  sitemap: Карта сайта
+  department_name: Департамент по вопросам семьи и детей Томской области
+  search: искать
 
-  asserts: утверждает
-  cancels: отменяет
-  changes: изменяет
-
-  canceled: утратил силу
-
-  paper_of: от
-  published_on: опубликовано
-
-  rss_documents: RSS нормативных документов
-
-  find: Найти
-
-  documents:
-    one: "%{count} документ"
-    few: "%{count} документа"
-    many: "%{count} документов"
-    other: "%{count} документы"
-
-  projects:
-    one: "%{count} проект"
-    few: "%{count} проекта"
-    many: "%{count} проектов"
-    other: "%{count} проекты"
-
-  views:
-    pagination:
-      next: '&rarr;'
-      previous: '&larr;'
-      truncate: ...
-
+  # footer
+  contacts: 'Контакты'
+  address: '634041, г.Томск, ул.Тверская, 74'
+  phones: 'тел./факс: +7 (382-2) 71-39-98'
+  development: 'Разработка'
+  design: 'Дизайн'

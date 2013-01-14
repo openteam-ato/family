@@ -13,4 +13,4 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = true
 end
 
-Tgr::Application.load_tasks
+Family::Application.load_tasks
