@@ -117,6 +117,7 @@ GEM
       rails
       unicorn
       whenever
+    pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.3)
     rack-cache (1.2)
@@ -203,6 +204,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   openteam-commons
+  pg
   rails
   russian
   sass-rails

@@ -27,3 +27,7 @@ group :development do
   gem 'hirb',                   :require => false
   gem 'sqlite3',                :require => false
 end
+
+group :production do
+  gem 'pg',                     :require => false
+end
