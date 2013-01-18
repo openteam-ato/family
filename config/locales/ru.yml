@@ -14,3 +14,27 @@ ru:
   phones: 'тел./факс: +7 (382-2) 71-39-98'
   development: 'Разработка'
   design: 'Дизайн'
+
+  activerecord:
+    models:
+      child: Ребенок
+
+    attributes:
+      child:
+        hair_color: Цвет волос
+        eyes_color: Цвет глаз
+        name: Имя
+        published_on: Дата помещения в банк
+        sex: Пол
+        living_arrangement: Форма жизнеустройства
+
+  enumerize:
+    child:
+      sex:
+        male: Мужской
+        female: Женский
+
+      living_arrangement:
+        adoption: Усыновление
+        foster_home: Приемная семья
+        custody: Опека

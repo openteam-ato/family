@@ -1,0 +1,35 @@
+<p>
+  Имя:
+  <%= @child.name %>
+</p>
+
+<p>
+  Цвет глаз:
+  <%= @child.eyes_color %>
+</p>
+
+<p>
+  Цвет волос:
+  <%= @child.hair_color %>
+</p>
+
+<p>
+  Пол:
+  <%= @child.sex_text %>
+</p>
+
+<p>
+  Форма жизнеустройства:
+  <%= @child.living_arrangement_text %>
+</p>
+
+дата помещения в банк<br />
+год и месяц рождения<br />
+фото<br />
+связь с родными<br />
+
+<%= link_to 'Править', edit_child_path(@child) %>
+<%= link_to 'Удалить', @child, :confirm => 'Вы уверены?', :method => :delete %>
+<%= link_to 'К списку', children_path %>
+
+

@@ -1,0 +1,8 @@
+<ul>
+  <% @children.each do |child| %>
+    <li>
+      <%= link_to child.name, child %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Добавить данные о ребенке', new_child_path %>
