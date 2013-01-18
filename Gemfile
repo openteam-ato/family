@@ -22,3 +22,8 @@ group :default do
   gem 'stop_ie'
   gem 'uuid'
 end
+
+group :development do
+  gem 'hirb',                   :require => false
+  gem 'sqlite3',                :require => false
+end
