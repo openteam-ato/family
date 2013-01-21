@@ -167,15 +167,14 @@
     border-bottom: 1px dotted #7f7f7f
 
     h3
+      font-weight: bold
       margin: 0
 
     .subdivision_information
-      display: none
       padding: 15px 0 0 20px
 
     h4
       font-size: 14px
-      font-weight: bold
       margin: 10px 0 25px
 
     li
@@ -191,6 +190,31 @@
     .employees
       border: none
 
+    .subdivision_chief
+      +clearfix
+      margin: 0 0 32px 0
+
+      span
+        display: block
+        float: left
+        font-size: 13px
+        line-height: 18px
+
+      .fio
+        float: none
+        font-size: 16px
+        margin: 0 0 5px 0
+
+      .title
+        float: none
+        color: #666
+        margin: 0 0 10px 0
+
+      .phones
+        margin: 0 15px 0 0
+
+      .emails
+        margin: 0 15px 0 0
 .collapse_item
   display: none
 
@@ -601,4 +625,3 @@ a
 .wma
   .icon
     background-position: -170px 0
-

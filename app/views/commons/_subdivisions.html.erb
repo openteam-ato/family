@@ -4,9 +4,9 @@
       <% if item.path %>
         <%= link_to item.title, item.path if item.path %>
       <% else %>
-        <h3><a href="#" class='slider'><%= item.title %></a></h3>
+        <h3><%= item.title %></h3>
 
-        <div class="subdivision_information collapse_item">
+        <div class="subdivision_information">
           <div class="contacts">
             <span class='address'><%= item.address %></span>
             <span class='phones'><%= item.phones %></span>
@@ -19,8 +19,22 @@
           </div>
 
           <% if item.items %>
-            <h4>Сотрудники</h4>
-            <ul class='employees'>
+            <% chief = item.items.shift %>
+            <div class="subdivision_chief">
+              <% if chief.link %>
+                <%= link_to chief.person, chief.link, :class => 'fio' %>
+              <% else %>
+                <span class="fio"><%= chief.person %></span>
+              <% end %>
+              <span class='title'><%= chief.title %></span>
+              <span class='phones'><%= chief.phones %></span>
+              <span class='emails'>
+                <%= chief.emails.map{|email| mail_to(email)}.join(', ').html_safe if chief.emails %>
+              </span>
+              <span class="address"><%= chief.address %></span>
+            </div>
+            <h4><a href="#" class='slider'>Сотрудники</a></h4>
+            <ul class='employees collapse_item'>
               <% item.items.each do |item| %>
                 <li>
                   <% if item.link %>
