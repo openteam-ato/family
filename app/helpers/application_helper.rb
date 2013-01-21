@@ -2,10 +2,6 @@
 
 module ApplicationHelper
 
-  def sitemap_link
-    content_tag :li, link_to(I18n.t('sitemap'), "/#{I18n.locale}/sitemap/"), class: :sitemap
-  end
-
   def languages_links
     res = ''
     I18n.available_locales.each do |lang|

@@ -1,3 +1,5 @@
+$common_width: 1200px
+
 body
   background: #f7f7f7
   font-family: Verdana, Arial, sans-serif
@@ -13,9 +15,8 @@ body
   a
     color: #005fab
     outline: none
-
-  a:hover
-    text-decoration: none !important
+    &:hover
+      text-decoration: none !important
 
   .rss
     background: image_url('rss.png') no-repeat
@@ -29,7 +30,7 @@ body
   .inner
     +clearfix
     margin: 0 auto
-    width: 976px
+    width: $common_width - 24px
 
 .top
   +clearfix
@@ -53,8 +54,9 @@ body
     float: left
     font-size: 13px
     line-height: 1.2
-    margin: 8px 0 0 48px
+    margin: 8px 0 0 186px
     text-decoration: underline
+    text-transform: uppercase
 
   .impaired
     float: left
@@ -69,7 +71,7 @@ body
       width: 230px
 
   .information
-    float: right
+    float: left
     font-size: 13px
     margin: 8px 20px 0 0
     a
@@ -77,9 +79,15 @@ body
 
   .sitemap
     display: block
+    float: left
+    font-size: 13px
+    margin: 9px 0 0 20px
+
+  .helpline
     float: right
     font-size: 13px
-    margin: 8px 23px 0 0
+    font-weight: bold
+    margin: 9px 23px 0 0
 
 .header
   +clearfix
@@ -103,10 +111,10 @@ body
 
   .site_title
     float: left
-    font-size: 23px
+    font-size: 22px
     margin: 10px 0 0
     line-height: 1.2
-    width: 490px
+    width: 534px
 
     a
       +clearfix
@@ -126,7 +134,7 @@ body
     font-size: 14px
     float: left
     margin: 9px 0 0 0
-    width: 500px
+    width: 550px
 
     .inputs
       float: left
@@ -136,7 +144,7 @@ body
         border: 1px solid #ccc
         height: 21px
         padding: 0 7px
-        width: 414px
+        width: 450px
 
     .buttons
       input
@@ -175,7 +183,7 @@ body
   ul
     +min-height(42px)
     background: image_url('main_menu_delimiter.png') no-repeat left
-    margin: 0 0 0 18px
+    margin: 0 0 0 25px
 
     li
       float: left
@@ -189,10 +197,10 @@ body
         background: image_url('main_menu_delimiter.png') no-repeat right
         color: #000
         display: block
-        font-size: 13px
+        font-size: 14px
         height: 42px
         line-height: 42px
-        padding: 0 18px
+        padding: 0 51px
         text-decoration: none
         text-transform: uppercase
 
@@ -319,7 +327,7 @@ body
     font-size: 12px
     line-height: 20px
     padding: 12px 18px
-    width: 940px
+    width: $common_width - 60px
 
 .banners_block
   +clearfix
@@ -328,7 +336,7 @@ body
   .inner
     border-top: 1px dotted #7f7f7f
     padding: 14px 0 36px
-    width: 990px
+    width: $common_width - 10px
 
   .jcarousel-container
     +clearfix
@@ -411,19 +419,19 @@ body
 
   .inner
     padding: 31px 28px
-    width: 920px
+    width: $common_width - 80px
 
     div
       float: left
       margin: 0 32px 0 0
-      width: 158px
+      width: 198px
 
     .last
       margin: 0
 
     h3
       border-bottom: 1px solid #808080
-      height: 75px
+      height: 60px
 
       a
         color: #000

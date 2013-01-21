@@ -23,14 +23,9 @@
 <body>
   <div class="top">
     <div class="inner">
-      <ul class="languages">
-        <%= languages_links %>
-      </ul>
       <a class='tgr' target="_blank" href="http://tomsk.gov.ru/"><%= I18n.t('tomsk_gov_ru') %></a>
-      <a href="/ru/sitemap/" class='sitemap'><%= sitemap_link %></a>
-      <div class="information">
-        <a target="_blank" href="http://old.family.tomsk.gov.ru/"><%= I18n.t('old_version') %></a>
-      </div>
+      <a href="/ru/sitemap/" class='sitemap'><%= I18n.t('sitemap') %></a>
+      <span class='helpline'><%= I18n.t('helpline') %></a>
     </div>
   </div>
 
@@ -38,10 +33,10 @@
     <div class="inner">
       <%= render "regions/additional_#{@main_bottom_navigation.type.underscore}", :object => @main_bottom_navigation.content if @main_bottom_navigation %>
       <div class="logo">
-        <%= link_to I18n.t('department_name'), "/#{I18n.locale}/", :title => I18n.t('department_name') %>
+        <%= link_to I18n.t('department_name'), '/', :title => I18n.t('department_name') %>
       </div>
       <div class="site_title">
-        <a href="/<%= I18n.locale %>/" title='<%= I18n.t('department_name') %>'><%= I18n.t('department_name') %></a>
+        <a href='/' title='<%= I18n.t('department_name') %>'><%= I18n.t('department_name') %></a>
       </div>
       <div class="search_block invalid_link">
         <form action="/ru/search/">

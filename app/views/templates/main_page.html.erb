@@ -6,7 +6,6 @@
 <% end %>
 
 <% content_for :content do %>
-  <%= render :partial => 'regions/governor_comments' if @governor_comments %>
   <%= render_partial_for_region(@news) if @news %>
 <% end %>
 
