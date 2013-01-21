@@ -24,5 +24,10 @@
       <%= object.emails.map{|email| mail_to(email)}.join(', ').html_safe if object.emails %>
     </span>
   </div>
+  <% if @schedule_citizens %>
+    <div class="schedule_citizens">
+      <%= raw @schedule_citizens.content.body %>
+    </div>
+  <% end %>
 </div>
 
