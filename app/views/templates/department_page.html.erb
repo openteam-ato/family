@@ -13,6 +13,18 @@
       </div>
     <% end %>
 
+    <% if @regulation %>
+      <div class="regulation_documents">
+        <h3>Документы</h3>
+        <ul>
+          <% @regulation.content.gallery_pictures.each do |item| %>
+            <li><%= link_to content_tag(:span, '', :class => 'icon') + item.description, item.picture_url, :class => item.picture_url.match(/\.(\w+)$/).try(:[], 1) %></li>
+          <% end %>
+        </ul>
+        <div class="right_side_bottom"></div>
+      </div>
+    <% end %>
+
     <%= render :partial => 'commons/department_info', :locals => { :object => @content_first.content } %>
     <%= render :partial => 'commons/department_employees', :locals => { :object => @content_first.content } if @content_first.content.items %>
     <% if @content_first.content.subdivisions %>

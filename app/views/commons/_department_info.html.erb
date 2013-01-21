@@ -1,9 +1,4 @@
 <div class="information">
-  <% if @regulation %>
-    <div class="regulation documents">
-      <%= link_to content_tag(:span, '', :class => 'icon') + @regulation.content.gallery_pictures.first.description, @regulation.content.gallery_pictures.first.picture_url, :class => @regulation.content.gallery_pictures.first.picture_url.match(/\.(\w+)$/).try(:[], 1) %>
-    </div>
-  <% end %>
 
   <div class="contacts">
     <ul>
