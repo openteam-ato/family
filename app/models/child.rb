@@ -12,8 +12,10 @@ class Child < ActiveRecord::Base
 
   has_attached_file :photo, :storage => :elvfs, :elvfs_url => Settings['storage.url']
 
-  enumerize :sex, in: [:male, :female]
-  enumerize :living_arrangement, in: [:adoption, :foster_home, :custody]
+  enumerize :eyes_color,          in: [:grey, :blue, :green, :black, :brown]
+  enumerize :hair_color,          in: [:black, :dark, :light, :red, :brown, :light_brown, :dark_brown]
+  enumerize :living_arrangement,  in: [:adoption, :foster_home, :custody]
+  enumerize :sex,                 in: [:male, :female]
 
   normalize_attribute :number, with: :strip
   normalize_attribute :relative_numbers_string, with: :strip_array

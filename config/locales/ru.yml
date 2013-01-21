@@ -35,9 +35,23 @@ ru:
 
   enumerize:
     child:
+      hair_color:
+        black: Черный
+        dark: Темный
+        light: Светлый
+        red: Рыжий
+        brown: Русый
+        light_brown: Светло-русый
+        dark_brown: Темно-русый
+      eyes_color:
+        grey: Серый
+        blue: Голубой
+        green: Зеленый
+        black: Черный
+        brown: Карий
       sex:
-        male: Мужской
-        female: Женский
+        male: Мальчик
+        female: Девочка
 
       living_arrangement:
         adoption: Усыновление
