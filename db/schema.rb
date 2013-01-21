@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130118032847) do
+ActiveRecord::Schema.define(:version => 20130121033131) do
 
   create_table "children", :force => true do |t|
     t.date     "published_on"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20130118032847) do
     t.string   "sex"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.date     "born_on"
   end
 
 end

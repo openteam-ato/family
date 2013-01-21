@@ -27,6 +27,8 @@ ru:
         published_on: Дата помещения в банк
         sex: Пол
         living_arrangement: Форма жизнеустройства
+        birth_year: Год рождения
+        birth_month: Месяц рождения
 
   enumerize:
     child:
