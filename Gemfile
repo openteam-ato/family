@@ -2,7 +2,8 @@ source :rubygems
 
 group :assets do
   gem 'coffee-rails'
-  gem 'therubyracer'                                unless RUBY_PLATFORM =~ /freebsd/
+  gem 'libv8',                  '~> 3.11.8' unless RUBY_PLATFORM =~ /freebsd/
+  gem 'therubyracer',           :platforms => :ruby, :require => 'v8'
   gem 'uglifier'
 end
 
@@ -28,7 +29,9 @@ end
 
 group :development do
   gem 'hirb',                   :require => false
+  gem 'quiet_assets'
   gem 'sqlite3',                :require => false
+  gem 'thin',                   :require => false
 end
 
 group :production do
