@@ -4,10 +4,11 @@ class Child < ActiveRecord::Base
   attr_accessor :birth_year, :birth_month, :relative_numbers_string
 
   attr_accessible :sex, :name, :hair_color, :eyes_color, :living_arrangement,
-    :birth_year, :birth_month, :number, :relative_numbers, :relative_numbers_string
+    :birth_year, :birth_month, :number, :relative_numbers, :relative_numbers_string,
+    :published_on
 
   validates_presence_of :sex, :name, :hair_color, :eyes_color, :living_arrangement,
-    :birth_year, :birth_month, :number
+    :birth_year, :birth_month, :number, :published_on
 
   enumerize :sex, in: [:male, :female]
   enumerize :living_arrangement, in: [:adoption, :foster_home, :custody]

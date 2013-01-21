@@ -1,4 +1,5 @@
 <%= simple_form_for @child do |f| %>
+  <%= f.input :published_on, :as => :string %>
   <%= f.input :name %>
 
   <%= f.input :birth_year,
@@ -19,9 +20,7 @@
   <%= f.input :living_arrangement %>
   <%= f.input :number %>
   <%= f.input :relative_numbers_string, :input_html => { :value => @child.relative_numbers.try(:join, ', ') } %>
-  дата помещения в банк<br />
   фото<br />
-  связь с родными<br />
 
   <%= f.submit %>
 <% end %>
