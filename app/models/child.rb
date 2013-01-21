@@ -5,10 +5,12 @@ class Child < ActiveRecord::Base
 
   attr_accessible :sex, :name, :hair_color, :eyes_color, :living_arrangement,
     :birth_year, :birth_month, :number, :relative_numbers, :relative_numbers_string,
-    :published_on
+    :published_on, :photo
 
   validates_presence_of :sex, :name, :hair_color, :eyes_color, :living_arrangement,
     :birth_year, :birth_month, :number, :published_on
+
+  has_attached_file :photo, :storage => :elvfs, :elvfs_url => Settings['storage.url']
 
   enumerize :sex, in: [:male, :female]
   enumerize :living_arrangement, in: [:adoption, :foster_home, :custody]

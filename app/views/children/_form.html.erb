@@ -1,6 +1,8 @@
 <%= simple_form_for @child do |f| %>
   <%= f.input :published_on, :as => :string %>
   <%= f.input :name %>
+  <%= image_tag @child.photo_url if @child.photo_url %>
+  <%= f.input :photo %>
 
   <%= f.input :birth_year,
     :collection => ((Date.today.year - 20)..Date.today.year),

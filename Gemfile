@@ -20,6 +20,7 @@ group :default do
   gem 'jquery-rails'
   gem 'kaminari'
   gem 'openteam-commons'
+  gem 'paperclip-elvfs'
   gem 'rails'
   gem 'russian'
   gem 'sass-rails'

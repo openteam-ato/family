@@ -1,3 +1,5 @@
+<%= image_tag @child.photo_url if @child.photo_url %>
+
 <p>
   Дата помещения в банк:
   <%= l @child.published_on %>
@@ -54,10 +56,6 @@
   <%= @child.living_arrangement_text %>
 </p>
 
-фото<br />
-
 <%= link_to 'Править', edit_child_path(@child) %>
 <%= link_to 'Удалить', @child, :confirm => 'Вы уверены?', :method => :delete %>
 <%= link_to 'К списку', children_path %>
-
-

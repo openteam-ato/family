@@ -48,6 +48,7 @@ GEM
     bunny (0.8.0)
     chronic (0.9.0)
     chunky_png (1.2.7)
+    cocaine (0.4.2)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -124,6 +125,15 @@ GEM
       rails
       unicorn
       whenever
+    paperclip (3.4.0)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.4.0)
+      mime-types
+    paperclip-elvfs (0.0.5)
+      curb
+      paperclip
     pg (0.14.1)
     polyglot (0.3.3)
     quiet_assets (1.0.1)
@@ -226,6 +236,7 @@ DEPENDENCIES
   kaminari
   libv8 (~> 3.11.8)
   openteam-commons
+  paperclip-elvfs
   pg
   quiet_assets
   rails
