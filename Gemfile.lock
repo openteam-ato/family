@@ -43,6 +43,7 @@ GEM
       amq-protocol (>= 0.9.4)
       eventmachine
     arel (3.0.2)
+    attribute_normalizer (1.1.0)
     builder (3.0.4)
     bunny (0.8.0)
     chronic (0.9.0)
@@ -210,6 +211,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  attribute_normalizer
   coffee-rails
   compass-rails
   curb

@@ -29,6 +29,8 @@ ru:
         living_arrangement: Форма жизнеустройства
         birth_year: Год рождения
         birth_month: Месяц рождения
+        number: Номер
+        relative_numbers_string: Родственники
 
   enumerize:
     child:

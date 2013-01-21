@@ -24,6 +24,27 @@
 </p>
 
 <p>
+  Номер:
+  <%= @child.number %>
+</p>
+
+<p>
+  Братья:
+  <ul>
+    <% @child.brothers.each do |brother| %>
+      <li><%= link_to brother.name, child_path(brother) %></li>
+    <% end %>
+  </ul>
+
+  Сестры:
+  <ul>
+    <% @child.sisters.each do |sister| %>
+      <li><%= link_to sister.name, child_path(sister) %></li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
   Форма жизнеустройства:
   <%= @child.living_arrangement_text %>
 </p>

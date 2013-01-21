@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121033131) do
+ActiveRecord::Schema.define(:version => 20130121043618) do
 
   create_table "children", :force => true do |t|
     t.date     "published_on"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20130121033131) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.date     "born_on"
+    t.string   "relative_numbers"
   end
 
 end

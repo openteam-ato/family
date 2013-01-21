@@ -1,19 +1,24 @@
 <%= simple_form_for @child do |f| %>
   <%= f.input :name %>
+
   <%= f.input :birth_year,
     :collection => ((Date.today.year - 20)..Date.today.year),
     :selected => @child.born_on.try(:year),
     :include_blank => true,
     :prompt => 'Год рождения' %>
+
   <%= f.input :birth_month,
     :collection => t("date.month_names").compact.each_with_index.map { |name, number| ["#{number + 1} (#{name})", number + 1] },
     :selected => @child.born_on.try(:month),
     :include_blank => true,
     :prompt => 'Месяц рождения' %>
+
   <%= f.input :sex %>
   <%= f.input :hair_color %>
   <%= f.input :eyes_color %>
   <%= f.input :living_arrangement %>
+  <%= f.input :number %>
+  <%= f.input :relative_numbers_string, :input_html => { :value => @child.relative_numbers.try(:join, ', ') } %>
   дата помещения в банк<br />
   фото<br />
   связь с родными<br />
