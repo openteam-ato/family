@@ -6,5 +6,8 @@
 /config/settings.yml
 /db/*.sqlite3
 /log/*.log
+/log/sunspot-solr-development.log.lck
 /public/assets
+/solr/data/
+/solr/pids
 /tmp

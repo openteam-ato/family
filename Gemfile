@@ -26,6 +26,7 @@ group :default do
   gem 'sass-rails'
   gem 'simple_form'
   gem 'stop_ie'
+  gem 'sunspot_rails'
   gem 'uuid'
 end
 
@@ -33,6 +34,7 @@ group :development do
   gem 'hirb',                   :require => false
   gem 'quiet_assets'
   gem 'sqlite3',                :require => false
+  gem 'sunspot_solr'
   gem 'thin',                   :require => false
 end
 
