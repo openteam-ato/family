@@ -138,18 +138,21 @@ body
 
     .inputs
       float: left
-      margin: 0 5px 0 0
 
       input
         border: 1px solid #ccc
         height: 21px
+        +border-top-left-radius(2px)
+        +border-bottom-left-radius(2px)
         padding: 0 7px
-        width: 450px
+        width: 445px
+        border-right: none
 
     .buttons
       input
         +background-image(linear-gradient(#f6f6f6, #e1e1e1))
-        +border-radius(2px)
+        +border-top-right-radius(2px)
+        +border-bottom-right-radius(2px)
         border: 1px solid #c0c0c0
         height: 23px
         padding: 0
