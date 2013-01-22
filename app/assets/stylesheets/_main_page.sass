@@ -1,0 +1,28 @@
+.content
+  .local_banners
+    +clearfix
+    border-bottom: 1px dotted #7f7f7f
+    padding: 0 40px 30px
+    margin-bottom: 20px
+    li
+      float: left
+      width: 320px
+      height: 100px
+      +box-shadow(#999 0 0 5px)
+      +border-radius(4px)
+      margin-top: 2px
+      a
+        display: block
+        width: 320px
+        height: 100px
+        +clearfix
+        text-indent: -9999em
+        +border-radius(4px)
+      &.adv_regional_bank
+        background: transparent image_url('adv_regional_bank.png') no-repeat
+        margin-right: 40px
+      &.adv_camps
+        background: transparent image_url('adv_camps.png') no-repeat
+        margin-right: 40px
+      &.adv_help
+        background: transparent image_url('adv_help.png') no-repeat
