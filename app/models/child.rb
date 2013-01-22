@@ -20,6 +20,10 @@ class Child < ActiveRecord::Base
   normalize_attribute :number, with: :strip
   normalize_attribute :relative_numbers_string, with: :strip_array
 
+  searchable do
+    string :number
+  end
+
   serialize :relative_numbers, Array
 
   before_save :set_born_on
