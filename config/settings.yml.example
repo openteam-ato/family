@@ -11,3 +11,6 @@ cms:
 
 storage:
   url:          http://storage.url
+
+solr:
+  url:          http://localhost:8982/solr

@@ -1,14 +1,87 @@
-<%= form_tag children_path, :method => :get do %>
-  <%= label_tag :number, 'Номер' %>
-  <%= text_field_tag :number, params[:number] %>
-  <%= submit_tag 'Поиск' %>
-<% end %>
+<%= link_to 'Добавить данные о ребенке', new_child_path, :class => 'new_link' %>
 
-<ul>
-  <% @children.each do |child| %>
-    <li>
-      <%= link_to child.name, child %>
-    </li>
+<div class="search_form">
+  <%= simple_form_for :search, :url => children_path, :method => :get do |f| %>
+    <%= f.input :number, :input_html => { :value => params[:search] ? params[:search][:number] : nil  }, :label => false %>
+    <div class="submit">
+      <%= f.submit 'Искать' %>
+    </div>
   <% end %>
-</ul>
-<%= link_to 'Добавить данные о ребенке', new_child_path %>
+</div>
+
+<div class="list">
+  <ul>
+    <% @children.each do |child| %>
+      <li>
+        <div class="photo">
+          <%= image_tag child.photo_url, :alt => child.name, :title => child.name, :width => 150, :height => 200  %>
+        </div>
+        <div class="info">
+          <div class="action_links">
+            <%= link_to "Редактировать", edit_resource_path(child), :class => 'edit', :title => 'Редактировать' %>
+            <%= link_to "Удалить", resource_path(child), :method => :delete, :confirm => 'Вы уверены?', :class => 'delete', :title => 'Удалить' %>
+          </div>
+          <div class="bold name_and_number">
+            <%= link_to child.name, child %>
+            <span>(<%= child.number %>)</span>
+          </div>
+
+          <div class="published_on">
+            Дата помещения в банк: <%= l child.published_on, :format => "%d %B %Y" %>
+          </div>
+
+          <div class='bold'>
+            Дата рождения: <%= l child.born_on, :format => "%B %Y" %>
+          </div>
+          <div>
+            Цвет глаз &mdash; <%= child.eyes_color_text %>, цвет волос &mdash; <%= child.hair_color_text %>
+          </div>
+          <div class='bold'>
+            Форма жизнеустройства:
+          </div>
+          <div>
+            <%= child.living_arrangement_text %>
+          </div>
+          <% if child.brothers.any? %>
+            <div>
+              <div class='bold'>Братья:</div>
+              <ul>
+                <% child.brothers.each do |relative| %>
+                  <li>
+                    <div class="photo">
+                      <%= image_tag relative.photo_url, :alt => relative.name, :title => relative.name, :width => 28, :height => 37 %>
+                    </div>
+                    <div class="info">
+                      <%= link_to relative.name, relative %>
+                      <br />
+                      <span>(<%= relative.number %>)</span>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <% if child.sisters.any? %>
+            <div>
+              <div class='bold'>Сестры:</div>
+              <ul>
+                <% child.sisters.each do |relative| %>
+                  <li>
+                    <div class="photo">
+                      <%= image_tag relative.photo_url, :alt => relative.name, :title => relative.name, :width => 28, :height => 37 %>
+                    </div>
+                    <div class="info">
+                      <%= link_to relative.name, relative %>
+                      <br />
+                      (<%= relative.number %>)
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
