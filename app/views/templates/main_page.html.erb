@@ -1,8 +1,8 @@
 <% content_for :extend_javascripts do %>
 <% end %>
 
-<%= content_for :actual_and_calendar do %>
-  <%= render :partial => 'regions/actual_and_calendar' if @actual || @calendar %>
+<%= content_for :actual do %>
+  <%= render :partial => 'regions/actual' if @actual %>
 <% end %>
 
 <% content_for :content do %>
