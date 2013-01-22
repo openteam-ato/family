@@ -10,6 +10,7 @@
  * = require chart
  * = require jcarousel
  * = require galleria
+ * = require actual_slider
  * = require map
  * = require reports
  * = require collapser
