@@ -2,11 +2,18 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <title>Банк детей-сирот</title>
+    <%= favicon_link_tag %>
+    <title>Банк данных детей&ndash;сирот</title>
+
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <%= yield %>
+  <body class='manage_children'>
+    <div class="content_wrapper">
+      <h1>Банк данных детей&ndash;сирот</h1>
+      <%= yield %>
+    </div>
   </body>
 </html>
 

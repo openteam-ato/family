@@ -67,24 +67,24 @@ ru:
   enumerize:
     child:
       hair_color:
-        black: Черный
-        dark: Темный
-        light: Светлый
-        red: Рыжий
-        brown: Русый
-        light_brown: Светло-русый
-        dark_brown: Темно-русый
+        black: черный
+        dark: темный
+        light: светлый
+        red: рыжий
+        brown: русый
+        light_brown: светло-русый
+        dark_brown: темно-русый
       eyes_color:
-        grey: Серый
-        blue: Голубой
-        green: Зеленый
-        black: Черный
-        brown: Карий
+        grey: серый
+        blue: голубой
+        green: зеленый
+        black: черный
+        brown: карий
       sex:
-        male: Мальчик
-        female: Девочка
+        male: мальчик
+        female: девочка
 
       living_arrangement:
-        adoption: Усыновление
-        foster_home: Приемная семья
-        custody: Опека
+        adoption: усыновление
+        foster_home: приемная семья
+        custody: опека

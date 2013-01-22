@@ -8,7 +8,7 @@ class Child < ActiveRecord::Base
     :published_on, :photo
 
   validates_presence_of :sex, :name, :hair_color, :eyes_color, :living_arrangement,
-    :birth_year, :birth_month, :number, :published_on
+    :birth_year, :birth_month, :number, :published_on, :photo
 
   has_attached_file :photo, :storage => :elvfs, :elvfs_url => Settings['storage.url']
 
