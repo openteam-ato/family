@@ -14,17 +14,19 @@ class Child < ActiveRecord::Base
 
   enumerize :eyes_color,          in: [:grey, :blue, :green, :black, :brown]
   enumerize :hair_color,          in: [:black, :dark, :light, :red, :brown, :light_brown, :dark_brown]
-  enumerize :living_arrangement,  in: [:adoption, :foster_home, :custody]
+  enumerize :living_arrangement,  in: [:adoption, :foster_home, :custody], multiple: true
   enumerize :sex,                 in: [:male, :female]
 
   normalize_attribute :number, with: :strip
   normalize_attribute :relative_numbers_string, with: :strip_array
+  normalize_attribute :living_arrangement, with: :blank_array
 
   searchable do
     string :number
   end
 
   serialize :relative_numbers, Array
+  serialize :living_arrangement, Array
 
   before_save :set_born_on
   before_save :set_relative_numbers
