@@ -14,7 +14,7 @@ class Child < ActiveRecord::Base
 
   enumerize :eyes_color,          in: [:grey, :blue, :green, :black, :brown]
   enumerize :hair_color,          in: [:black, :dark, :light, :red, :brown, :light_brown, :dark_brown]
-  enumerize :living_arrangement,  in: [:adoption, :foster_home, :custody], multiple: true
+  enumerize :living_arrangement,  in: [:adoption, :foster_home, :custody], :multiple => true
   enumerize :sex,                 in: [:male, :female]
 
   normalize_attribute :number, with: :strip

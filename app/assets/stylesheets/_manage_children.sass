@@ -212,10 +212,10 @@
             margin: 0 5px 0 0
 
         .input
-          +clearfix
           +min-height(26px)
           line-height: 22px
-          margin: 0 0 15px 0
+          margin: 0 0 5px 0
+          padding: 0 0 15px 0
           position: relative
 
           &.file
@@ -259,18 +259,26 @@
             label.collection_check_boxes, label.collection_radio_buttons
               font-size: 13px
               float: none
+              line-height: 22px
               width: auto
               text-align: left
 
             .radio_buttons, .check_boxes
               font-size: 13px
               float: left
-              width: 20px
+              width: auto
+              margin: 0 5px
 
           .checkbox
             margin: 0 0 0 200px
             float: none
             width: 135px
+
+        div.check_boxes
+          padding-bottom: 15px
+
+          .error
+            top: 65px
 
         .submit
           border-top: 1px solid #cccccc
