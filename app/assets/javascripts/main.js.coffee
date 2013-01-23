@@ -11,9 +11,11 @@ $ ->
   init_reports_list()      if $("div.reports").length
   init_colorbox()          if $(".right_side .entry_image img").length
   init_uppod()             if $("div.uppod").length
+  init_datepicker()
 
   if $(".need_collapser").length
     init_collapser()
     hash_handler()
   $("a.invalid_link").click =>
     return false
+

@@ -32,6 +32,7 @@ ru:
         birth_month: Месяц рождения
         number: Номер
         relative_numbers_string: Родственники
+        photo: Фотография
 
   enumerize:
     child:

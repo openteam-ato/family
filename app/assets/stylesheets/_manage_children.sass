@@ -182,3 +182,111 @@
       .brothers
         li
           margin: 0 35px 20px 0
+
+
+    .child_form
+      float: left
+      margin: 0 25px 0 0
+      width: 560px
+
+      form
+        border-top: 1px solid #cccccc
+        padding: 15px 0 0
+
+        .hint
+          font-size: 12px
+          color: #999
+          position: absolute
+          top: 20px
+          left: 202px
+
+        .error
+          font-size: 12px
+          color: #cf373f
+          position: absolute
+          top: 20px
+          left: 200px
+
+          &:before
+            content: '\2b11'
+            margin: 0 5px 0 0
+
+        .input
+          line-height: 22px
+          height: 26px
+          margin: 0 0 15px 0
+          position: relative
+
+          &.file
+            input
+              border: none
+              line-height: 14px
+
+          label
+            display: block
+            color: #535353
+            font-size: 14px
+            float: left
+            margin: 0 10px 0 0
+            text-align: right
+            width: 190px
+
+            abbr
+              display: none
+
+          input, select
+            border: 1px solid #cccccc
+            font-size: 13px
+            height: 20px
+            line-height: 20px
+            margin: 0
+            padding-left: 7px
+            padding-right: 7px
+            width: 300px
+
+          select
+            width: 318px
+
+          .radio
+            +clearfix
+            display: block
+            float: left
+            line-height: 14px
+            margin: 0 10px 0 0
+            width: 85px
+
+            label
+              font-size: 13px
+              float: none
+              width: auto
+
+            .radio_buttons
+              font-size: 13px
+              float: left
+              width: 18px
+
+        .submit
+          border-top: 1px solid #cccccc
+          margin: 15px 0 0
+          padding: 15px 0 0
+
+          input
+            +border-radius(2px)
+            background: #578e4d
+            border: 1px solid #3f803e
+            color: #edf4ec
+            display: block
+            float: left
+            font-size: 16px
+            font-weight: normal
+            height: 32px
+            line-height: 18px
+            margin: 0 15px 0 200px
+            padding: 6px 10px
+
+          a
+            line-height: 32px
+
+      .photo_wrapper
+        .empty
+

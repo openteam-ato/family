@@ -20,5 +20,6 @@
  * = require scroll_to
  * = require colorbox
  * = require uppod
+ * = require datepicker
  * = require main
  */
