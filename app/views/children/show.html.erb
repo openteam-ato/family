@@ -1,61 +1,86 @@
-<%= image_tag @child.photo_url if @child.photo_url %>
-
-<p>
-  Дата помещения в банк:
-  <%= l @child.published_on %>
-</p>
-
-<p>
-  Имя:
-  <%= @child.name %>
-</p>
-
-<p>
-  Дата рождения:
-  <%= l(@child.born_on, format: '%b %Y') %>
-</p>
-
-<p>
-  Цвет глаз:
-  <%= @child.eyes_color_text %>
-</p>
-
-<p>
-  Цвет волос:
-  <%= @child.hair_color_text %>
-</p>
-
-<p>
-  Пол:
-  <%= @child.sex_text %>
-</p>
-
-<p>
-  Номер:
-  <%= @child.number %>
-</p>
-
-<p>
-  Братья:
+<div class="breadcrumbs">
   <ul>
-    <% @child.brothers.each do |brother| %>
-      <li><%= link_to brother.name, child_path(brother) %></li>
-    <% end %>
+    <li>
+      <%= link_to "назад к списку", collection_path %>
+    </li>
+    <li>
+      <%= @child.name %>
+    </li>
   </ul>
+</div>
+<div class="show_child">
+  <div class="show_child_wrapper">
+    <div class="photo">
+      <%= image_tag @child.photo_url, :alt => @child.name, :title => @child.name, :width => 150, :height => 200 %>
+    </div>
+    <div class="info">
+      <div class="action_links">
+        <%= link_to "Редактировать", edit_resource_path(@child), :class => 'edit', :title => 'Редактировать' %>
+        <%= link_to "Удалить", resource_path(@child), :method => :delete, :confirm => 'Вы уверены?', :class => 'delete', :title => 'Удалить' %>
+      </div>
+      <div class="bold name_and_number">
+        <%= @child.name %>
+        <span>(<%= @child.number %>)</span>
+      </div>
 
-  Сестры:
-  <ul>
-    <% @child.sisters.each do |sister| %>
-      <li><%= link_to sister.name, child_path(sister) %></li>
+      <div class="published_on">
+        Дата помещения в банк: <%= l @child.published_on, :format => "%d %B %Y" %>
+      </div>
+
+      <div class='bold'>
+        Дата рождения: <%= l @child.born_on, :format => "%B %Y" %>
+      </div>
+      <div>
+        Цвет глаз &mdash; <%= @child.eyes_color_text %>, цвет волос &mdash; <%= @child.hair_color_text %>
+      </div>
+      <div class='bold'>
+        Форма жизнеустройства:
+      </div>
+      <div>
+        <%= @child.living_arrangement_text %>
+      </div>
+    </div>
+  </div>
+  <div class="relativities">
+    <% if @child.brothers.any? %>
+      <div class='brothers'>
+        <div class='bold'>Братья:</div>
+        <ul>
+          <% @child.brothers.each do |relative| %>
+            <li>
+              <div class="photo">
+                <%= link_to relative do %>
+                  <%= image_tag relative.photo_url, :alt => relative.name, :title => relative.name, :width => 74, :height => 98 %>
+                <% end %>
+              </div>
+              <div class="info">
+                <%= link_to relative.name, relative %>
+                <span>(<%= relative.number %>)</span>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
-  </ul>
-</p>
-
-<p>
-  Форма жизнеустройства:
-  <%= @child.living_arrangement_text %>
-</p>
-
-<%= link_to 'Править', edit_child_path(@child) %>
-<%= link_to 'Удалить', @child, :confirm => 'Вы уверены?', :method => :delete %>
-<%= link_to 'К списку', children_path %>
+    <% if @child.sisters.any? %>
+      <div>
+        <div class='bold'>Сестры:</div>
+        <ul>
+          <% @child.sisters.each do |relative| %>
+            <li>
+              <div class="photo">
+                <%= link_to relative do %>
+                  <%= image_tag relative.photo_url, :alt => relative.name, :title => relative.name, :width => 74, :height => 98 %>
+                <% end %>
+              </div>
+              <div class="info">
+                <%= link_to relative.name, relative %>
+                <span>(<%= relative.number %>)</span>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

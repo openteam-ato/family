@@ -14,7 +14,9 @@
     <% @children.each do |child| %>
       <li>
         <div class="photo">
-          <%= image_tag child.photo_url, :alt => child.name, :title => child.name, :width => 150, :height => 200  %>
+          <%= link_to child do %>
+            <%= image_tag child.photo_url, :alt => child.name, :title => child.name, :width => 150, :height => 200 %>
+          <% end %>
         </div>
         <div class="info">
           <div class="action_links">
@@ -49,7 +51,9 @@
                 <% child.brothers.each do |relative| %>
                   <li>
                     <div class="photo">
-                      <%= image_tag relative.photo_url, :alt => relative.name, :title => relative.name, :width => 28, :height => 37 %>
+                      <%= link_to relative do %>
+                        <%= image_tag relative.photo_url, :alt => relative.name, :title => relative.name, :width => 28, :height => 37 %>
+                      <% end %>
                     </div>
                     <div class="info">
                       <%= link_to relative.name, relative %>
@@ -68,12 +72,14 @@
                 <% child.sisters.each do |relative| %>
                   <li>
                     <div class="photo">
-                      <%= image_tag relative.photo_url, :alt => relative.name, :title => relative.name, :width => 28, :height => 37 %>
+                      <%= link_to relative do %>
+                        <%= image_tag relative.photo_url, :alt => relative.name, :title => relative.name, :width => 28, :height => 37 %>
+                      <% end %>
                     </div>
                     <div class="info">
                       <%= link_to relative.name, relative %>
                       <br />
-                      (<%= relative.number %>)
+                      <span>(<%= relative.number %>)</span>
                     </div>
                   </li>
                 <% end %>
