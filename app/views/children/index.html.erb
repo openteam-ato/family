@@ -42,7 +42,7 @@
             Форма жизнеустройства:
           </div>
           <div>
-            <%= child.living_arrangement_text %>
+            <%= child.living_arrangement.map(&:text).join(', ') %>
           </div>
           <% if child.brothers.any? %>
             <div>
