@@ -7,13 +7,11 @@
     <%= f.input :birth_year,
       :collection => ((Date.today.year - 20)..Date.today.year),
       :selected => @child.born_on.try(:year),
-      :include_blank => true,
       :prompt => 'Год рождения' %>
 
     <%= f.input :birth_month,
       :collection => t("date.month_names").compact.each_with_index.map { |name, number| ["#{number + 1} (#{name})", number + 1] },
       :selected => @child.born_on.try(:month),
-      :include_blank => true,
       :prompt => 'Месяц рождения' %>
     <%= f.input :living_arrangement, :as => :check_boxes %>
     <%= f.input :hair_color %>
