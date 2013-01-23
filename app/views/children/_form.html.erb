@@ -1,27 +1,34 @@
-<%= simple_form_for @child do |f| %>
-  <%= f.input :published_on, :as => :string %>
-  <%= f.input :name %>
-  <%= image_tag @child.photo_url if @child.photo_url %>
-  <%= f.input :photo %>
+<div class="child_form">
+  <%= simple_form_for @child, :html => {:novalidate => true} do |f| %>
+    <%= f.input :published_on, :as => :datepicker %>
+    <%= f.input :number %>
+    <%= f.input :name %>
+    <%= f.input :sex, :as => :radio %>
+    <%= f.input :birth_year,
+      :collection => ((Date.today.year - 20)..Date.today.year),
+      :selected => @child.born_on.try(:year),
+      :include_blank => true,
+      :prompt => 'Год рождения' %>
 
-  <%= f.input :birth_year,
-    :collection => ((Date.today.year - 20)..Date.today.year),
-    :selected => @child.born_on.try(:year),
-    :include_blank => true,
-    :prompt => 'Год рождения' %>
+    <%= f.input :birth_month,
+      :collection => t("date.month_names").compact.each_with_index.map { |name, number| ["#{number + 1} (#{name})", number + 1] },
+      :selected => @child.born_on.try(:month),
+      :include_blank => true,
+      :prompt => 'Месяц рождения' %>
+    <%= f.input :living_arrangement %>
+    <%= f.input :hair_color %>
+    <%= f.input :eyes_color %>
+    <%= f.input :relative_numbers_string, :input_html => { :value => @child.relative_numbers.try(:join, ', ') }, :hint => 'Номера дел братьев и сестер, разделенные запятыми.' %>
+    <%= f.input :photo %>
 
-  <%= f.input :birth_month,
-    :collection => t("date.month_names").compact.each_with_index.map { |name, number| ["#{number + 1} (#{name})", number + 1] },
-    :selected => @child.born_on.try(:month),
-    :include_blank => true,
-    :prompt => 'Месяц рождения' %>
-
-  <%= f.input :sex %>
-  <%= f.input :hair_color %>
-  <%= f.input :eyes_color %>
-  <%= f.input :living_arrangement %>
-  <%= f.input :number %>
-  <%= f.input :relative_numbers_string, :input_html => { :value => @child.relative_numbers.try(:join, ', ') } %>
-
-  <%= f.submit %>
-<% end %>
+    <div class="submit">
+      <%= f.submit 'Сохранить' %>
+      <%= link_to "Отмена", smart_resource_url %>
+    </div>
+  <% end %>
+</div>
+<div class="photo_wrapper">
+  <% if @child.photo? %>
+    <%= image_tag @child.photo_url, :alt => @child.name, :title => @child.name %>
+  <% end %>
+</div>
