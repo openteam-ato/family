@@ -15,7 +15,7 @@
       <li>
         <div class="photo">
           <%= link_to child do %>
-            <%= image_tag child.photo_url, :alt => child.name, :title => child.name, :size => '150x200' %>
+            <%= image_tag child.photo_url.gsub(/\/\d+-\d+\//, '/150-200!/'), :alt => child.name, :title => child.name, :size => '150x200' %>
           <% end %>
         </div>
         <div class="info">
@@ -52,7 +52,7 @@
                   <li>
                     <div class="photo">
                       <%= link_to relative do %>
-                        <%= image_tag relative.photo_url, :alt => relative.name, :title => relative.name, :size => '28x37' %>
+                        <%= image_tag relative.photo_url.gsub(/\/\d+-\d+\//, '/28-37!/'), :alt => relative.name, :title => relative.name, :size => '28x37' %>
                       <% end %>
                     </div>
                     <div class="info">
@@ -73,7 +73,7 @@
                   <li>
                     <div class="photo">
                       <%= link_to relative do %>
-                        <%= image_tag relative.photo_url, :alt => relative.name, :title => relative.name, :size => '28x37' %>
+                        <%= image_tag relative.photo_url.gsub(/\/\d+-\d+\//, '/28-37!/'), :alt => relative.name, :title => relative.name, :size => '28x37' %>
                       <% end %>
                     </div>
                     <div class="info">
