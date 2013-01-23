@@ -1,7 +1,7 @@
 <%= link_to 'Добавить данные о ребенке', new_child_path, :class => 'new_link' %>
 
 <div class="search_form">
-  <%= simple_form_for :search, :url => children_path, :method => :get do |f| %>
+  <%= simple_form_for :search, :url => children_path, :html => { :novalidate => true }, :method => :get do |f| %>
     <%= f.input :number, :input_html => { :value => params[:search] ? params[:search][:number] : nil  }, :label => false %>
     <div class="submit">
       <%= f.submit 'Искать' %>
