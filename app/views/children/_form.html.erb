@@ -3,7 +3,7 @@
     <%= f.input :published_on, :as => :datepicker %>
     <%= f.input :number %>
     <%= f.input :name %>
-    <%= f.input :sex, :as => :radio %>
+    <%= f.input :sex, :as => :radio_buttons %>
     <%= f.input :birth_year,
       :collection => ((Date.today.year - 20)..Date.today.year),
       :selected => @child.born_on.try(:year),
