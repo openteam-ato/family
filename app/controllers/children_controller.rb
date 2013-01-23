@@ -6,7 +6,7 @@ class ChildrenController < ApplicationController
 
   def index
     @children = Child.search {
-      with(:number, params[:number]) if params[:number].present?
+      with(:number, params[:search][:number]) if params[:search] && params[:search][:number].present?
     }.results
   end
 
