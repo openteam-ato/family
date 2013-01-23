@@ -4,7 +4,7 @@ AttributeNormalizer.configure do |config|
   end
 
   config.normalizers[:blank_array] = ->(value, options) do
-    (value || []).delete_if(&:blank?)
+    value.try(:detect, &:present?) ? value : nil
   end
 end
 
