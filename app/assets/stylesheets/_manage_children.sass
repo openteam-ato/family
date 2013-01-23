@@ -212,8 +212,9 @@
             margin: 0 5px 0 0
 
         .input
+          +clearfix
+          +min-height(26px)
           line-height: 22px
-          height: 26px
           margin: 0 0 15px 0
           position: relative
 
@@ -247,7 +248,7 @@
           select
             width: 318px
 
-          .radio
+          .radio, .checkbox
             +clearfix
             display: block
             float: left
@@ -255,15 +256,21 @@
             margin: 0 10px 0 0
             width: 85px
 
-            label
+            label.collection_check_boxes, label.collection_radio_buttons
               font-size: 13px
               float: none
               width: auto
+              text-align: left
 
-            .radio_buttons
+            .radio_buttons, .check_boxes
               font-size: 13px
               float: left
-              width: 18px
+              width: 20px
+
+          .checkbox
+            margin: 0 0 0 200px
+            float: none
+            width: 135px
 
         .submit
           border-top: 1px solid #cccccc
