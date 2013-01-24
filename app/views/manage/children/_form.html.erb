@@ -1,5 +1,5 @@
 <div class="child_form">
-  <%= simple_form_for @child, :html => {:novalidate => true} do |f| %>
+  <%= simple_form_for [:manage, @child], :html => {:novalidate => true} do |f| %>
     <%= f.input :published_on, :as => :datepicker %>
     <%= f.input :number %>
     <%= f.input :name %>

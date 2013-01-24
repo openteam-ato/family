@@ -11,10 +11,14 @@ class MainController < ApplicationController
 
     @page_title = page.title
 
-    render "templates/#{page.template}"
+    render template
   end
 
   private
+    def template
+      "templates/#{page.template}"
+    end
+
     def cms_address
       "#{Settings['cms.url']}/nodes/#{Settings['cms.site_slug']}"
     end
