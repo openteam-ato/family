@@ -1,5 +1,5 @@
 <% content_for :content do %>
   <% @children.each do |child| %>
-    <%= link_to child.name, child(:id => child.id) %>
+    <%= link_to child.name, child_path(:id => child.id) %>
   <% end %>
 <% end %>
