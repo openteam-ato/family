@@ -12,7 +12,7 @@
 <div class="list">
   <ul>
     <% @children.each do |child| %>
-      <li>
+      <li class='child'>
         <div class="photo">
           <%= link_to [:manage, child] do %>
             <%= image_tag child.photo_url.gsub(/\/\d+-\d+\//, '/150-200!/'), :alt => child.name, :title => child.name, :size => '150x200' %>
