@@ -45,6 +45,20 @@ class Child < ActiveRecord::Base
     self.class.where number: relative_numbers
   end
 
+  def self.solr_search_results(params)
+    page = params[:page] || 1
+    number = params[:search].try(:[], :number)
+
+    search {
+      with(:number, number) if number.present?
+
+      order_by(:published_on, :desc)
+      order_by(:created_at, :desc)
+
+      paginate(:page => page, :per_page => 10)
+    }.results
+  end
+
   private
 
   def set_born_on

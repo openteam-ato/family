@@ -1,6 +1,6 @@
 class ChildrenController < MainController
   def index
-    @children = Child.all
+    @children = Child.solr_search_results(params)
 
     super
   end
