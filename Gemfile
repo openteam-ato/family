@@ -34,6 +34,7 @@ group :development do
   gem 'hirb',                   :require => false
   gem 'quiet_assets'
   gem 'sqlite3',                :require => false
+  gem 'progress_bar',           :require => false
   gem 'sunspot_solr'
   gem 'thin',                   :require => false
 end
