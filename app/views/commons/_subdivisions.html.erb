@@ -33,24 +33,26 @@
               </span>
               <span class="address"><%= chief.address %></span>
             </div>
-            <h4><a href="#" class='slider'>Сотрудники</a></h4>
-            <ul class='employees collapse_item'>
-              <% item.items.each do |item| %>
-                <li>
-                  <% if item.link %>
-                    <%= link_to item.person, item.link, :class => 'fio' %>
-                  <% else %>
-                    <span class="fio"><%= item.person %></span>
-                  <% end %>
-                  <span class='title'><%= item.title %></span>
-                  <span class='phones'><%= item.phones %></span>
-                  <span class='emails'>
-                    <%= item.emails.map{|email| mail_to(email)}.join(', ').html_safe if item.emails %>
-                  </span>
-                  <span class="address"><%= item.address %></span>
-                </li>
-              <% end %>
-            </ul>
+            <% if item.items.any? %>
+              <h4><a href="#" class='slider'>Сотрудники</a></h4>
+              <ul class='employees collapse_item'>
+                <% item.items.each do |item| %>
+                  <li>
+                    <% if item.link %>
+                      <%= link_to item.person, item.link, :class => 'fio' %>
+                    <% else %>
+                      <span class="fio"><%= item.person %></span>
+                    <% end %>
+                    <span class='title'><%= item.title %></span>
+                    <span class='phones'><%= item.phones %></span>
+                    <span class='emails'>
+                      <%= item.emails.map{|email| mail_to(email)}.join(', ').html_safe if item.emails %>
+                    </span>
+                    <span class="address"><%= item.address %></span>
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
           <% end %>
           <% if item.subdivisions %>
             <ul>
