@@ -7,6 +7,8 @@ class Manage::ChildrenController < ApplicationController
   def index
     @children = Child.search {
       with(:number, params[:search][:number]) if params[:search] && params[:search][:number].present?
+      order_by(:published_on, :desc)
+      order_by(:created_at, :desc)
     }.results
   end
 

@@ -23,6 +23,8 @@ class Child < ActiveRecord::Base
 
   searchable do
     string :number
+    date :published_on
+    date :created_at
   end
 
   serialize :relative_numbers, Array
