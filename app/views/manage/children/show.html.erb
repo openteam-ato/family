@@ -54,7 +54,7 @@
                 <% end %>
               </div>
               <div class="info">
-                <%= link_to relative.name, relative %>
+                <%= link_to relative.name, manage_child_path(relative) %>
                 <span>(<%= relative.number %>)</span>
               </div>
             </li>
@@ -74,7 +74,7 @@
                 <% end %>
               </div>
               <div class="info">
-                <%= link_to relative.name, relative %>
+                <%= link_to relative.name, manage_child_path(relative) %>
                 <span>(<%= relative.number %>)</span>
               </div>
             </li>

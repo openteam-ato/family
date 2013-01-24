@@ -1,4 +1,5 @@
 <% content_for :content do %>
+  <%= render_partial_for_region(@content_first) %>
   <% @children.each do |child| %>
     <%= link_to child.name, child_path(:id => child.id) %>
   <% end %>
