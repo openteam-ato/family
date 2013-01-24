@@ -9,6 +9,7 @@ class Manage::ChildrenController < ApplicationController
       with(:number, params[:search][:number]) if params[:search] && params[:search][:number].present?
       order_by(:published_on, :desc)
       order_by(:created_at, :desc)
+      paginate(:page => params[:page] || 1, :per_page => 10)
     }.results
   end
 

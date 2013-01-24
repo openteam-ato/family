@@ -5,7 +5,7 @@
     <%= f.input :name %>
     <%= f.input :sex, :as => :radio_buttons %>
     <%= f.input :birth_year,
-      :collection => ((Date.today.year - 20)..Date.today.year),
+      :collection => Date.today.year.downto(Date.today.year - 20),
       :selected => @child.born_on.try(:year),
       :prompt => 'Год рождения' %>
 

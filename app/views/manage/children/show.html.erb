@@ -11,7 +11,7 @@
 <div class="show_child">
   <div class="show_child_wrapper">
     <div class="photo">
-      <%= image_tag @child.photo_url, :alt => @child.name, :title => @child.name, :width => 150, :height => 200 %>
+      <%= image_tag @child.photo_url.gsub(/\/\d+-\d+\//, '/150-200!/'), :alt => @child.name, :title => @child.name, :size => '150x200' %>
     </div>
     <div class="info">
       <div class="action_links">
@@ -50,7 +50,7 @@
             <li>
               <div class="photo">
                 <%= link_to relative do %>
-                  <%= image_tag relative.photo_url, :alt => relative.name, :title => relative.name, :width => 74, :height => 98 %>
+                  <%= image_tag relative.photo_url.gsub(/\/\d+-\d+\//, '/74-98!/'), :alt => relative.name, :title => relative.name, :size => '74x98' %>
                 <% end %>
               </div>
               <div class="info">
@@ -70,7 +70,7 @@
             <li>
               <div class="photo">
                 <%= link_to relative do %>
-                  <%= image_tag relative.photo_url, :alt => relative.name, :title => relative.name, :width => 74, :height => 98 %>
+                  <%= image_tag relative.photo_url.gsub(/\/\d+-\d+\//, '/74-98!/'), :alt => relative.name, :title => relative.name, :size => '74x98' %>
                 <% end %>
               </div>
               <div class="info">
