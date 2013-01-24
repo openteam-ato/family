@@ -5,5 +5,11 @@ class ChildrenController < MainController
     super
   end
 
+  def show
+    @child = Child.find(params[:id])
+
+    super
+  end
+
   alias_method :template, :action_name
 end

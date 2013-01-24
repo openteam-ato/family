@@ -5,7 +5,8 @@ Family::Application.routes.draw do
     resources :children
   end
 
-  resources :children, :only => [:index, :show], :path => '/ru/children'
+  get 'ru/children' => 'children#index', :as => :children
+  get 'ru/children/view' => 'children#show', :as => :child
 
   get '/(*path)', :to => 'main#index'
 end

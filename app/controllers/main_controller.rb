@@ -14,6 +14,14 @@ class MainController < ApplicationController
     render template
   end
 
+  def show
+    page_regions.each do |region|
+      eval "@#{region} = page.regions.#{region}"
+    end
+
+    @page_title = page.title
+  end
+
   private
     def template
       "templates/#{page.template}"
