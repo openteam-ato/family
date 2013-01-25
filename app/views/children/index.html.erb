@@ -1,6 +1,35 @@
 <% content_for :content do %>
+
   <%= render_partial_for_region(@content_first) %>
-  <% @children.each do |child| %>
-    <%= link_to child.name, child_path(:id => child.id) %>
+
+  <% if @children.any? %>
+    <ul class='children_list'>
+      <% @children.each do |child| %>
+        <li class='<%= cycle('odd', 'even') %>'>
+          <div class='image'>
+            <%= link_to child_path(:id => child.id) do %>
+              <%= image_tag child.photo_url.gsub(/\/\d+-\d+\//, '/150-200!/'), :alt => child.name %>
+            <% end %>
+          </div>
+          <div class='information'>
+            <div class='name_and_number'>
+              <%= link_to child.name, child_path(:id => child.id), :class => 'name' %>
+              <%= content_tag :span, "(#{child.number})", :class => 'number' %>
+            </div>
+            <div class='published_on'>
+              Дата размещения информации:
+              <%= l child.published_on %>
+            </div>
+            <div class='birth'>
+              <%= child.sex == 'male' ? 'Родился в' : 'Родилась в' %>
+              <%= t('date.common_month_names')[child.born_on.month].gsub(/я$/, 'е') %>
+              <%= child.born_on.year %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <%= paginate @children %>
   <% end %>
+
 <% end %>
