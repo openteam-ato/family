@@ -27,6 +27,16 @@ ru:
 
   rss_documents: RSS нормативных документов
 
+  child_presence:
+    brothers:
+      one: Есть брат
+      few: Есть братья
+      many: Есть братья
+    sisters:
+      one: Есть сестра
+      few: Есть сёстры
+      many: Есть сёстры
+
   find: Найти
 
   documents:

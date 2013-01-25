@@ -23,6 +23,8 @@
         line-height: 1.3
         font-size: 13px
         margin-left: 170px
+        p
+          margin-bottom: 0
         .name_and_number
           margin-bottom: 5px
           .name
@@ -36,6 +38,37 @@
         .published_on
           color: #444
           font-size: 11px
-          margin-bottom: 5px
+          margin-bottom: 10px
         .birth
           font-weight: bold
+          margin-bottom: 5px
+        .phisiology
+          margin-bottom: 10px
+        .living_arrangement
+          margin-bottom: 10px
+        .relatives
+          margin: 5px 0
+          .relatives_title
+            margin-bottom: 5px
+          .list
+            +clearfix
+            li
+              width: 120px
+              float: left
+              margin: 0
+              &.first
+                clear: left
+                margin-right: 5px
+              &.second
+                margin-right: 5px
+              .relative_image
+                float: left
+                img
+                  border: 1px solid #868686
+              .relative_information
+                margin-left: 33px
+                .name
+                  font-size: 11px
+                .number
+                  color: #808080
+                  font-size: 11px
