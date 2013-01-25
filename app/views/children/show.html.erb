@@ -37,8 +37,19 @@
                   <% end %>
                 </div>
                 <div class='relative_information'>
-                  <p class='name'p><%= link_to rel.name, child_path(:number => rel.number) %></p>
-                  <p class='number'>(<%= rel.number %>)</p>
+                  <div class='name_and_number'>
+                    <%= link_to rel.name, child_path(:number => rel.number), :class => 'name' %>
+                    <%= content_tag :span, "(#{rel.number})", :class => 'number' %>
+                  </div>
+                  <div class='birth'>
+                    <%= rel.sex == 'male' ? 'Родился в' : 'Родилась в' %>
+                    <%= t('date.common_month_names')[rel.born_on.month].gsub(/я$/, 'е') %>
+                    <%= rel.born_on.year %>
+                  </div>
+                  <div class="living_arrangement">
+                    <p><strong>Форма жизнеустройства ребёнка:</strong></p>
+                    <p><%= rel.living_arrangement.map(&:text).join(', ') %></p>
+                  </div>
                 </div>
               </li>
             <% end %>
