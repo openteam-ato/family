@@ -18,13 +18,13 @@
       <% @children.each do |child| %>
         <li class='<%= cycle('odd', 'even') %>'>
           <div class='image'>
-            <%= link_to child_path(:id => child.id) do %>
+            <%= link_to child_path(:number => child.number) do %>
               <%= image_tag child.photo_url.gsub(/\/\d+-\d+\//, '/150-200!/'), :alt => child.name %>
             <% end %>
           </div>
           <div class='information'>
             <div class='name_and_number'>
-              <%= link_to child.name, child_path(:id => child.id), :class => 'name' %>
+              <%= link_to child.name, child_path(:number => child.number), :class => 'name' %>
               <%= content_tag :span, "(#{child.number})", :class => 'number' %>
             </div>
             <div class='published_on'>
