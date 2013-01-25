@@ -1,3 +1,4 @@
 <% content_for :content do %>
+  <%= content_tag :div, render(:partial => 'regions/children_contacts'), :class => 'right_side' if @right_side_links %>
   <%= @child.name %>
 <% end %>
