@@ -59,6 +59,10 @@ class Child < ActiveRecord::Base
     [['один', 1], ['двое', 2], ['более двух', 3]]
   end
 
+  def absent_relative_numbers
+    relative_numbers - relatives.pluck(:number)
+  end
+
   def self.solr_search_results(params)
     page     = params[:page] || 1
     number   = params[:search].try(:[], :number)

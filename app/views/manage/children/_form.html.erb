@@ -16,7 +16,7 @@
     <%= f.input :living_arrangement, :as => :check_boxes %>
     <%= f.input :hair_color %>
     <%= f.input :eyes_color %>
-    <%= f.input :relative_numbers_string, :input_html => { :value => @child.relative_numbers.try(:join, ', ') }, :hint => 'Номера дел братьев и сестер, разделенные запятыми.' %>
+    <%= f.input :relative_numbers_string, :input_html => { :value => @child.relative_numbers.try(:join, ' ') }, :hint => 'Номера дел братьев и сестер, разделенные пробелами.' %>
     <%= f.input :photo %>
 
     <div class="submit">
