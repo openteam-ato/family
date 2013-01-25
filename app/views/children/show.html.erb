@@ -1,4 +1,51 @@
 <% content_for :content do %>
   <%= content_tag :div, render(:partial => 'regions/children_contacts'), :class => 'right_side' if @right_side_links %>
-  <%= @child.name %>
+  <div class='child_information'>
+    <h2><%= @child.name %> <span class='number'>(<%= @child.number %>)</span></h2>
+    <div class='published_on'>Дата размещения информации: <%= l @child.published_on %></div>
+    <div class='information'>
+      <div class='image'>
+        <%= link_to child_path(:number => @child.number) do %>
+          <%= image_tag @child.photo_url.gsub(/\/\d+-\d+\//, '/150-200!/'), :size => '150x200', :alt => @child.name %>
+        <% end %>
+      </div>
+      <div class='details'>
+        <div class='birth'>
+          <%= @child.sex == 'male' ? 'Родился в' : 'Родилась в' %>
+          <%= t('date.common_month_names')[@child.born_on.month].gsub(/я$/, 'е') %>
+          <%= @child.born_on.year %>
+        </div>
+        <div class='phisiology'>
+          <p><%= @child.eyes_color_text.mb_chars.capitalize %> цвет глаз</p>
+          <p><%= @child.hair_color_text.mb_chars.capitalize %> цвет волос</p>
+        </div>
+        <div class="living_arrangement">
+          <p><strong>Форма жизнеустройства ребёнка:</strong> <%= @child.living_arrangement.map(&:text).join(', ') %></p>
+        </div>
+      </div>
+    </div>
+    <% %w[brothers sisters].each do |relative| %>
+      <% if @child.send(relative).any? %>
+        <div class='relatives'>
+          <p class='relatives_title'><strong><%= t("child_presence.#{relative}", :count => @child.send(relative).count) %>:</strong></p>
+          <ul class='list'>
+            <% @child.send(relative).each do |rel| %>
+              <li class='<%= cycle('first', 'second', 'third', :name => 'relative_class') %>'>
+                <div class="relative_image">
+                  <%= link_to child_path(:number => rel.number) do %>
+                    <%= image_tag rel.photo_url.gsub(/\/\d+-\d+\//, '/75-100!/'), :size => '75x100', :alt => rel.name %>
+                  <% end %>
+                </div>
+                <div class='relative_information'>
+                  <p class='name'p><%= link_to rel.name, child_path(:number => rel.number) %></p>
+                  <p class='number'>(<%= rel.number %>)</p>
+                </div>
+              </li>
+            <% end %>
+            <% reset_cycle('relative_class') %>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 <% end %>
