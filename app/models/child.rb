@@ -9,8 +9,9 @@ class Child < ActiveRecord::Base
     :birth_year, :birth_month, :number, :relative_numbers, :relative_numbers_string,
     :published_on, :photo
 
-  validates_presence_of :sex, :name, :hair_color, :eyes_color, :living_arrangement,
-    :birth_year, :birth_month, :number, :published_on, :photo
+  validates_presence_of :sex, :name, :living_arrangement, :number, :published_on, :photo
+
+  validates_presence_of :birth_year, :birth_month, :unless => :born_on?
 
   has_attached_file :photo, :storage => :elvfs, :elvfs_url => Settings['storage.url']
 
@@ -38,6 +39,8 @@ class Child < ActiveRecord::Base
 
   before_save :set_born_on
   before_save :set_relative_numbers
+
+  after_save :set_relations
 
   def sisters
     relatives.where(sex: :female)
@@ -100,10 +103,33 @@ class Child < ActiveRecord::Base
   private
 
   def set_born_on
-    self.born_on = Date.new.change(year: birth_year.to_i, month: birth_month.to_i)
+    self.born_on = Date.new.change(year: birth_year.to_i, month: birth_month.to_i) if birth_year && birth_month
   end
 
   def set_relative_numbers
     self.relative_numbers = self.relative_numbers_string
+  end
+
+  def set_new_relations
+    relatives.each do |relative|
+      relative.relative_numbers += [self.number] and relative.save
+    end
+  end
+
+  def unset_rotten_relations
+    rotten_numbers = self.relative_numbers_was - self.relative_numbers
+
+    self.class.where(number: rotten_numbers).each do |relative|
+      relative.relative_numbers -= [self.number] and relative.save
+    end
+  end
+
+  def set_relations
+    self.class.skip_callback :save, :before, :set_relative_numbers
+    self.class.skip_callback :save, :after, :set_relations
+    unset_rotten_relations
+    set_new_relations
+    self.class.set_callback :save, :after, :set_relations
+    self.class.set_callback :save, :before, :set_relative_numbers
   end
 end
