@@ -3,13 +3,14 @@
   <%= render_partial_for_region(@content_first) %>
 
   <div class="child_filters">
-    <%= simple_form_for :search, :method => :get do |f| %>
-      <%= f.input :number %>
-      <%= f.input :age, :as => :range, :collection => 0..18, :required => false %>
-      <%= f.input :sex, :as => :select, :collection => ["Не важно", "Мужской", "Женский"], :include_blank => false, :required => false %>
-      <%= f.input :relative_numbers, :as => :select, :include_blank => false, :required => false %>
-      <%= f.input :living_arrangement, :as => :check_boxes %>
-      <%= f.submit %>
+    <%= simple_form_for :search, :method => :get, :html => { :novalidate => true } do |f| %>
+      <%= f.input :number, :placeholder => 'Поиск по номеру дела' %>
+      <%= f.input :age_min, :as => :integer %>
+      <%= f.input :age_max, :as => :integer %>
+      <%= f.input :sex, :as => :select, :collection => Child.sex.options, :include_blank => 'не важно' %>
+      <%= f.input :relative_count, :as => :select, :collection => Child.relative_counts_options, :include_blank => 'не важно' %>
+      <%= f.input :living_arrangements, :as => :check_boxes, :collection => Child.living_arrangement.options %>
+      <%= f.submit "Выбрать" %>
     <% end %>
   </div>
 

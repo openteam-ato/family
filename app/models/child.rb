@@ -1,3 +1,5 @@
+# encoding: utf-8
+#
 class Child < ActiveRecord::Base
   extend Enumerize
 
@@ -24,6 +26,9 @@ class Child < ActiveRecord::Base
   searchable do
     string :number
     string :sex
+    integer :age
+    integer(:relative_count) { relatives.count }
+    string(:living_arrangements, :multiple => true){ living_arrangement.map(&:value) }
     date :published_on
     time :created_at
   end
@@ -46,12 +51,40 @@ class Child < ActiveRecord::Base
     self.class.where number: relative_numbers
   end
 
+  def age
+    (Time.zone.now.to_date - born_on).to_i/365
+  end
+
+  def self.relative_counts_options
+    [['один', 1], ['двое', 2], ['более двух', 3]]
+  end
+
   def self.solr_search_results(params)
-    page = params[:page] || 1
-    number = params[:search].try(:[], :number)
+    page     = params[:page] || 1
+    number   = params[:search].try(:[], :number)
+    age_min  = params[:search].try(:[], :age_min)
+    age_max  = params[:search].try(:[], :age_max)
+    sex      = params[:search].try(:[], :sex)
+    relative_count = params[:search].try(:[], :relative_count).try(:to_i)
+    living_arrangements = params[:search].try(:[], :living_arrangements)
 
     search {
-      with(:number, number) if number.present?
+      with(:number, number)                                 if number.present?
+      with(:age).between(age_min..age_max)                  if age_min.present? && age_max.present?
+      with(:sex, sex)                                       if sex.present?
+      if relative_count.present?
+        if relative_count < 3
+          with(:relative_count, relative_count)
+        else
+          with(:relative_count).greater_than(relative_count)
+        end
+      end
+
+      any_of do
+        living_arrangements.delete_if(&:blank?).each do |living_arrangement|
+          with(:living_arrangements, living_arrangement)
+        end
+      end if living_arrangements.present?
 
       order_by(:published_on, :desc)
       order_by(:created_at, :desc)
