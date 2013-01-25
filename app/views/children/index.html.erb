@@ -2,6 +2,17 @@
 
   <%= render_partial_for_region(@content_first) %>
 
+  <div class="child_filters">
+    <%= simple_form_for :search, :method => :get do |f| %>
+      <%= f.input :number %>
+      <%= f.input :age, :as => :range, :collection => 0..18, :required => false %>
+      <%= f.input :sex, :as => :select, :collection => ["Не важно", "Мужской", "Женский"], :include_blank => false, :required => false %>
+      <%= f.input :relative_numbers, :as => :select, :include_blank => false, :required => false %>
+      <%= f.input :living_arrangement, :as => :check_boxes %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
   <% if @children.any? %>
     <ul class='children_list'>
       <% @children.each do |child| %>

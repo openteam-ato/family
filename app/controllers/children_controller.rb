@@ -6,7 +6,7 @@ class ChildrenController < MainController
   end
 
   def show
-    @child = Child.find(params[:id])
+    @child = Child.find_by_number(params[:number])
 
     super
   end

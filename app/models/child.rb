@@ -23,6 +23,7 @@ class Child < ActiveRecord::Base
 
   searchable do
     string :number
+    string :sex
     date :published_on
     time :created_at
   end
