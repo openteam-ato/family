@@ -28,6 +28,7 @@ group :default do
   gem 'stop_ie'
   gem 'sunspot_rails'
   gem 'uuid'
+  gem 'validates_email_format_of'
 end
 
 group :development do
