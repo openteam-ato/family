@@ -1,8 +1,8 @@
 class RequestMailer < ActionMailer::Base
-  default :from => 'noreply.tab.server@gmail.com'
+  default :from => Settings['mail']['from']
 
   def send_email(request)
     @request = request
-    mail(:to => 'tab@openteam.ru', :subject => 'New request')
+    mail(:to => Settings['mail']['to'], :subject => 'New request')
   end
 end

@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20130128040526) do
   end
 
   create_table "requests", :force => true do |t|
-    t.text     "name"
+    t.string   "name"
     t.string   "email"
     t.string   "phone"
     t.text     "message"

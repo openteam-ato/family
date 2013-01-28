@@ -60,6 +60,7 @@ ru:
   activerecord:
     models:
       child: Ребенок
+      request: Вопрос
 
     attributes:
       child:
@@ -74,6 +75,12 @@ ru:
         number: Номер
         relative_numbers_string: Родственники
         photo: Фотография
+
+      request:
+        name: ФИО
+        email: Электронная почта
+        phone: Контактный телефон
+        message: Ваш вопрос
 
   enumerize:
     child:

@@ -1,0 +1,60 @@
+.request
+  margin: 20px 0 70px 0
+
+  form
+    padding: 15px 0 0
+
+    textarea
+      padding: 5px
+      height: 220px
+      width: 600px
+
+  .input
+    input
+      line-height: 22px
+      margin: 0 0 5px 0
+      padding: 2px
+
+  .input
+    +min-height(26px)
+    line-height: 22px
+    margin: 0 0 5px 0
+    padding: 0 7px
+    position: relative
+
+    label
+      display: block
+      color: #535353
+      font-size: 14px
+      float: left
+      margin: 0 10px 0 0
+      text-align: right
+      width: 190px
+
+    .error
+      color: #cf373f
+      font-size: 12px
+      left: 200px
+      position: absolute
+      top: 20px
+
+      &:before
+        content: '\2b11'
+        margin: 0 5px 0 0
+
+  .submit
+    margin: 15px 0 0
+
+    input
+      +border-radius(2px)
+      background: #578e4d
+      border: 1px solid #3f803e
+      color: #edf4ec
+      display: block
+      float: left
+      font-size: 16px
+      font-weight: normal
+      height: 32px
+      line-height: 18px
+      margin: 0 15px 0 200px
+      padding: 6px 10px
