@@ -2,7 +2,6 @@
 
   <%= render_partial_for_region(@content_first) %>
 
-  <!--
   <div class="child_filters">
     <%= simple_form_for :search, :method => :get, :html => { :novalidate => true } do |f| %>
       <%= f.input :number, :placeholder => 'Поиск по номеру дела' %>
@@ -14,7 +13,6 @@
       <%= f.submit "Выбрать" %>
     <% end %>
   </div>
-  -->
 
   <% if @children.any? %>
     <ul class='children_list'>
