@@ -7,6 +7,7 @@
  * = require jquery
  * = require jquery_ujs
  * = require jquery-ui
+ * = require sugar
  * = require scroller
  * = require chart
  * = require jcarousel
@@ -15,6 +16,7 @@
  * = require map
  * = require reports
  * = require collapser
+ * = require slider_age_range
  * = require tabs
  * = require upload_files
  * = require archive_collapser

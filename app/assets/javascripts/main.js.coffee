@@ -4,6 +4,7 @@ $ ->
   init_actual_slider()     if $(".actual li").length > 1
   init_jcarousel()         if $(".banners_block").length
   init_map()               if $("#map").length
+  init_slider_age_range()  if $("#slider_age_range").length
   init_tabs()              if $('.tabs').length
   init_scroller()          if $(".calendar .calendar_items").length
   init_upload_files()      if $(".appeal_form").length
