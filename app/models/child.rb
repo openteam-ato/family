@@ -1,5 +1,5 @@
 # encoding: utf-8
-#
+
 class Child < ActiveRecord::Base
   extend Enumerize
 
@@ -112,7 +112,9 @@ class Child < ActiveRecord::Base
 
   def set_new_relations
     relatives.each do |relative|
-      relative.relative_numbers += [self.number] and relative.save
+      relative.relative_numbers += [self.number]
+      relative.relative_numbers.uniq!
+      relative.save
     end
   end
 
