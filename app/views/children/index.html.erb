@@ -4,15 +4,21 @@
 
   <!--
   <div class="child_filters">
-    <%= simple_form_for :search, :method => :get, :html => { :novalidate => true } do |f| %>
-      <%= f.input :number, :placeholder => 'Поиск по номеру дела' %>
-      <%= f.input :age_min, :as => :integer %>
-      <%= f.input :age_max, :as => :integer %>
-      <%= f.input :sex, :as => :select, :collection => Child.sex.options, :include_blank => 'не важно' %>
-      <%= f.input :relative_count, :as => :select, :collection => Child.relative_counts_options, :include_blank => 'не важно' %>
-      <%= f.input :living_arrangements, :as => :check_boxes, :collection => Child.living_arrangement.options %>
-      <%= f.submit "Выбрать" %>
-    <% end %>
+    <div class="search_form_wrapper">
+      <h3>Фильтр</h3>
+      <%= simple_form_for :search, :method => :get, :html => { :novalidate => true } do |f| %>
+        <%= f.input :number, :placeholder => 'Поиск по номеру дела', :label => false %>
+        <%= f.input :age_min, :as => :integer %>
+        <%= f.input :age_max, :as => :integer %>
+        <%= f.input :sex, :as => :select, :collection => Child.sex.options, :include_blank => 'не важно', :label => 'Пол:' %>
+        <%= f.input :relative_count, :as => :select, :collection => Child.relative_counts_options, :include_blank => 'не важно', :label => 'Братья и сестры:' %>
+        <%= f.input :living_arrangements, :as => :check_boxes, :collection => Child.living_arrangement.options, :label => 'Форма жизнеустройства:' %>
+
+        <div class="buttons">
+          <%= f.submit "Выбрать" %>
+        </div>
+      <% end %>
+    </div>
   </div>
   -->
 

@@ -85,12 +85,14 @@ ru:
         brown: русый
         light_brown: светло-русый
         dark_brown: темно-русый
+
       eyes_color:
         grey: серый
         blue: голубой
         green: зеленый
         black: черный
         brown: карий
+
       sex:
         male: мальчик
         female: девочка
