@@ -72,3 +72,56 @@
                 .number
                   color: #808080
                   font-size: 11px
+
+  .child_information
+    h2
+      font-size: 22px
+      .number
+        +inline-block
+        color: #808080
+        font-size: 18px
+        margin-bottom: 5px
+    .published_on
+      font-size: 12px
+      margin-bottom: 20px
+    .information
+      +clearfix
+      .image
+        float: left
+        img
+          border: 1px solid #808080
+      .details
+        font-size: 13px
+        margin-left: 170px
+        .birth
+          font-weight: bold
+          margin-bottom: 18px
+        .phisiology
+          margin-bottom: 18px
+          p
+            margin-bottom: 0
+    .relatives
+      clear: both
+      border-top: 1px dotted #7f7f7f
+      padding-top: 10px
+      .list
+        +clearfix
+        li
+          float: left
+          +clearfix
+          width: 366px
+          margin-bottom: 10px
+          &.first
+            clear: left
+            margin-right: 10px
+          &.second
+            margin-right: 10px
+          .relative_image
+            float: left
+            img
+              border: 1px solid #808080
+          .relative_information
+            line-height: 1.3
+            margin-left: 85px
+            p
+              margin-bottom: 0
