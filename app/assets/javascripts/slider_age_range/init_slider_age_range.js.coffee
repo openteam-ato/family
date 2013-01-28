@@ -34,7 +34,3 @@
       age_max.val(values[1])
       true
   true
-
-update_info = (slider) ->
-
-  true

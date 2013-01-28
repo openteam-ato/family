@@ -27,6 +27,7 @@
         </div>
         <div class='buttons'>
           <%= f.submit 'Выбрать' %>
+          <a class='clear' href='/ru/children'>сбросить</a>
         </div>
       <% end %>
     </div>
@@ -63,7 +64,7 @@
             <% %w[brothers sisters].each do |relative| %>
               <% if child.send(relative).any? %>
                 <div class='relatives'>
-                  <p class='relatives_title'><strong><%= t('child_presence.#{relative}', :count => child.send(relative).count) %>:</strong></p>
+                  <p class='relatives_title'><strong><%= t("child_presence.#{relative}", :count => child.send(relative).count) %>:</strong></p>
                   <ul class='list'>
                     <% child.send(relative).each do |rel| %>
                       <li class='<%= cycle('first', 'second', 'third', :name => 'relative_class') %>'>
