@@ -1,0 +1,14 @@
+<%= content_for :content do %>
+  <%= flash[:notice] %>
+
+  <%= simple_form_for @request, :html => {:novalidate => true} do |f| %>
+    <%= f.input :message %>
+    <%= f.input :email %>
+    <%= f.input :phone %>
+    <%= f.input :name %>
+
+    <div class='submit'>
+      <%= f.submit "Отправить" %>
+    </div>
+  <% end %>
+<% end %>

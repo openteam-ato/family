@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    На сайте Департамента по вопросам семьи и детей Томской области, с помощью формы обратной связи пользователь
+    <%= @request.name %> оставил вопрос:
+
+    <%= @request.message %>
+
+    Для связи с <%= @request.name %> используете электнонную почту: <%= @request.email %> или телефон: <%= @request.phone %>
+  </body>
+</html>

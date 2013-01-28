@@ -8,5 +8,8 @@ Family::Application.routes.draw do
   get 'ru/children' => 'children#index', :as => :children
   get 'ru/children/view' => 'children#show', :as => :child
 
-  get '/(*path)', :to => 'main#index'
+  resources :requests, :only => [:new, :create]
+  get 'ru/departament/uchebno-metodicheskiy-tsentr/request' => 'requests#new', :as => :new_request
+
+  get '/(*path)' => 'main#index'
 end
