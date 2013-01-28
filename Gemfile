@@ -22,6 +22,7 @@ group :default do
   gem 'openteam-commons'
   gem 'paperclip-elvfs'
   gem 'rails'
+  gem 'recaptcha', :require => 'recaptcha/rails'
   gem 'russian'
   gem 'sass-rails'
   gem 'simple_form'

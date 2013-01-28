@@ -10,10 +10,11 @@ class RequestsController < MainController
     @request = Request.new(params[:request])
 
     respond_to do |format|
-      if @request.save
+      if verify_recaptcha
+        @request.save
         format.html { redirect_to new_request_path, :notice => 'Сообщение отправлено успешно, спасибо за обращение.' }
       else
-        format.html { render :action => 'new' }
+        format.html { redirect_to new_request_path, :notice => 'Ошибка проверки' }
       end
     end
   end

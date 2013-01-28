@@ -12,6 +12,9 @@
         <%= f.input :email %>
         <%= f.input :phone %>
         <%= f.input :message %>
+        <div class='recaptcha'>
+          <%= recaptcha_tags :display => {:theme => 'white'}, :ajax => true %>
+        </div>
         <div class='submit'>
           <%= f.submit "Отправить" %>
         </div>

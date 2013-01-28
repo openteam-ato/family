@@ -172,6 +172,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
+    recaptcha (0.3.4)
     ref (1.0.2)
     responders (0.9.3)
       railties (~> 3.1)
@@ -259,6 +260,7 @@ DEPENDENCIES
   progress_bar
   quiet_assets
   rails
+  recaptcha
   russian
   sass-rails
   simple_form
