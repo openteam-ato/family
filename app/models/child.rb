@@ -86,7 +86,7 @@ class Child < ActiveRecord::Base
 
       unless relative_count.nil? || relative_count.zero?
         if relative_count == 1
-          with(:relative_count).greater_than(1)
+          with(:relative_count).greater_than(0)
         elsif relative_count == 2
           with(:relative_count, 0)
         end
