@@ -17,7 +17,7 @@ group :default do
   gem 'formtastic'
   gem 'hashie'
   gem 'inherited_resources'
-  gem 'jquery-rails',           '= 2.1.4'
+  gem 'jquery-rails',           '2.1.4'
   gem 'kaminari'
   gem 'openteam-commons'
   gem 'paperclip-elvfs'

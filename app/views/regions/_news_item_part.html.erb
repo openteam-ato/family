@@ -48,12 +48,14 @@
   <% end %>
 
   <% if object.images && object.images.many? %>
-    <div class="galleria_wrapper">
-      <div id="galleria">
-        <% object.images.each do |image| %>
-          <%= galleria_link(image) %>
-        <% end %>
+    <% content_for :gallery_region do %>
+      <div class="galleria_wrapper">
+        <div id="galleria">
+          <% object.images.each do |image| %>
+            <%= galleria_link(image) %>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 <% end %>

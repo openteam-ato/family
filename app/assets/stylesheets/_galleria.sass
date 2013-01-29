@@ -27,7 +27,6 @@
       float: left
       height: 473px
       margin: 0 21px 0 0
-      //position: absolute
       width: 697px
 
       .galleria-images
@@ -53,8 +52,7 @@
           background-repeat: no-repeat
 
         .galleria-image-nav-left
-          opacity: .3
-          filter: alpha(opacity = 50)
+          +opacity(0.5)
           cursor: pointer
           width: 62px
           height: 124px
@@ -64,8 +62,7 @@
           background-position: 0 46px
 
         .galleria-image-nav-right
-          opacity: .3
-          filter: alpha(opacity = 50)
+          +opacity(0.5)
           cursor: pointer
           width: 62px
           height: 124px
@@ -79,19 +76,16 @@
           z-index: 2
 
         .galleria-image-nav-left:hover, .galleria-image-nav-right:hover
-          opacity: 1
-          filter: alpha(opacity = 100)
+          +opacity(1)
 
     .galleria-thumbnails-container
       +clearfix
       background: #d9d9d9
-      //height: 475px !important
-      height: 475px !important
+      height: 485px !important
       left: auto
       position: absolute
       right: 0
       top: 0
-      //bottom: 38px
       bottom: 0
       width: 220px
       z-index: 2
@@ -166,18 +160,16 @@
       background-color: #000
       background-position: -829px -6px
       cursor: pointer
-      filter: alpha(opacity = 70)
       height: 20px
       left: 15px
-      opacity: .7
+      +opacity(0.7)
       position: absolute
       top: 15px
       width: 20px
       z-index: 2
 
     .galleria-fullscreen:hover, .fullscreen .galleria-fullscreen:hover
-      opacity: 1
-      filter: alpha(opacity = 100)
+      +opacity(1)
 
   .fullscreen
     background: rgba(00, 00, 00, 0.8)
@@ -188,10 +180,9 @@
       background-position: -829px -6px
       background-position: -892px -6px
       cursor: pointer
-      filter: alpha(opacity = 70)
       height: 20px
       left: 15px
-      opacity: .7
+      +opacity(0.7)
       position: absolute
       top: 15px
       width: 20px
