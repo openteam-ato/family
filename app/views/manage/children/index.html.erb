@@ -6,6 +6,8 @@
     <div class="submit">
       <%= f.submit 'Искать' %>
     </div>
+    <%= link_to 'Список всех детей', manage_children_path, :class => 'children' %>
+    <%= link_to 'Список детей старше 18 лет', manage_adult_children_path, :class => 'adult_children' %>
   <% end %>
 </div>
 
@@ -32,11 +34,12 @@
             Дата помещения в банк: <%= l child.published_on, :format => "%d %B %Y" %>
           </div>
 
-          <div class='bold<%= check_adult_child(child) %>'>
+          <div class='bold<%= ' adult' if child.adult? %>'>
             Дата рождения: <%= l child.born_on, :format => "%B %Y" %>
           </div>
           <div>
-            Цвет глаз &mdash; <%= child.eyes_color_text %>, цвет волос &mdash; <%= child.hair_color_text %>
+            Цвет глаз &mdash; <%= child.eyes_color_text ? child.eyes_color_text : 'не указано' %>,
+            цвет волос &mdash; <%= child.hair_color_text ? child.hair_color_text : 'не указано' %>
           </div>
           <div class='bold'>
             Форма жизнеустройства:

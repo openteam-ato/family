@@ -3,6 +3,7 @@ Family::Application.routes.draw do
 
   namespace :manage do
     resources :children
+    get 'adult_children' => 'children#adult'
   end
 
   get 'ru/children' => 'children#index', :as => :children

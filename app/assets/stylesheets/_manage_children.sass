@@ -51,6 +51,7 @@
           width: 320px
 
       .submit
+        float: left
         input
           +border-radius(2px)
           background: #578e4d image_url('magnifier.png') no-repeat 60px center
@@ -62,6 +63,12 @@
           padding: 6px 25px 6px 10px
           margin: 0
           height: 32px
+
+      .children,
+      .adult_children
+        float: left
+        display: block
+        margin: 8px 0 0 20px
 
     .new_link
       +border-radius(2px)
@@ -128,6 +135,7 @@
           background-color: #880000
           color: #fff
           padding: 8px
+          +border-radius(2px)
 
         div
           font-size: 14px

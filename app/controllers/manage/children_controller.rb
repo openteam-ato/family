@@ -8,6 +8,11 @@ class Manage::ChildrenController < ApplicationController
     @children = Child.solr_search_results(params, { :only_young => false })
   end
 
+  def adult
+    @children = Child.solr_search_results(params, { :only_adult => true })
+    render 'index'
+  end
+
   def set_locale
     I18n.locale = I18n.default_locale
   end

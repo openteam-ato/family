@@ -61,8 +61,17 @@ class Child < ActiveRecord::Base
     self.class.where number: relative_numbers
   end
 
+  def months_from_birth
+    now = -> { Time.zone.now.to_date }.call
+    (now.year * 12 + now.month) - (born_on.year * 12 + born_on.month)
+  end
+
   def age
-    (Time.zone.now.to_date - born_on).to_i/365
+    months_from_birth / 12
+  end
+
+  def adult?
+    age > 18
   end
 
   def self.relative_counts_options
@@ -82,11 +91,13 @@ class Child < ActiveRecord::Base
     relative_count = params[:search].try(:[], :relative_count).try(:to_i)
     living_arrangements = params[:search].try(:[], :living_arrangements)
     only_young = options[:only_young]
+    only_adult = options[:only_adult]
 
     search {
       with(:number, number)                                 if number.present?
       with(:age).between(age_min..age_max)                  if age_min.present? && age_max.present?
       with(:age).less_than(19)                              if only_young
+      with(:age).greater_than(18)                           if only_adult
       with(:sex, sex)                                       if sex.present?
 
       unless relative_count.nil? || relative_count.zero?
