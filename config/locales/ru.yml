@@ -36,6 +36,11 @@ ru:
       one: Есть сестра
       few: Есть сёстры
       many: Есть сёстры
+  child:
+    age:
+      one: "%{count} год"
+      few: "%{count} года"
+      many: "%{count} лет"
 
   find: Найти
 

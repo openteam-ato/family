@@ -51,14 +51,22 @@
               <%= content_tag :span, "(#{child.number})", :class => 'number' %>
             </div>
             <div class='published_on'>Дата размещения информации: <%= l child.published_on %></div>
-            <div class='birth'>
+            <div class='birth' title='<%= t('child.age', :count => child.age) %>'>
               <%= child.sex == 'male' ? 'Родился в' : 'Родилась в' %>
               <%= t('date.common_month_names')[child.born_on.month].gsub(/я$/, 'е') %>
               <%= child.born_on.year %>
             </div>
             <div class='phisiology'>
-              <%= child.eyes_color_text.mb_chars.capitalize %> цвет глаз,
-              <%= child.hair_color_text %> цвет волос
+              <% if child.eyes_color_text %>
+                <%= child.eyes_color_text.mb_chars.capitalize %> цвет глаз,
+              <% else %>
+                Цвет глаз не указан,
+              <% end %>
+              <% if child.hair_color_text %>
+                <%= child.hair_color_text %> цвет волос
+              <% else %>
+                цвет волос не указан
+              <% end %>
             </div>
             <div class='living_arrangement'>
               <p><strong>Форма жизнеустройства ребёнка:</strong></p>

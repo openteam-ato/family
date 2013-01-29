@@ -34,7 +34,7 @@
             Дата помещения в банк: <%= l child.published_on, :format => "%d %B %Y" %>
           </div>
 
-          <div class='bold<%= ' adult' if child.adult? %>'>
+          <div class='bold<%= ' adult' if child.adult? %>' title='<%= t('child.age', :count => child.age) %>'>
             Дата рождения: <%= l child.born_on, :format => "%B %Y" %>
           </div>
           <div>
