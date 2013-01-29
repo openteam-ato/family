@@ -14,3 +14,17 @@ storage:
 
 solr:
   url:          http://localhost:8982/solr
+
+mail:
+  domain:       example.com
+  login:        user@example
+  password:     SECRET
+  smtp:         smtp.example.com
+  port:         22
+  to:           client@example.com
+  from:         server@example.com
+
+recaptcha:
+  public:       KEY
+  private:      KEY
+
