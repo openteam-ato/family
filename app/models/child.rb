@@ -15,7 +15,10 @@ class Child < ActiveRecord::Base
 
   validates_presence_of :birth_year, :birth_month, :unless => :born_on?
 
-  has_attached_file :photo, :storage => :elvfs, :elvfs_url => Settings['storage.url']
+  has_attached_file :photo,
+                    :storage => :elvfs,
+                    :elvfs_url => Settings['storage.url'],
+                    :restricted_characters => /^.*(?=\.\w+$)/  # look ahead file extension
 
   validate :check_image_dimension
 
