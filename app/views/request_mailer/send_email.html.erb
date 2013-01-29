@@ -9,6 +9,7 @@
 
     <%= @request.message %>
 
-    Для связи с <%= @request.name %> используете электнонную почту: <%= @request.email %> или телефон: <%= @request.phone %>
+    Для связи с <%= @request.name %> используете электнонную почту: <%= @request.email %>
+    <%= @request.phone? ? "или телефон: #{@request.phone}" : '' %>
   </body>
 </html>
