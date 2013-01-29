@@ -5,7 +5,7 @@ class Manage::ChildrenController < ApplicationController
   before_filter :set_locale
 
   def index
-    @children = Child.solr_search_results(params)
+    @children = Child.solr_search_results(params, { :only_young => false })
   end
 
   def set_locale

@@ -73,7 +73,7 @@ class Child < ActiveRecord::Base
     relative_numbers - relatives.pluck(:number)
   end
 
-  def self.solr_search_results(params)
+  def self.solr_search_results(params, options)
     page     = params[:page] || 1
     number   = params[:search].try(:[], :number)
     age_min  = params[:search].try(:[], :age_min)
@@ -81,10 +81,12 @@ class Child < ActiveRecord::Base
     sex      = params[:search].try(:[], :sex)
     relative_count = params[:search].try(:[], :relative_count).try(:to_i)
     living_arrangements = params[:search].try(:[], :living_arrangements)
+    only_young = options[:only_young]
 
     search {
       with(:number, number)                                 if number.present?
       with(:age).between(age_min..age_max)                  if age_min.present? && age_max.present?
+      with(:age).less_than(19)                              if only_young
       with(:sex, sex)                                       if sex.present?
 
       unless relative_count.nil? || relative_count.zero?

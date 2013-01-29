@@ -1,6 +1,6 @@
 class ChildrenController < MainController
   def index
-    @children = Child.solr_search_results(params)
+    @children = Child.solr_search_results(params, { :only_young => true })
 
     super
   end
