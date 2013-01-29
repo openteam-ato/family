@@ -1,5 +1,5 @@
 <% content_for :content do %>
-  <div class="article">
+  <div class="article sitemap">
     <%= render "regions/#{@content_first.type.underscore}", :object => @content_first.content.values.first['children'] if @content_first %>
   </div>
 <% end %>
