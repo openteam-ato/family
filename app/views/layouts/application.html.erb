@@ -91,11 +91,7 @@
   </div>
 
   <% if @banners %>
-    <div class="banners_block">
-      <div class="inner">
-        <%= render("regions/#{@banners.type.underscore}", :object => @banners.content) %>
-      </div>
-    </div>
+    <%= render("regions/#{@banners.type.underscore}", :object => @banners.content) %>
   <% end %>
 
   <%= render "regions/bottom_#{@secondary_navigation.type.underscore}", :object => @secondary_navigation.content if @secondary_navigation %>
