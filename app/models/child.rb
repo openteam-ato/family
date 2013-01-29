@@ -9,11 +9,15 @@ class Child < ActiveRecord::Base
     :birth_year, :birth_month, :number, :relative_numbers, :relative_numbers_string,
     :published_on, :photo
 
+  validates_uniqueness_of :number
+
   validates_presence_of :sex, :name, :living_arrangement, :number, :published_on, :photo
 
   validates_presence_of :birth_year, :birth_month, :unless => :born_on?
 
   has_attached_file :photo, :storage => :elvfs, :elvfs_url => Settings['storage.url']
+
+  validate :check_image_dimension
 
   enumerize :eyes_color,          in: [:grey, :blue, :green, :black, :brown]
   enumerize :hair_color,          in: [:black, :dark, :light, :red, :brown, :light_brown, :dark_brown]
@@ -101,6 +105,16 @@ class Child < ActiveRecord::Base
   end
 
   private
+
+  def check_image_dimension
+    return unless photo.queued_for_write[:original]
+    dimensions = Paperclip::Geometry.from_file(photo.queued_for_write[:original].path)
+    width = dimensions.width
+    height = dimensions.height
+    if (width.to_i < 150 || height.to_i < 200)
+      self.errors.add(:photo, "Изображение должно быть не меньше 150x200 пикселей")
+    end
+  end
 
   def set_born_on
     self.born_on = Date.new.change(year: birth_year.to_i, month: birth_month.to_i) if birth_year && birth_month
