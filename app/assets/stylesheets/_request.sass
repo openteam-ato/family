@@ -21,7 +21,7 @@
   .input
     +min-height(26px)
     line-height: 22px
-    margin: 0 0 5px 0
+    margin: 0 0 15px 0
     padding: 0 7px
     position: relative
 
@@ -34,12 +34,17 @@
       text-align: right
       width: 190px
 
+      abbr
+        border-bottom: none
+        color: #880000
+        float: right
+        margin: 0 0 0 3px
+
     .error
       color: #cf373f
       font-size: 12px
-      left: 200px
-      position: absolute
-      top: 20px
+      display: block
+      margin-left: 200px
 
       &:before
         content: '\2b11'

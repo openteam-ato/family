@@ -2,20 +2,22 @@
 
 class RequestsController < MainController
   def new
-    @request = Request.new
+    @request = Request.new(params[:request])
+
     super
   end
 
   def create
+    super
+
     @request = Request.new(params[:request])
 
-    respond_to do |format|
-      if verify_recaptcha
-        @request.save
-        format.html { redirect_to new_request_path, :notice => 'Сообщение отправлено успешно, спасибо за обращение.' }
-      else
-        format.html { redirect_to new_request_path, :notice => 'Ошибка проверки' }
-      end
+    if verify_recaptcha(:model => @request) && @request.save
+      redirect_to new_request_path, :notice => 'Сообщение отправлено успешно, спасибо за обращение.'
+    else
+      @request.valid?
+
+      render :new
     end
   end
 end

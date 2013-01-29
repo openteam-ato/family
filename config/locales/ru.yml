@@ -113,3 +113,8 @@ ru:
         adoption: усыновление
         foster_home: приемная семья
         custody: опека
+
+  recaptcha:
+    errors:
+      verification_failed: Да Вы похоже Робот!
+      'incorrect-captcha-sol': Вы робот!!!

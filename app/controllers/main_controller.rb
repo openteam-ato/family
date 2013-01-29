@@ -22,6 +22,7 @@ class MainController < ApplicationController
     @page_title = page.title
   end
   alias_method :new, :show
+  alias_method :create, :show
 
   private
     def template
