@@ -27,7 +27,7 @@ group :default do
   gem 'sass-rails'
   gem 'simple_form'
   gem 'stop_ie'
-  gem 'sunspot_rails'
+  gem 'sunspot_rails',           '~> 2.0.0.pre.130115'
   gem 'uuid'
   gem 'validates_email_format_of'
 end
@@ -37,7 +37,7 @@ group :development do
   gem 'quiet_assets'
   gem 'sqlite3',                :require => false
   gem 'progress_bar',           :require => false
-  gem 'sunspot_solr'
+  gem 'sunspot_solr',           '~> 2.0.0.pre.130115'
   gem 'thin',                   :require => false
 end
 

@@ -201,13 +201,13 @@ GEM
       jquery-rails
       rails
       sass-rails
-    sunspot (1.3.3)
+    sunspot (2.0.0.pre.130115)
       pr_geohash (~> 1.0)
       rsolr (~> 1.0.7)
-    sunspot_rails (1.3.3)
+    sunspot_rails (2.0.0.pre.130115)
       nokogiri
-      sunspot (= 1.3.3)
-    sunspot_solr (1.3.3)
+      sunspot (= 2.0.0.pre.130115)
+    sunspot_solr (2.0.0.pre.130115)
     systemu (2.5.2)
     therubyracer (0.11.3)
       libv8 (~> 3.11.8.12)
@@ -266,8 +266,8 @@ DEPENDENCIES
   simple_form
   sqlite3
   stop_ie
-  sunspot_rails
-  sunspot_solr
+  sunspot_rails (~> 2.0.0.pre.130115)
+  sunspot_solr (~> 2.0.0.pre.130115)
   therubyracer
   thin
   uglifier

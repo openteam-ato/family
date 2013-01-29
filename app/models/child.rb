@@ -63,7 +63,7 @@ class Child < ActiveRecord::Base
   end
 
   def self.relative_counts_options
-    [['один', 1], ['двое', 2], ['более двух', 3]]
+    [['не важно', 0], ['есть', 1], ['нет', 2]]
   end
 
   def absent_relative_numbers
@@ -83,11 +83,12 @@ class Child < ActiveRecord::Base
       with(:number, number)                                 if number.present?
       with(:age).between(age_min..age_max)                  if age_min.present? && age_max.present?
       with(:sex, sex)                                       if sex.present?
-      if relative_count.present?
-        if relative_count < 3
-          with(:relative_count, relative_count)
-        else
-          with(:relative_count).greater_than(relative_count)
+
+      unless relative_count.nil? || relative_count.zero?
+        if relative_count == 1
+          with(:relative_count).greater_than(1)
+        elsif relative_count == 2
+          with(:relative_count, 0)
         end
       end
 

@@ -20,9 +20,12 @@
             </div>
             <%= f.input :sex, :as => :select, :collection => Child.sex.options, :include_blank => 'не важно', :label => 'Пол:',
               :selected => params[:search].try(:[], :sex) %>
-            <%= f.input :relative_count, :as => :select, :collection => Child.relative_counts_options, :include_blank => 'не важно', :label => 'Братья и сестры:',
+
+            <%= f.input :relative_count, :as => :select, :collection => Child.relative_counts_options, :include_blank => false, :label => 'Братья и сестры:',
               :selected => params[:search].try(:[], :relative_count) %>
-            <%= f.input :living_arrangements, :as => :check_boxes, :collection => Child.living_arrangement.options, :label => 'Форма жизнеустройства:' %>
+
+            <%= f.input :living_arrangements, :as => :check_boxes, :collection => Child.living_arrangement.options, :label => 'Форма жизнеустройства:',
+              :checked => params[:search].try(:[], :living_arrangements) %>
           </div>
         </div>
         <div class='buttons'>
