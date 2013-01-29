@@ -1,6 +1,6 @@
 AttributeNormalizer.configure do |config|
   config.normalizers[:strip_array] = ->(value, options) do
-    value.split(/\s/).map(&:strip).uniq
+    value.squish.split(/\s/).uniq
   end
 
   config.normalizers[:blank_array] = ->(value, options) do

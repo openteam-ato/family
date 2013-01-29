@@ -43,12 +43,14 @@
   </div>
   <div class="relativities">
     <% if @child.absent_relative_numbers.any? %>
-      <p>Дети со следующими номерами отсутствуют:</p>
-      <ul class="absent">
-        <% @child.absent_relative_numbers.each do |number| %>
-          <li><%= number %></li>
-        <% end %>
-      </ul>
+      <div class='absent'>
+        <div class='bold'>Дети со следующими номерами отсутствуют:</div>
+        <ul>
+          <% @child.absent_relative_numbers.each do |number| %>
+            <li><%= number %></li>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
 
     <% if @child.brothers.any? %>
@@ -72,7 +74,7 @@
       </div>
     <% end %>
     <% if @child.sisters.any? %>
-      <div>
+      <div class='sisters'>
         <div class='bold'>Сестры:</div>
         <ul>
           <% @child.sisters.each do |relative| %>

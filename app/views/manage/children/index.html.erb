@@ -14,7 +14,7 @@
 <div class="list">
   <ul>
     <% @children.each do |child| %>
-      <li class='child'>
+      <li class='child <%= cycle('odd', 'even') %>'>
         <div class="photo">
           <%= link_to [:manage, child] do %>
             <%= image_tag child.photo_url.gsub(/\/\d+-\d+\//, '/150-200!/'), :alt => child.name, :title => child.name, :size => '150x200' %>
@@ -47,6 +47,16 @@
           <div>
             <%= child.living_arrangement.map(&:text).join(', ') %>
           </div>
+          <% if child.absent_relative_numbers.any? %>
+            <div class='absent'>
+              <div class='bold'>Дети со следующими номерами отсутствуют:</div>
+              <ul>
+                <% child.absent_relative_numbers.each do |number| %>
+                  <li><%= number %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
           <% if child.brothers.any? %>
             <div>
               <div class='bold'>Братья:</div>

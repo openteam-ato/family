@@ -87,6 +87,11 @@
       +clearfix
       width: 100%
 
+      .absent
+        li
+          color: #fff
+          background-color: #880000
+
       ul
         +clearfix
 
@@ -100,6 +105,9 @@
 
           &.child
             +min-height(295px)
+
+            &.odd
+              clear: left
 
       .photo
         border: 1px solid #e5e5e7 !important
@@ -136,6 +144,9 @@
           color: #fff
           padding: 8px
           +border-radius(2px)
+
+        .absent li
+          padding: 5px
 
         div
           font-size: 14px
