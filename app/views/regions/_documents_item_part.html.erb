@@ -3,9 +3,6 @@
 
 <% if object.approved_on? %>
   <p>Утверждён: <%= l object.approved_on.to_date %></p>
-  <%= render 'commons/social_links' %>
 <% else %>
   <p>Опубликован: <%= l object.published_on.to_date %></p>
-  <%= render 'commons/social_links' %>
-  <%= render 'commons/disqus' %>
 <% end %>
