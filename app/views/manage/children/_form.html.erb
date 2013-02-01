@@ -26,7 +26,7 @@
   <% end %>
 </div>
 <div class="photo_wrapper">
-  <% if @child.photo? %>
+  <% if @child.persisted? %>
     <%= image_tag @child.photo_url, :alt => @child.name, :title => @child.name %>
   <% end %>
 </div>
