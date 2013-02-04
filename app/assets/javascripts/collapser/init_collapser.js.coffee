@@ -5,7 +5,15 @@ change_location_hash = (object) ->
   window.location.hash = id
   object.attr 'id', id
 
+sub_info_collapser = () ->
+  $('.sub_info_link').on 'click', ->
+    link = $(this)
+    link.next().slideToggle ->
+      link.toggleClass('open')
+    return false
+
 @init_collapser = ->
+  sub_info_collapser()
   wrapper = $('.need_collapser')
 
   wrapper.click (event) ->

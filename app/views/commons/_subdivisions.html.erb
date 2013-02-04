@@ -7,6 +7,14 @@
         <h3><%= item.title %></h3>
 
         <div class="subdivision_information">
+          <% if item.dossier.try(:present?) %>
+            <div class="sub_info_wrapper">
+              <%= link_to "Информация о подразделении", '#', :class => 'sub_info_link' %>
+              <div class="sub_info">
+                <%= item.dossier.html_safe %>
+              </div>
+            </div>
+          <% end %>
           <div class="contacts">
             <span class='address'><%= item.address %></span>
             <span class='phones'><%= item.phones %></span>

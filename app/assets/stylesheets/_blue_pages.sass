@@ -226,8 +226,57 @@
 
       .emails
         margin: 0 15px 0 0
+
 .collapse_item
   display: none
+
+.sub_info_link
+  font-size: 12px
+  margin: 0 0 26px 0
+  border-bottom: 1px dashed #005fab
+  text-decoration: none
+
+  &:after
+    border: none
+    color: #558754
+    content: '\2B'
+    display: inline-block
+    float: right
+    font-size: 12px
+    font-weight: bold
+    line-height: 20px
+    margin: 0 0 0 0
+    text-align: right
+    text-decoration: none
+    position: absolute
+    height: 15px
+    width: 16px
+
+  &.open
+    border-color: #000
+    color: #000
+
+    &:after
+      color: #000
+      content: '\2013'
+
+.sub_info_wrapper
+  margin: 0 0 15px 0
+
+.sub_info
+  display: none
+  font-size: 12px
+  padding: 10px
+  margin: 0 0 20px 0
+
+  p
+    font-size: 12px
+    margin: 0 0 10px 0
+
+  ul
+    li
+      list-style: disc inside
+      line-height: 20px
 
 .slider
   +inline-block
