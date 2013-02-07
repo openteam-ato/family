@@ -116,7 +116,7 @@
   </div>
   <!-- <%= request.host %> -->
 
-  <% if Rails.env.production? %>
+  <% if Rails.env.production? && request.host.eql?('family.tomsk.gov.ru') %>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
       (function (d, w, c) {
