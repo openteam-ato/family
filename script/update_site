@@ -82,4 +82,5 @@ if [ -f "${CURRENT_PATH}/lib/tasks/cron.rake" ]; then
   exec_bundle exec whenever --update-crontab --load-file "${CURRENT_PATH}/config/schedule.rb"
 fi
 
+RAILS_ENV=production ${CURRENT_PATH}/script/delayed_job restart
 exec_rake airbrake:deploy TO=production

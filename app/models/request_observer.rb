@@ -1,5 +1,5 @@
 class RequestObserver < ActiveRecord::Observer
   def after_save(request)
-    RequestMailer.send_email(request).deliver
+    RequestMailer.delay.send_email(request)
   end
 end

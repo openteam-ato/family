@@ -11,6 +11,7 @@ group :default do
   gem 'attribute_normalizer'
   gem 'compass-rails'
   gem 'curb'
+  gem 'delayed_job_active_record'
   gem 'el_vfs_client'
   gem 'enumerize'
   gem 'esp-commons'
