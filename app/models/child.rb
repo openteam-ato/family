@@ -5,13 +5,12 @@ class Child < ActiveRecord::Base
 
   attr_accessor :birth_year, :birth_month, :relative_numbers_string
 
-  attr_accessible :sex, :name, :hair_color, :eyes_color, :living_arrangement,
-    :birth_year, :birth_month, :number, :relative_numbers, :relative_numbers_string,
-    :published_on, :photo
+  attr_accessible :sex, :name, :hair_color, :eyes_color, :living_arrangement, :birth_year,
+    :birth_month, :number, :relative_numbers, :relative_numbers_string, :photo
 
   validates_uniqueness_of :number
 
-  validates_presence_of :sex, :name, :living_arrangement, :number, :published_on, :photo
+  validates_presence_of :sex, :name, :living_arrangement, :number, :photo
 
   validates_presence_of :birth_year, :birth_month, :unless => :born_on?
 
@@ -32,13 +31,13 @@ class Child < ActiveRecord::Base
   normalize_attribute :living_arrangement, with: :blank_array
 
   searchable do
+    integer :age
+    integer(:number_i) { number.to_i }
+    integer(:relative_count) { relatives.count }
+
     string :number
     string :sex
-    integer :age
-    integer(:relative_count) { relatives.count }
-    string(:living_arrangements, :multiple => true){ living_arrangement.map(&:value) }
-    date :published_on
-    time :created_at
+    string(:living_arrangements, :multiple => true) { living_arrangement.map(&:value) }
   end
 
   serialize :relative_numbers, Array
@@ -114,8 +113,7 @@ class Child < ActiveRecord::Base
         end
       end if living_arrangements.present?
 
-      order_by(:published_on, :desc)
-      order_by(:created_at, :desc)
+      order_by(:number_i, :desc)
 
       paginate(:page => page, :per_page => 10)
     }.results

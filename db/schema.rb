@@ -11,10 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130212052025) do
+ActiveRecord::Schema.define(:version => 20130213094215) do
 
   create_table "children", :force => true do |t|
-    t.date     "published_on"
     t.string   "number"
     t.string   "name"
     t.string   "hair_color"

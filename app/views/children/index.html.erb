@@ -50,7 +50,6 @@
               <%= link_to child.name, child_path(:number => child.number), :class => 'name' %>
               <%= content_tag :span, "(#{child.number})", :class => 'number' %>
             </div>
-            <div class='published_on'>Дата размещения информации: <%= l child.published_on %></div>
             <div class='birth' title='<%= t('child.age', :count => child.age) %>'>
               <%= child.sex == 'male' ? 'Родился в' : 'Родилась в' %>
               <%= t('date.common_month_names')[child.born_on.month].gsub(/я$/, 'е') %>

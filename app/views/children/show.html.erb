@@ -2,7 +2,6 @@
   <%= content_tag :div, render(:partial => 'regions/children_contacts'), :class => 'right_side' if @right_side_links %>
   <div class='child_information'>
     <h2><%= @child.name %> <span class='number'>(<%= @child.number %>)</span></h2>
-    <div class='published_on'>Дата размещения информации: <%= l @child.published_on %></div>
     <div class='information'>
       <div class='image'>
         <%= link_to child_path(:number => @child.number) do %>
