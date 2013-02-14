@@ -58,6 +58,8 @@ ru:
 
   views:
     pagination:
+      last: 'Последняя'
+      first: 'Первая'
       next: '&rarr;'
       previous: '&larr;'
       truncate: ...
