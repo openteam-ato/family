@@ -2,7 +2,7 @@
 
   <%= render_partial_for_region(@content_first) %>
 
-  <div class='child_filters'>
+  <div id='filter' class='child_filters'>
     <div class='search_form_wrapper'>
       <h3>Фильтр</h3>
       <%= simple_form_for :search, :method => :get, :html => { :novalidate => true } do |f| %>
@@ -98,7 +98,7 @@
         </li>
       <% end %>
     </ul>
-    <%= paginate @children %>
+    <%= paginate @children, params: { anchor: 'filter' } %>
   <% end %>
 
 <% end %>

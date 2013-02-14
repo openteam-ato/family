@@ -82,15 +82,16 @@ class Child < ActiveRecord::Base
   end
 
   def self.solr_search_results(params, options)
-    page     = params[:page] || 1
-    number   = params[:search].try(:[], :number)
-    age_min  = params[:search].try(:[], :age_min)
-    age_max  = params[:search].try(:[], :age_max)
-    sex      = params[:search].try(:[], :sex)
-    relative_count = params[:search].try(:[], :relative_count).try(:to_i)
+    page                = params[:page] || 1
+    number              = params[:search].try(:[], :number)
+    age_min             = params[:search].try(:[], :age_min)
+    age_max             = params[:search].try(:[], :age_max)
+    sex                 = params[:search].try(:[], :sex)
+    relative_count      = params[:search].try(:[], :relative_count).try(:to_i)
     living_arrangements = params[:search].try(:[], :living_arrangements)
-    only_young = options[:only_young]
-    only_adult = options[:only_adult]
+    only_young          = options[:only_young]
+    only_adult          = options[:only_adult]
+    per_page            = 20
 
     search {
       with(:number, number)                                 if number.present?
@@ -115,7 +116,7 @@ class Child < ActiveRecord::Base
 
       order_by(:number_i, :desc)
 
-      paginate(:page => page, :per_page => 10)
+      paginate(:page => page, :per_page => per_page)
     }.results
   end
 
