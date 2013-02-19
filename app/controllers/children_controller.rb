@@ -7,7 +7,7 @@ class ChildrenController < MainController
 
   def show
     @child = Child.find_by_number(params[:number])
-
+    raise ActionController::RoutingError.new('Not Found') if @child.blank?
     super
   end
 
