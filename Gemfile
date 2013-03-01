@@ -33,7 +33,6 @@ end
 
 group :development do
   gem 'hirb',                   :require => false
-  gem 'libv8',                  '~> 3.11.8' unless RUBY_PLATFORM =~ /freebsd/
   gem 'progress_bar',           :require => false
   gem 'quiet_assets'
   gem 'rvm-capistrano'

@@ -274,7 +274,6 @@ DEPENDENCIES
   inherited_resources
   jquery-rails (= 2.1.4)
   kaminari
-  libv8 (~> 3.11.8)
   openteam-commons
   paperclip-elvfs
   pg
