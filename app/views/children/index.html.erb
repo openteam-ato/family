@@ -7,25 +7,25 @@
       <h3>Фильтр</h3>
       <%= simple_form_for :search, :method => :get, :html => { :novalidate => true } do |f| %>
         <%= f.input :number, :placeholder => 'Поиск по номеру дела', :label => false,
-                    :input_html => { :value => params[:search].try(:[], :number) } %>
+                    :input_html => { :value => params[:search].present? ? params[:search][:number] : nil } %>
         <div class='advanced'>
           <%= f.input :age_min, :as => :hidden,
-                      :input_html => { :value => params[:search].try(:[], :age_min) } %>
+                      :input_html => { :value => params[:search].present? ? params[:search][:age_min] : nil } %>
           <%= f.input :age_max, :as => :hidden,
-                      :input_html => { :value => params[:search].try(:[], :age_max) } %>
+                      :input_html => { :value => params[:search].present? ? params[:search][:age_max] : nil } %>
           <div class='line_wrapper'>
             <div class='slider_wrapper'>
               <label class='slider_label'>Возраст:</label>
               <div id='slider_age_range'></div>
             </div>
             <%= f.input :sex, :as => :select, :collection => Child.sex.options, :include_blank => 'не важно', :label => 'Пол:',
-              :selected => params[:search].try(:[], :sex) %>
+              :selected => params[:search].present? ? params[:search][:sex] : nil %>
 
             <%= f.input :relative_count, :as => :select, :collection => Child.relative_counts_options, :include_blank => false, :label => 'Братья и сестры:',
-              :selected => params[:search].try(:[], :relative_count) %>
+              :selected => params[:search].present? ? params[:search][:relative_count] : nil %>
 
             <%= f.input :living_arrangements, :as => :check_boxes, :collection => Child.living_arrangement.options, :label => 'Форма жизнеустройства:',
-              :checked => params[:search].try(:[], :living_arrangements) %>
+              :checked => params[:search].present? ? params[:search][:living_arrangements] : nil %>
           </div>
         </div>
         <div class='buttons'>
