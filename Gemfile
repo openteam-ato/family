@@ -20,7 +20,7 @@ group :default do
   gem 'kaminari'
   gem 'openteam-commons'
   gem 'paperclip-elvfs'
-  gem 'rails'
+  gem 'rails', '~> 3.2.12'
   gem 'recaptcha',              :require => 'recaptcha/rails'
   gem 'russian'
   gem 'sass-rails'
@@ -32,6 +32,7 @@ group :default do
 end
 
 group :development do
+  gem 'brakeman'
   gem 'hirb',                   :require => false
   gem 'progress_bar',           :require => false
   gem 'quiet_assets'
