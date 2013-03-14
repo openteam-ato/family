@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (3.2.12)
       actionpack (= 3.2.12)
@@ -136,7 +136,6 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.8.0)
-    libv8 (3.11.8.13)
     macaddr (1.6.1)
       systemu (~> 2.5.0)
     mail (2.4.4)
@@ -205,7 +204,6 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     recaptcha (0.3.4)
-    ref (1.0.2)
     responders (0.9.3)
       railties (~> 3.1)
     rsolr (1.0.8)
@@ -254,9 +252,6 @@ GEM
     systemu (2.5.2)
     temple (0.5.5)
     terminal-table (1.4.5)
-    therubyracer (0.11.3)
-      libv8 (~> 3.11.8.12)
-      ref
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -315,7 +310,6 @@ DEPENDENCIES
   stop_ie
   sunspot_rails (~> 2.0.0.pre.130115)
   sunspot_solr (~> 2.0.0.pre.130115)
-  therubyracer
   thin
   uglifier
   uuid

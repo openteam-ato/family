@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 group :assets do
   gem 'coffee-rails'
@@ -39,7 +39,6 @@ group :development do
   gem 'rvm-capistrano'
   gem 'sqlite3',                :require => false
   gem 'sunspot_solr',           '~> 2.0.0.pre.130115'
-  gem 'therubyracer',           :platforms => :ruby, :require => 'v8'
   gem 'thin',                   :require => false
 end
 
