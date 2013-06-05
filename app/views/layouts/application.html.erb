@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name='yandex-verification' content='5b82f8c9e9140b58' />
+  <meta name='yandex-verification' content='79273af379cd587f' />
   <%= favicon_link_tag %>
   <title><%= raw @page_title %> — <%= strip_tags(@site_name.content.body) %></title>
 
@@ -116,7 +116,7 @@
   </div>
   <!-- <%= request.host %> -->
 
-  <% if Rails.env.production? && request.host.eql?('family.tomsk.gov.ru') %>
+  <% if Rails.env.production? && request.host.match('family.tomsk.gov.ru') %>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
       (function (d, w, c) {

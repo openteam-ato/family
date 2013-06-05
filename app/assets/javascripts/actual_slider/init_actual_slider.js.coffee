@@ -10,7 +10,7 @@
     "left": 0
   list_width = 0
   list_height = 0
-  list_item_width = $("li:first", actual).outerWidth(true, true)
+  list_item_width = $(".clearfix", actual).width()
   $("<div class='switcher'></div>").appendTo(inner)
   switcher = $(".switcher", inner)
   $("li", actual).each (index, item) ->
