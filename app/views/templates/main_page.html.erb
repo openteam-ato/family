@@ -2,15 +2,22 @@
 <% end %>
 
 <%= content_for :actual do %>
-  <%= render :partial => 'regions/actual' if @actual %>
+  <div class="actual">
+    <div class="inner">
+      <%= render :partial => 'regions/actual' if @actual %>
+      <div class="local_banners_wrapper">
+        <ul class='local_banners'>
+          <li class='adv_draw_dream'><a target='_blank' href='/ru/dream-picture/' title='Нарисуй свою мечту'>Нарисуй свою мечту</a></li>
+          <li class='adv_without_orphan'><a target='_blank' href='http://tomsk.opekaweb.ru/' title='Территория без сирот'>Территория без сирот</a></li>
+          <li class='adv_regional_bank'><a href='/ru/children/' title='Региональный банк данных детей-сирот'>Региональный банк данных детей-сирот</a></li>
+          <li class='adv_help'><a target='_blank' href='http://простодети.рф/' title='Усыновить ребенка - это просто'>Усыновить ребенка - это просто</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 <% content_for :content do %>
-  <ul class='local_banners'>
-    <li class='adv_regional_bank'><a href='/ru/children/'>Региональный банк данных детей-сирот</a></li>
-    <li class='adv_camps'><a target='_blank' href='http://camps.tom.ru/'>Детский отдых в Томской области</a></li>
-    <li class='adv_help'><a target='_blank' href='http://простодети.рф'>Усыновить ребенка - это просто</a></li>
-  </ul>
   <%= render_partial_for_region(@news) if @news %>
 <% end %>
 

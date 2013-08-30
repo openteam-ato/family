@@ -1,6 +1,6 @@
 @init_actual_slider = ->
-  actual = $(".actual")
-  inner = $(".actual .inner").css
+  actual = $(".actual_wrapper")
+  inner = $(".actual_slider", actual).css
     "padding-bottom": "35px"
   list = $("ul", inner).css
     "position": "relative"
@@ -39,9 +39,9 @@ change_slide = (target) ->
     timer()
 
 auto_change = ->
-  active_dot = $(".actual .switcher .active")
-  next_dot = if active_dot.next().length then active_dot.next() else $(".actual .switcher span:first")
-  next_item = $(".actual ul li.#{next_dot.attr("id")}")
+  active_dot = $(".actual_wrapper .switcher .active")
+  next_dot = if active_dot.next().length then active_dot.next() else $(".actual_wrapper .switcher span:first")
+  next_item = $(".actual_wrapper ul li.#{next_dot.attr("id")}")
   active_dot.removeClass("active")
   next_dot.addClass("active")
   change_slide(next_item)
