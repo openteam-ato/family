@@ -34,6 +34,7 @@ group :default do
 end
 
 group :development do
+  gem 'annotate',               :require => false
   gem 'brakeman',               :require => false
   gem 'capistrano-unicorn',     '= 0.1.7', :require => false
   gem 'hirb',                   :require => false

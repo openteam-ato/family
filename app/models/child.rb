@@ -165,3 +165,26 @@ class Child < ActiveRecord::Base
     self.class.set_callback :save, :before, :set_relative_numbers
   end
 end
+
+# == Schema Information
+#
+# Table name: children
+#
+#  id                 :integer          not null, primary key
+#  number             :string(255)
+#  name               :string(255)
+#  hair_color         :string(255)
+#  eyes_color         :string(255)
+#  living_arrangement :string(255)
+#  sex                :string(255)
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  born_on            :date
+#  relative_numbers   :string(255)
+#  photo_file_name    :string(255)
+#  photo_content_type :string(255)
+#  photo_file_size    :integer
+#  photo_updated_at   :datetime
+#  photo_url          :text
+#
+

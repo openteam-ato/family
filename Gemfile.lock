@@ -42,6 +42,8 @@ GEM
       amq-client (~> 0.9.5)
       amq-protocol (>= 0.9.4)
       eventmachine
+    annotate (2.5.0)
+      rake
     arel (3.0.2)
     attribute_normalizer (1.1.0)
     brakeman (2.2.0)
@@ -294,6 +296,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   attribute_normalizer
   brakeman
   capistrano-unicorn (= 0.1.7)
