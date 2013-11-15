@@ -1,7 +1,4 @@
-class Manage::ChildrenController < ApplicationController
-  inherit_resources
-
-  layout 'manage'
+class Manage::ChildrenController < Manage::ApplicationController
   before_filter :set_locale
 
   def index
