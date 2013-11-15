@@ -21,13 +21,13 @@ group :default do
   gem 'kaminari'
   gem 'openteam-commons'
   gem 'paperclip-elvfs'
-  gem 'rails', '~> 3.2.12'
+  gem 'rails',                  '~> 3.2.15'
   gem 'recaptcha',              :require => 'recaptcha/rails'
   gem 'russian'
   gem 'sass-rails'
   gem 'simple_form'
   gem 'stop_ie'
-  gem 'sunspot_rails',          '~> 2.0.0.pre.130115'
+  gem 'sunspot_rails'
   gem 'uuid'
   gem 'validates_email_format_of'
 end
@@ -39,7 +39,6 @@ group :development do
   gem 'quiet_assets'
   gem 'rvm-capistrano'
   gem 'sqlite3',                :require => false
-  gem 'sunspot_solr',           '~> 2.0.0.pre.130115'
   gem 'thin',                   :require => false
 end
 
