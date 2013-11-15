@@ -4,6 +4,8 @@ Family::Application.routes.draw do
   namespace :manage do
     resources :children
     get 'adult_children' => 'children#adult'
+    root :to => 'children#index'
+    resources :contest_works
   end
 
   get 'ru/children' => 'children#index', :as => :children

@@ -186,8 +186,6 @@ GEM
     progress_bar (0.4.0)
       highline (~> 1.6.1)
       options (~> 2.3.0)
-    quiet_assets (1.0.1)
-      railties (~> 3.1)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -237,6 +235,8 @@ GEM
       sass (>= 3.1.10)
       tilt (~> 1.3)
     sexp_processor (4.4.0)
+    simple-navigation (3.9.0)
+      activesupport (>= 2.3.2)
     simple_form (2.0.4)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -315,11 +315,11 @@ DEPENDENCIES
   paperclip-elvfs
   pg
   progress_bar
-  quiet_assets
   rails (~> 3.2.15)
   recaptcha
   russian
   sass-rails
+  simple-navigation
   simple_form
   sqlite3
   stop_ie

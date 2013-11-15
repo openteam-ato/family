@@ -1,4 +1,9 @@
 ru:
+
+  title:
+    manage/children: 'Банк данных детей–сирот'
+    manage/contest_works: 'Акция «Нарисуй свою мечту»'
+
   locale:
     ru: 'РУ'
     en: 'EN'

@@ -26,6 +26,7 @@ group :default do
   gem 'recaptcha',              :require => 'recaptcha/rails'
   gem 'russian'
   gem 'simple_form'
+  gem 'simple-navigation'
   gem 'stop_ie'
   gem 'sunspot_rails',          '~> 2.0.0'
   gem 'uuid'
@@ -38,7 +39,6 @@ group :development do
   gem 'hirb',                   :require => false
   gem 'openteam-capistrano'
   gem 'progress_bar',           :require => false
-  gem 'quiet_assets'
   gem 'sqlite3',                :require => false
   gem 'sunspot_solr',           '~> 2.0.0'
   gem 'thin',                   :require => false
