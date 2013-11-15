@@ -27,7 +27,7 @@ group :default do
   gem 'russian'
   gem 'simple_form'
   gem 'stop_ie'
-  gem 'sunspot_rails'
+  gem 'sunspot_rails',          '~> 2.0.0'
   gem 'uuid'
   gem 'validates_email_format_of'
 end
@@ -40,6 +40,7 @@ group :development do
   gem 'progress_bar',           :require => false
   gem 'quiet_assets'
   gem 'sqlite3',                :require => false
+  gem 'sunspot_solr',           '~> 2.0.0'
   gem 'thin',                   :require => false
 end
 
