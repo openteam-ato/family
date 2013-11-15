@@ -57,12 +57,17 @@ GEM
       terminal-table (~> 1.4)
     builder (3.0.4)
     bunny (0.8.0)
-    capistrano (2.14.2)
+    capistrano (2.15.5)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    capistrano-db-tasks (0.2)
+    capistrano-ext (1.2.1)
+      capistrano (>= 1.0.0)
+    capistrano-unicorn (0.1.7)
+      capistrano
     chronic (0.9.0)
     chunky_png (1.2.7)
     cocaine (0.4.2)
@@ -143,14 +148,19 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     multi_json (1.8.2)
-    net-scp (1.1.0)
+    net-scp (1.1.2)
       net-ssh (>= 2.6.5)
-    net-sftp (2.1.1)
+    net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (2.6.5)
+    net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     nokogiri (1.5.6)
+    openteam-capistrano (0.0.14)
+      capistrano-db-tasks
+      capistrano-ext
+      capistrano-unicorn
+      rvm-capistrano
     openteam-commons (0.2.3)
       airbrake
       configliere
@@ -217,8 +227,8 @@ GEM
       sexp_processor (~> 4.1)
     russian (0.6.0)
       i18n (>= 0.5.0)
-    rvm-capistrano (1.2.7)
-      capistrano (>= 2.0.0)
+    rvm-capistrano (1.5.1)
+      capistrano (~> 2.15.4)
     sass (3.2.12)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -283,6 +293,7 @@ PLATFORMS
 DEPENDENCIES
   attribute_normalizer
   brakeman
+  capistrano-unicorn (= 0.1.7)
   coffee-rails
   compass-rails
   curb
@@ -296,6 +307,7 @@ DEPENDENCIES
   inherited_resources
   jquery-rails (= 2.1.4)
   kaminari
+  openteam-capistrano
   openteam-commons
   paperclip-elvfs
   pg
@@ -304,7 +316,6 @@ DEPENDENCIES
   rails (~> 3.2.15)
   recaptcha
   russian
-  rvm-capistrano
   sass-rails
   simple_form
   sqlite3

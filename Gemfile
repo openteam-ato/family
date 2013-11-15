@@ -2,13 +2,14 @@ source 'https://rubygems.org'
 
 group :assets do
   gem 'coffee-rails'
+  gem 'compass-rails'
+  gem 'sass-rails'
   gem 'turbo-sprockets-rails3'
   gem 'uglifier'
 end
 
 group :default do
   gem 'attribute_normalizer'
-  gem 'compass-rails'
   gem 'curb'
   gem 'delayed_job_active_record'
   gem 'el_vfs_client'
@@ -24,7 +25,6 @@ group :default do
   gem 'rails',                  '~> 3.2.15'
   gem 'recaptcha',              :require => 'recaptcha/rails'
   gem 'russian'
-  gem 'sass-rails'
   gem 'simple_form'
   gem 'stop_ie'
   gem 'sunspot_rails'
@@ -33,11 +33,12 @@ group :default do
 end
 
 group :development do
-  gem 'brakeman'
+  gem 'brakeman',               :require => false
+  gem 'capistrano-unicorn',     '= 0.1.7', :require => false
   gem 'hirb',                   :require => false
+  gem 'openteam-capistrano'
   gem 'progress_bar',           :require => false
   gem 'quiet_assets'
-  gem 'rvm-capistrano'
   gem 'sqlite3',                :require => false
   gem 'thin',                   :require => false
 end
