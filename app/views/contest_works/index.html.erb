@@ -1,0 +1,50 @@
+<% content_for :content do %>
+
+  <%= render_partial_for_region(@content_first) %>
+
+  <div class='contest_work_wrapper'>
+    <div class='contest_work item_<%= @selected_work.id %>'>
+      <div class='left'>
+        <div class='image'>
+          <%= image_tag @selected_work.photo_url.gsub(/\/\d+-\d+\//, '/150-200!mn/'), :size => '150x200', :alt => "#{@selected_work.name}, #{t('child.age', :count => @selected_work.age)}" %>
+        </div>
+        <div class='name'>
+          <%= @selected_work.name %>, <%= t 'child.age', :count => @selected_work.age %>
+        </div>
+        <div class='description'>
+          <%= simple_format @selected_work.description %>
+        </div>
+      </div>
+      <div class='right'>
+        <%= image_tag @selected_work.work_url.gsub(/\/\d+-\d+\//, '/830-830/') %>
+      </div>
+    </div>
+  </div>
+
+  <ul class='contest_thumbnails'>
+    <% @works.each_with_index do |item, index| %>
+      <li<%= " class='selected'".html_safe if item.id == @selected_work.id %>>
+        <div class='thumbnail_<%= item.id %>' title='<%= item.name %>, <%= t('child.age', :count => item.age) %>'>
+          <%= image_tag item.work_url.gsub(/\/\d+-\d+\//, '/128-88!mn/'), :size => '128x88', :alt => "#{item.name}, #{t('child.age', :count => item.age)}" %>
+        </div>
+        <div class='hidden item_<%= item.id %>'>
+          <div class='left'>
+            <div class='image'>
+              <%= image_tag item.photo_url.gsub(/\/\d+-\d+\//, '/150-200!mn/'), :size => '150x200', :alt => "#{item.name}, #{t('child.age', :count => item.age)}" %>
+            </div>
+            <div class='name'>
+              <%= item.name %>, <%= t 'child.age', :count => item.age %>
+            </div>
+            <div class='description'>
+              <%= simple_format item.description %>
+            </div>
+          </div>
+          <div class='right'>
+            <%= image_tag item.work_url.gsub(/\/\d+-\d+\//, '/830-830/') %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+<% end %>

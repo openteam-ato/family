@@ -14,5 +14,7 @@ Family::Application.routes.draw do
   get 'ru/departament/uchebno-metodicheskiy-tsentr/request' => 'requests#new', :as => :new_request
   post 'ru/departament/uchebno-metodicheskiy-tsentr/request' => 'requests#create', :as => :create_request
 
+  get 'ru/dream-picture/' => 'contest_works#index'
+
   get '/(*path)' => 'main#index'
 end

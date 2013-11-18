@@ -7,3 +7,5 @@
     "title": description
     "maxWidth": "90%"
     "maxHeight": "90%"
+
+  true
