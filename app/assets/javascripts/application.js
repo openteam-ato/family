@@ -20,6 +20,7 @@
  * = require tabs
  * = require upload_files
  * = require archive_collapser
+ * = require contest
  * = require scroll_to
  * = require colorbox
  * = require uppod

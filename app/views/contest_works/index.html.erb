@@ -40,7 +40,7 @@
             </div>
           </div>
           <div class='right'>
-            <%= image_tag item.work_url.gsub(/\/\d+-\d+\//, '/830-830/') %>
+            <%= image_tag item.work_url.gsub(/\/\d+-\d+\//, '/830-830/'), :alt => "#{item.name}, #{t('child.age', :count => item.age)}" %>
           </div>
         </div>
       </li>
