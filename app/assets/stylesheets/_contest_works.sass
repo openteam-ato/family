@@ -4,8 +4,40 @@
     display: none
 
   .contest_work_wrapper
+    position: relative
     width: 1080px
     padding: 0 20px
+
+    =iconize
+      $top: 300px
+      top: $top
+      display: block
+      width: 20px
+      height: 40px
+      +clearfix
+      background: transparent image_url('contest_arrow.png') no-repeat 0 0
+      text-indent: -9999em
+
+      &:active
+        top: $top + 2px
+
+    .to_left
+      position: absolute
+      left: -10px
+      +iconize
+      background-position: 0 0
+
+      &:hover
+        background-position: 0 -40px
+
+    .to_right
+      position: absolute
+      right: -10px
+      +iconize
+      background-position: -20px 0
+
+      &:hover
+        background-position: -20px -40px
 
     .contest_work
       +clearfix
