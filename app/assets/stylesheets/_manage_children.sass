@@ -238,7 +238,6 @@
     .child_form
       float: left
       margin: 0 25px 0 0
-      width: 560px
 
       form
         border-top: 1px solid #cccccc
@@ -254,9 +253,8 @@
         .error
           color: #cf373f
           font-size: 12px
-          left: 200px
-          position: absolute
-          top: 20px
+          display: block
+          margin-left: 205px
 
           &:before
             content: '\2b11'
@@ -288,9 +286,10 @@
               float: right
               margin: 0 0 0 3px
 
-          input, select
+          input, select, textarea
             border: 1px solid #cccccc
             font-size: 13px
+            font-family: Arial, Verdana, sans-serif
             height: 20px
             line-height: 20px
             margin: 0
@@ -300,6 +299,10 @@
 
           select
             width: 318px
+
+          textarea
+            width: 500px
+            height: 300px
 
           .radio, .checkbox
             +clearfix
@@ -354,3 +357,21 @@
 
           a
             line-height: 32px
+
+    .contest_works
+      clear: left
+
+      li
+        +clearfix
+        margin-bottom: 20px
+
+        .photo
+          float: left
+          margin-right: 20px
+
+          img
+            display: block
+            border: 1px solid #ccc
+
+        .details
+          +clearfix

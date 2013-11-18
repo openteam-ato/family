@@ -1,0 +1,16 @@
+<%= link_to 'Добавить рисунок', new_manage_contest_work_path, :class => 'new_link' %>
+
+<ul class='contest_works'>
+  <% collection.each do |item| %>
+    <li>
+      <div class='photo'>
+        <%= link_to image_tag(item.photo_url.gsub(/\/\d+-\d+\//, '/50-66!/'), :size => '50x66', :alt => item.name), manage_contest_work_path(item) %>
+      </div>
+      <div class='details'>
+        <div class='name'><%= link_to item.name, manage_contest_work_path(item) %></div>
+        <div class='age'><%= t 'child.age', :count => item.age %></div>
+        <div class='work'><%= image_tag item.work_url.gsub(/\/\d+-\d+\//, '/100-100!/'), :size => '100x100' %></div>
+      </div>
+    </li>
+  <% end %>
+</ul>

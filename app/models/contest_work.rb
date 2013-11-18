@@ -2,6 +2,8 @@ class ContestWork < ActiveRecord::Base
 
   attr_accessible :age, :description, :name, :photo, :work
 
+  validates_presence_of :age, :description, :name, :photo, :work
+
   has_attached_file :photo,
                     :storage => :elvfs,
                     :elvfs_url => Settings['storage.url'],

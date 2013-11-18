@@ -1,0 +1,21 @@
+<div class='child_form'>
+  <%= simple_form_for [:manage, @contest_work], :html => {:novalidate => true} do |f| %>
+    <%= f.input :name %>
+    <%= f.input :age %>
+    <%= f.input :description %>
+    <%= f.input :photo %>
+    <%= f.input :work %>
+
+    <div class='submit'>
+      <%= f.submit 'Сохранить' %>
+      <%= link_to 'Отмена', smart_resource_url %>
+      <%= link_to 'Удалить', smart_resource_url, :method => :delete, :confirm => 'Вы уверены?' %>
+    </div>
+  <% end %>
+</div>
+<div class='photo_wrapper'>
+  <% if @contest_work.persisted? %>
+    <p><%= image_tag @contest_work.photo_url, :alt => @contest_work.name %></p>
+    <p><%= image_tag @contest_work.work_url, :alt => 'Рисунок' %></p>
+  <% end %>
+</div>

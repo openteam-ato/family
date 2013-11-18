@@ -94,6 +94,13 @@ ru:
         phone: Контактный телефон
         message: Ваш вопрос
 
+      contest_work:
+        name: Имя
+        age: Возраст
+        description: Описание
+        photo: Фотография
+        work: Рисунок
+
     errors:
       messages:
         invalid: имеет неверный формат

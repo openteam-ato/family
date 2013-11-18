@@ -50,9 +50,8 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>.
     #
 
-    primary.item :children, 'Все дети-сироты', manage_children_path
-    primary.item :adult_children, 'Дети-сироты старше 18 лет', manage_adult_children_path
-    primary.item :contest, 'Акция «Нарисуй свою мечту»', manage_contest_works_path
+    primary.item :children, 'Банк данных детей–сирот', manage_children_path, highlights_on: -> { params[:controller] == 'manage/children' }
+    primary.item :contest, 'Акция «Нарисуй свою мечту»', manage_contest_works_path, highlights_on: -> { params[:controller] == 'manage/contest_works' }
 
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
