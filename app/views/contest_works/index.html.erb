@@ -16,7 +16,7 @@
         <div class='description'>
           <%= simple_format @selected_work.description %>
         </div>
-        <%= render :partial => 'contest_votes/votes', :locals => { :contest_work => @selected_work } %>
+        <%#= render :partial => 'contest_votes/votes', :locals => { :contest_work => @selected_work } %>
       </div>
       <div class='right'>
         <%= image_tag @selected_work.work_url.gsub(/\/\d+-\d+\//, '/830-830/') %>
@@ -41,7 +41,7 @@
             <div class='description'>
               <%= simple_format item.description %>
             </div>
-            <%= render :partial => 'contest_votes/votes', :locals => { :contest_work => item } %>
+            <%#= render :partial => 'contest_votes/votes', :locals => { :contest_work => item } %>
           </div>
           <div class='right'>
             <%= image_tag item.work_url.gsub(/\/\d+-\d+\//, '/830-830/'), :alt => "#{item.name}, #{t('child.age', :count => item.age)}" %>
