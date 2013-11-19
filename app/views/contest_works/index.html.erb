@@ -16,6 +16,7 @@
         <div class='description'>
           <%= simple_format @selected_work.description %>
         </div>
+        <%# TODO раскомментировать, когда начнется голосование %>
         <%#= render :partial => 'contest_votes/votes', :locals => { :contest_work => @selected_work } %>
       </div>
       <div class='right'>
@@ -41,6 +42,7 @@
             <div class='description'>
               <%= simple_format item.description %>
             </div>
+            <%# TODO раскомментировать, когда начнется голосование %>
             <%#= render :partial => 'contest_votes/votes', :locals => { :contest_work => item } %>
           </div>
           <div class='right'>
