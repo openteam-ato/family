@@ -24,3 +24,17 @@
     false
 
   true
+
+@init_contest_votes = ->
+  $('.votes a.vote_link').live 'ajax:success', (xhr, data, status) ->
+    response = $("<div>#{data}</div>")
+    container = $(this).closest('.contest_work')
+    hidden_class = container.attr('class').replace('contest_work', '').replace(/^\s+|\s+$/, '')
+    container = $(".contest_thumbnails .#{hidden_class} .votes")
+    container.html($('.votes', response).html())
+    container = $(this).closest('.votes')
+    container.html($('.votes', response).html())
+    response.remove()
+    true
+
+  true

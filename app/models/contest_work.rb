@@ -4,6 +4,8 @@ class ContestWork < ActiveRecord::Base
 
   validates_presence_of :age, :description, :name, :photo, :work
 
+  has_many :contest_votes
+
   has_attached_file :photo,
                     :storage => :elvfs,
                     :elvfs_url => Settings['storage.url'],

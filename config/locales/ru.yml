@@ -111,6 +111,13 @@ ru:
             name:
               invalid: разрешены только русские буквы
 
+  contest_votes:
+    zero: "Нет проголосовавших"
+    one: "Проголосовал %{count} человек"
+    few: "Проголосовало %{count} человека"
+    many: "Проголосовало %{count} человек"
+    other: "Проголосовало %{count} человек"
+
   enumerize:
     child:
       hair_color:

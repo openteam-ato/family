@@ -16,5 +16,9 @@ Family::Application.routes.draw do
 
   get 'ru/dream-picture/' => 'contest_works#index'
 
+  resources :contest_works, :only => [:index] do
+    resources :contest_votes, :only => [:create]
+  end
+
   get '/(*path)' => 'main#index'
 end

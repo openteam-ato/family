@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131115090209) do
+ActiveRecord::Schema.define(:version => 20131119050753) do
 
   create_table "children", :force => true do |t|
     t.string   "number"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(:version => 20131115090209) do
     t.datetime "photo_updated_at"
     t.text     "photo_url"
   end
+
+  create_table "contest_votes", :force => true do |t|
+    t.text     "ip"
+    t.text     "user_agent"
+    t.text     "session_id"
+    t.integer  "contest_work_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "contest_votes", ["ip"], :name => "index_contest_votes_on_ip"
 
   create_table "contest_works", :force => true do |t|
     t.string   "name"

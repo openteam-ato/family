@@ -10,6 +10,7 @@ $ ->
   init_upload_files()      if $('.appeal_form').length
   init_archive_collapser() if $('.archive').length
   init_contest()           if $('.contest_thumbnails').length
+  init_contest_votes()     if $('.votes a.vote_link').length
   init_reports_list()      if $('div.reports').length
   init_colorbox()          if $('.right_side .entry_image img').length
   init_uppod()             if $('div.uppod').length

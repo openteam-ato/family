@@ -1,0 +1,13 @@
+<div class='votes'>
+  <p><%= Russian::t('contest_votes', :count => contest_work.contest_votes.size) %></p>
+  <% vote_ip = [request.remote_ip, request.env["HTTP_X_FORWARDED_FOR"]].compact.join(', ') %>
+  <% exist_votes = ContestVote.where(:ip => vote_ip, :contest_work_id => contest_work.id) %>
+  <p>
+    <% unless exist_votes.present? %>
+      <%= link_to 'голосовать', contest_work_contest_votes_path(contest_work), :class => :vote_link,
+                  :method => :post, :disable_with => 'голосовать', :remote => true %>
+    <% else %>
+      <span class='small'>Ваш голос учтён</span>
+    <% end %>
+  </p>
+</div>
