@@ -3,5 +3,3 @@
     <%= render "regions/#{@content_first.type.underscore}", :object => @content_first.content.values.first['children'] if @content_first %>
   </div>
 <% end %>
-
-<%= render :template => 'layouts/application' %>

@@ -42,7 +42,6 @@ group :development do
   gem 'progress_bar',           :require => false
   gem 'sqlite3',                :require => false
   gem 'sunspot_solr',           '~> 2.0.0'
-  gem 'thin',                   :require => false
 end
 
 group :production do
