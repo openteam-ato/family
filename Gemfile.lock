@@ -188,6 +188,8 @@ GEM
     progress_bar (0.4.0)
       highline (~> 1.6.1)
       options (~> 2.3.0)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -265,6 +267,10 @@ GEM
     systemu (2.5.2)
     temple (0.6.7)
     terminal-table (1.4.5)
+    thin (1.6.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 1.0.0)
+      rack (>= 1.0.0)
     thor (0.18.1)
     tilt (1.4.1)
     treetop (1.4.15)
@@ -314,6 +320,7 @@ DEPENDENCIES
   paperclip-elvfs
   pg
   progress_bar
+  quiet_assets
   rails (~> 3.2.15)
   recaptcha
   russian
@@ -324,6 +331,7 @@ DEPENDENCIES
   stop_ie
   sunspot_rails (~> 2.0.0)
   sunspot_solr (~> 2.0.0)
+  thin
   turbo-sprockets-rails3
   uglifier
   uuid

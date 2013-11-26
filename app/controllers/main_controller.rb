@@ -11,7 +11,7 @@ class MainController < ApplicationController
 
     @page_title = page.title
 
-    render template
+    render template, :layout => subdomain.present? && subdomains.has_key?(subdomain) ? 'subdomain' : 'application'
   end
 
   def show
@@ -37,13 +37,27 @@ class MainController < ApplicationController
       I18n.locale = request.fullpath.gsub(/\?.*$/, '').split('/').map(&:presence).compact.first || 'ru'
     end
 
+    def subdomains
+      @subdomains ||= YAML.load_file(Rails.root.join('config', 'subdomains.yml')).try(:[], 'subdomains')
+    end
+
+    def subdomain
+      if request.subdomain.split('.').size > 1
+        @subdomain ||= request.subdomain.split('.').first == 'www' ? request.subdomain.split('.').second : request.subdomain.split('.').first
+      end
+
+      @subdomain
+    end
+
     def remote_url
+      subdomain_path = subdomains[subdomain]['path'].squish if subdomain.present? && subdomains.has_key?(subdomain)
+
       request_path, parts_params = request.fullpath.split('?')
+      request_path = "#{subdomain_path}/#{request_path}".gsub('//', '/') if subdomain_path.present?
 
-      # TODO: выяснить нужно ли энкодить
-      #parts_params = URI.encode(parts_params || '')
+      parts_params = URI.encode(parts_params || '')
 
-      "#{cms_address}#{request_path.split('/').compact.join('/')}.json?#{parts_params}"
+      "#{cms_address}#{request_path.gsub('//', '/').split('/').compact.join('/')}.json?#{parts_params}"
     end
 
     def page

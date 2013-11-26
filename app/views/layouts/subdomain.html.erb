@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='yandex-verification' content='79273af379cd587f' />
+  <%= favicon_link_tag %>
+  <title><%= @page_title.squish.html_safe %> — <%= strip_tags(@site_name.content.body) %></title>
+
+  <%= stylesheet_link_tag    'application', :media => "all" %>
+  <%= javascript_include_tag 'application' %>
+  <%= yield(:extend_javascripts) %>
+
+  <!--[if lte IE 7]>
+  <%= stylesheet_link_tag    'stop_ie/application' %>
+  <%= javascript_include_tag 'stop_ie/application' %>
+  <![endif]-->
+
+  <%= csrf_meta_tags %>
+  <% if entry_date %>
+    <meta name='entry_date' content="<%= entry_date %>">
+  <% end %>
+</head>
+<body>
+  <div class='top'>
+    <div class='inner'>
+      <a class='tgr' target='_blank' href='http://tomsk.gov.ru/'><%= I18n.t('tomsk_gov_ru') %></a>
+      <a href='http://family.tomsk.gov.ru/' class='sitemap'><%= I18n.t('family_tomsk_gov_ru') %></a>
+      <span class='helpline'><%= I18n.t('helpline') %></a>
+    </div>
+  </div>
+
+  <div class='header'>
+    <div class='inner'>
+      <div class='logo'>
+        <%= link_to @page_title.squish.html_safe, '/', :title => @page_title.squish.html_safe %>
+      </div>
+      <div class='site_title subdomain'>
+        <a href='/' title='<%= @page_title.squish.html_safe %>'><%= @page_title.squish.html_safe %><br /><%= I18n.t('family_tomsk_gov_ru') %></a>
+      </div>
+    </div>
+  </div>
+
+  <%= yield(:actual) %>
+
+  <div class="content index">
+    <div class="inner">
+
+      <%= yield(:content) %>
+
+      <%= yield(:map_region) %>
+
+      <%= render_partial_for_region(@gallery) %>
+
+      <%= yield(:gallery_region) %>
+    </div>
+  </div>
+
+  <% if @banners %>
+    <%= render("regions/#{@banners.type.underscore}", :object => @banners.content) %>
+  <% end %>
+
+  <div class="footer">
+    <div class="inner">
+      <div class="copyrights">
+        <ul>
+          <li><%= I18n.t('development') %>: <a href="http://openteam.ru">OpenTeam</a></li>
+        </ul>
+      </div>
+      <div class="contacts">
+        <h5><%= I18n.t('contacts') %></h5>
+        <p><%= I18n.t('department_name') %></p>
+        <p><%= I18n.t('address') %></p>
+        <p><%= I18n.t('phones') %></p>
+        <p><a href='mailto:dsmd@family.tomsk.gov.ru'>dsmd@family.tomsk.gov.ru</a></p>
+      </div>
+    </div>
+  </div>
+  <!-- host: <%= request.host %> -->
+
+  <% if Rails.env.production? && request.host.match('family.tomsk.gov.ru') %>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (d, w, c) {
+       (w[c] = w[c] || []).push(function() {
+         try {
+         w.yaCounter19937860 = new Ya.Metrika({id:19937860,
+           webvisor:true,
+           clickmap:true,
+           trackLinks:true,
+           accurateTrackBounce:true});
+         } catch(e) { }
+         });
+
+       var n = d.getElementsByTagName("script")[0],
+       s = d.createElement("script"),
+       f = function () { n.parentNode.insertBefore(s, n); };
+       s.type = "text/javascript";
+       s.async = true;
+       s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+       if (w.opera == "[object Opera]") {
+       d.addEventListener("DOMContentLoaded", f, false);
+       } else { f(); }
+      })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/19937860" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+  <% end %>
+
+</body>
+</html>
