@@ -18,7 +18,7 @@ group :default do
   gem 'formtastic'
   gem 'hashie'
   gem 'inherited_resources'
-  gem 'jquery-rails',           '= 2.1.4'
+  gem 'jquery-rails',           '2.1.4'
   gem 'kaminari'
   gem 'openteam-commons'
   gem 'paperclip-elvfs'
@@ -36,7 +36,7 @@ end
 group :development do
   gem 'annotate',               :require => false
   gem 'brakeman',               :require => false
-  gem 'capistrano-unicorn',     '= 0.1.7', :require => false
+  gem 'capistrano-unicorn',     '~> 0.1.10', :require => false
   gem 'hirb',                   :require => false
   gem 'openteam-capistrano'
   gem 'progress_bar',           :require => false
