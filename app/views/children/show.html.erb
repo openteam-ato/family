@@ -15,8 +15,8 @@
           <%= @child.born_on.year %>
         </div>
         <div class='phisiology'>
-          <p><%= @child.eyes_color_text.mb_chars.capitalize %> цвет глаз</p>
-          <p><%= @child.hair_color_text.mb_chars.capitalize %> цвет волос</p>
+          <%= content_tag :p, "#{@child.eyes_color_text.to_s.mb_chars.capitalize} цвет глаз" if @child.eyes_color_text.present? %>
+          <%= content_tag :p, "#{@child.hair_color_text.to_s.mb_chars.capitalize} цвет волос" if @child.hair_color_text.present? %>
         </div>
         <div class="living_arrangement">
           <p><strong>Форма жизнеустройства ребёнка:</strong> <%= @child.living_arrangement.map(&:text).join(', ') %></p>
