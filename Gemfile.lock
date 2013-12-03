@@ -241,7 +241,7 @@ GEM
     sexp_processor (4.4.0)
     simple-navigation (3.9.0)
       activesupport (>= 2.3.2)
-    simple_form (2.0.4)
+    simple_form (2.1.1)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
     slim (2.0.2)
