@@ -33,7 +33,7 @@ module Family
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ru
 
-    I18n.enforce_available_locales = true
+    I18n.enforce_available_locales = false
 
     # By default rails-i18n loads all locale files, pluralization and transliteration rules available
     # in the gem. This behaviour can be changed, if you specify the locales which have to be loaded
