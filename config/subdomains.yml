@@ -1,105 +1,105 @@
 subdomains:
 
-  # ОГБУ «Социально-реабилитационный центр для несовершеннолетних «Огонёк» г.Томск
   ogonek:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogbu-tsentr-sotsialnoy-pomoschi-semie-i-detyam-ogonek-g-tomska-
+    title:  "ОГБУ «Социально-реабилитационный центр для несовершеннолетних «Огонёк» г.Томск"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogbu-tsentr-sotsialnoy-pomoschi-semie-i-detyam-ogonek-g-tomska-"
 
-  # ОГБУ «Социально-реабилитационный центр для несовершеннолетних «Друг» г.Томск
   friend:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogbu-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-drug-g-tomska
+    title:  "ОГБУ «Социально-реабилитационный центр для несовершеннолетних «Друг» г.Томск"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogbu-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-drug-g-tomska"
 
-  # ОГБУ «Социально-реабилитационный центр для несовершеннолетних «Луч» г.Томск
   luch:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogbu-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-luch-g-tomska
+    title:  "ОГБУ «Социально-реабилитационный центр для несовершеннолетних «Луч» г.Томск"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogbu-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-luch-g-tomska"
 
-  #ОГБУ «Центр детского и семейного отдыха «Здоровье»
   zdorovie:
-    :path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogbu-tsentr-detskogo-i-semeynogo-otdyha-zdorovie-
+    title:  "ОГБУ «Центр детского и семейного отдыха «Здоровье»"
+    :path:  "/ru/departament/podvedomstvennye-uchrezhdeniya/ogbu-tsentr-detskogo-i-semeynogo-otdyha-zdorovie-"
 
-  # ОГКУ «Социально-реабилитационный центр для несовершеннолетних Томского района»
   srcntomsk:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-tomskogo-rayona-
+    title:  "ОГКУ «Социально-реабилитационный центр для несовершеннолетних Томского района»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-tomskogo-rayona-"
 
-  # ОГКУ «Социально-реабилитационный центр для несовершеннолетних Асиновского района»
   srcnasino:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-asinovskogo-rayona-
+    title:  "ОГКУ «Социально-реабилитационный центр для несовершеннолетних Асиновского района»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-asinovskogo-rayona-"
 
-  # ОГКУ «Социально-реабилитационный центр для несовершеннолетних «Александровского района»
   srcnalx:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-aleksandrovskogo-rayona-
+    title:  "ОГКУ «Социально-реабилитационный центр для несовершеннолетних «Александровского района»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-aleksandrovskogo-rayona-"
 
-  # ОГКУ «Социально-реабилитационный центр для несовершеннолетних Каргасокского района»
   srcnkg:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-kargasokskogo-rayona-
+    title:  "ОГКУ «Социально-реабилитационный центр для несовершеннолетних Каргасокского района»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-kargasokskogo-rayona-"
 
-  # ОГКУ «Центр социальной помощи семье и детям Колпашевского района»
   srcnklp:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogku-tsentr-sotsialnoy-pomoschi-semie-i-detyam-kolpashevskogo-rayona-
+    title:  "ОГКУ «Центр социальной помощи семье и детям Колпашевского района»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogku-tsentr-sotsialnoy-pomoschi-semie-i-detyam-kolpashevskogo-rayona-"
 
-  # ОГКУ «Социально-реабилитационный центр для несовершеннолетних Кривошеинского района»
   srcnkr:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-krivosheinskogo-rayona-
+    title:  "ОГКУ «Социально-реабилитационный центр для несовершеннолетних Кривошеинского района»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-krivosheinskogo-rayona-"
 
-  # ОГКУ «Социально-реабилитационный центр для несовершеннолетних Молчановского района»
   srcnmol:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-molchanovskogo-rayona-
+    title:  "ОГКУ «Социально-реабилитационный центр для несовершеннолетних Молчановского района»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-molchanovskogo-rayona-"
 
-  # ОГКУ «Социально-реабилитационный центр для несовершеннолетних Парабельского района»
   srcnpar:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-parabelskogo-rayona-
+    title:  "ОГКУ «Социально-реабилитационный центр для несовершеннолетних Парабельского района»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-parabelskogo-rayona-"
 
-  #ОГКУ «Социально-реабилитационный центр для несовершеннолетних Чаинского района»
   srcnch:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-chainskogo-rayona-
+    title:  "ОГКУ «Социально-реабилитационный центр для несовершеннолетних Чаинского района»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogku-sotsialno-reabilitatsionnyy-tsentr-dlya-nesovershennoletnih-chainskogo-rayona-"
 
-  #ОГКОУ для детей-сирот и детей, оставшихся безпопечения родителей детский дом «Орлиное гнездо»
   srcnorl:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-detskiy-dom-orlinoe-gnezdo-
+    title:  "ОГКОУ для детей-сирот и детей, оставшихся безпопечения родителей детский дом «Орлиное гнездо»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-detskiy-dom-orlinoe-gnezdo-"
 
-  #ТОГКОУ Специальный (коррекционный) детский дом №1 для детей-сирот, оставшихся без попечения родителей, с отклонениями в развитии»
   dd1:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/togkou-spetsialnyy-korrektsionnyy-detskiy-dom-1-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-s-ogranichennymi-vozmozhnostyami-zdorovya-
+    title:  "ТОГКОУ Специальный (коррекционный) детский дом №1 для детей-сирот, оставшихся без попечения родителей, с отклонениями в развитии»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/togkou-spetsialnyy-korrektsionnyy-detskiy-dom-1-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-s-ogranichennymi-vozmozhnostyami-zdorovya-"
 
-  #ТОГКОУ для детей-сирот и детей, оставшихся без попечения родителей «детский дом №4»
   dd4:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/togkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-detskiy-dom-4-
+    title:  "ТОГКОУ для детей-сирот и детей, оставшихся без попечения родителей «детский дом №4»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/togkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-detskiy-dom-4-"
 
-  #ОГКОУ для детей-сирот и детей. оставшихся без попечения родителей «Семилуженский детский дом»
   ddsem:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-semiluzhenskiy-detskiy-dom-
+    title:  "ОГКОУ для детей-сирот и детей. оставшихся без попечения родителей «Семилуженский детский дом»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-semiluzhenskiy-detskiy-dom-"
 
-  #ОГКОУ для детей-сирот и детей, оставшихся без попечения родителей «Асиновский детский дом»
   ddasino:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-asinovskiy-detskiy-dom-
+    title:  "ОГКОУ для детей-сирот и детей, оставшихся без попечения родителей «Асиновский детский дом»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-asinovskiy-detskiy-dom-"
 
-  #ОГКОУ для детей-сирот и детей, оставшихся без попечения родителей «Бакчарский детский дом»
   ddbk:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-bakcharskiy-detskiy-dom-
+    title:  "ОГКОУ для детей-сирот и детей, оставшихся без попечения родителей «Бакчарский детский дом»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-bakcharskiy-detskiy-dom-"
 
-  #ОГКОУ для детей сирот и детей, оставшихся без попечения родителей «Тогурский детский дом»
   ddtg:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-togurskiy-detskiy-dom-
+    title:  "ОГКОУ для детей сирот и детей, оставшихся без попечения родителей «Тогурский детский дом»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-togurskiy-detskiy-dom-"
 
-  #ОГКОУ для детей-сирот и детей, оставшихся без попечения родителей «Чердатский детский дом»
   ddch:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-cherdatskiy-detskiy-dom-
+    title:  "ОГКОУ для детей-сирот и детей, оставшихся без попечения родителей «Чердатский детский дом»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-cherdatskiy-detskiy-dom-"
 
-  #ОГКОУ для детей –сирот и детей, ставшихся без попечения родителей «Зырянский детский дом»
   ddz:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-zyryanskiy-detskiy-dom-
+    title:  "ОГКОУ для детей –сирот и детей, ставшихся без попечения родителей «Зырянский детский дом»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogkou-dlya-detey-sirot-i-detey-ostavshihsya-bez-popecheniya-roditeley-zyryanskiy-detskiy-dom-"
 
-  #ОГКСУ «Реабилитационный центр для детей и подростков с ограниченными возможностями «Надежда»
   nadejda:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogksu-reabilitatsionnyy-tsentr-dlya-detey-i-podrostkov-s-ogranichennymi-vozmozhnostyami-nadezhda-
+    title:  "ОГКСУ «Реабилитационный центр для детей и подростков с ограниченными возможностями «Надежда»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogksu-reabilitatsionnyy-tsentr-dlya-detey-i-podrostkov-s-ogranichennymi-vozmozhnostyami-nadezhda-"
 
-  #ОГБУ «ЦСП г.Стрежевой»
   csps:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogbu-tsentr-sotsialnoy-pomoschi-semie-i-detyam-g-strezhevogo-
+    title:  "ОГБУ «ЦСП г.Стрежевой»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogbu-tsentr-sotsialnoy-pomoschi-semie-i-detyam-g-strezhevogo-"
 
-  #ОГКУ «Реабилитационный центр для детей и подростков с ограниченными возможностями ЗАТО «Северск»
   rcs:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogku-reabilitatsionnyy-tsentr-dlya-detey-i-podrostkov-s-ogranichennymi-vozmozhnostyami-zato-seversk-
+    title:  "ОГКУ «Реабилитационный центр для детей и подростков с ограниченными возможностями ЗАТО «Северск»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogku-reabilitatsionnyy-tsentr-dlya-detey-i-podrostkov-s-ogranichennymi-vozmozhnostyami-zato-seversk-"
 
-  #ОГКСУ для умственно-отсталых детей «Тунгусовский детский дом-интернат»
   ddt:
-    path: /ru/departament/podvedomstvennye-uchrezhdeniya/ogksu-dlya-umstvenno-otstalyh-detey-tungusovskiy-detskiy-dom-internat-
+    title:  "ОГКСУ для умственно-отсталых детей «Тунгусовский детский дом-интернат»"
+    path:   "/ru/departament/podvedomstvennye-uchrezhdeniya/ogksu-dlya-umstvenno-otstalyh-detey-tungusovskiy-detskiy-dom-internat-"
