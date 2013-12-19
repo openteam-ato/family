@@ -11,11 +11,7 @@ class MainController < ApplicationController
 
     @page_title = page.title
 
-    if subdomain.present? && subdomains.has_key?(subdomain) && subdomain_path.present?
-      render template, :layout => 'subdomain'
-    else
-      render template, :layout => 'application'
-    end
+    render template, :layout => subdomain.present? && subdomains.has_key?(subdomain) ? 'subdomain' : 'application'
   end
 
   def show
@@ -53,11 +49,9 @@ class MainController < ApplicationController
       @subdomain
     end
 
-    def subdomain_path
-      @subdomain_path ||= subdomains[subdomain]['path'].to_s.squish if subdomain.present? && subdomains.has_key?(subdomain)
-    end
-
     def remote_url
+      subdomain_path = subdomains[subdomain]['path'].squish if subdomain.present? && subdomains.has_key?(subdomain)
+
       request_path, parts_params = request.fullpath.split('?')
       request_path = "#{subdomain_path}/#{request_path}".gsub('//', '/') if subdomain_path.present?
 
