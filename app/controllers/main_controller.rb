@@ -54,7 +54,7 @@ class MainController < ApplicationController
     end
 
     def subdomain_path
-      @subdomain_path ||= subdomains[subdomain][:path].to_s.squish if subdomain.present? && subdomains.has_key?(subdomain)
+      @subdomain_path ||= (subdomains[subdomain][:path] || subdomains[subdomain]['path']).to_s.squish if subdomain.present? && subdomains.has_key?(subdomain)
     end
 
     def remote_url
