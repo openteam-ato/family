@@ -4,12 +4,6 @@
 <% content_for :content do %>
   <div class='blue_pages'>
     <%= render :partial => 'commons/chief', :locals => { :object => @content_first.content.items.first } if @content_first.content.items %>
-    <% if @webanketa_voting %>
-      <div class='webanketa_voting'>
-        <%= render_partial_for_region(@webanketa_voting, 'webanketa') %>
-        <div class='right_side_bottom'></div>
-      </div>
-    <% end %>
 
     <% if @links %>
       <div class='links'>
@@ -27,6 +21,13 @@
             <li><%= link_to content_tag(:span, '', :class => 'icon') + item.description, item.picture_url, :class => item.picture_url.match(/\.(\w+)$/).try(:[], 1) %></li>
           <% end %>
         </ul>
+        <div class='right_side_bottom'></div>
+      </div>
+    <% end %>
+
+    <% if @webanketa_voting %>
+      <div class='webanketa_voting'>
+        <%= render_partial_for_region(@webanketa_voting, 'webanketa') %>
         <div class='right_side_bottom'></div>
       </div>
     <% end %>
