@@ -107,6 +107,22 @@
           position: relative
           width: 0
 
+    ol
+      counter-reset: list
+      li
+        +clearfix
+        line-height: 19px
+        padding: 0 0 12px 28px
+
+        &:before
+          counter-increment: list
+          content: counter(list) '.'
+          float: left
+          left: -28px
+          padding: 0 0 0 0
+          position: relative
+          width: 0
+
   .links,
   .regulation_documents
     +clearfix
@@ -291,6 +307,7 @@
   +inline-block
   border-bottom: 1px dashed #005fab
   text-decoration: none
+  white-space: nowrap
 
   &:after
     border: none
