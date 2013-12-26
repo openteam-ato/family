@@ -61,8 +61,6 @@ class MainController < ApplicationController
       request_path, parts_params = request.fullpath.split('?')
       request_path = "#{subdomain_path}/#{request_path}".gsub('//', '/') if subdomain_path.present? && request_path.gsub(/\/$/, '') != subdomain_path
 
-      parts_params = URI.encode(parts_params || '')
-
       "#{cms_address}#{request_path.gsub('//', '/').split('/').compact.join('/')}.json?#{parts_params}"
     end
 
