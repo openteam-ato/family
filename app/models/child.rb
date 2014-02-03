@@ -109,7 +109,7 @@ class Child < ActiveRecord::Base
       end
 
       any_of do
-        living_arrangements.delete_if(&:blank?).each do |living_arrangement|
+        living_arrangements.delete_if{ |key, value| value.blank? }.each do |living_arrangement|
           with(:living_arrangements, living_arrangement)
         end
       end if living_arrangements.present?
