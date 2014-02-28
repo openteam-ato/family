@@ -23,6 +23,7 @@ group :default do
   gem 'openteam-commons'
   gem 'paperclip-elvfs'
   gem 'rails',                  '~> 3.2.15'
+  gem 'rack-utf8_sanitizer'
   gem 'recaptcha',              :require => 'recaptcha/rails'
   gem 'russian'
   gem 'simple_form'
