@@ -114,9 +114,10 @@
       </div>
     </div>
   </div>
+
   <!-- host: <%= request.host %> -->
 
-  <% if Rails.env.production? && request.host.match('family.tomsk.gov.ru') %>
+  <% if Rails.env.production? %>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
       (function (d, w, c) {
