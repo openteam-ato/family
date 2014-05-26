@@ -15,6 +15,7 @@ $ ->
   init_colorbox()          if $('.right_side .entry_image img').length
   init_uppod()             if $('div.uppod').length
   init_datepicker()
+  init_iframe_resize()     if $('#autoIframe').length
 
   if $('.need_collapser').length
     init_collapser()

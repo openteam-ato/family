@@ -25,5 +25,6 @@
  * = require colorbox
  * = require uppod
  * = require datepicker
+ * = require iframe_resizer
  * = require main
  */
