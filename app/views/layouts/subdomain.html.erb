@@ -59,6 +59,10 @@
     <%= render("regions/#{@banners.type.underscore}", :object => @banners.content) %>
   <% end %>
 
+  <div class="gosuslugi_banner">
+    <%= link_to image_tag('gosuslugi.gif'), 'http://www.gosuslugi.ru', :target => '_blank' %>
+  </div>
+
   <div class="footer">
     <div class="inner">
       <div class="copyrights">

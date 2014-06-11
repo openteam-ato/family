@@ -162,8 +162,4 @@ module ApplicationHelper
   def extension(filename)
     filename.match(/\.(\w+)$/).try(:[], 1)
   end
-
-  def subdepartment_page?
-    params[:path].try :match, /ru\/departament\/.+/
-  end
 end
