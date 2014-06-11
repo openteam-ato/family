@@ -42,5 +42,12 @@
     <%= render :partial => 'regions/dependent_subdivisions', :locals => { :object => @dependent_subdivisions } if @dependent_subdivisions %>
 
     <%= render 'commons/social_links' %>
+
   </div>
 <% end %>
+
+<% content_for :permanent_banners do %>
+  <div class="gosuslugi_banner">
+    <%= link_to image_tag('gosuslugi.gif'), 'http://www.gosuslugi.ru', :target => '_blank' %>
+  </div>
+<% end if subdepartment_page? %>
