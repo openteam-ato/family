@@ -164,6 +164,6 @@ module ApplicationHelper
   end
 
   def subdepartment_page?
-    params[:path].match(/ru\/departament\/.+/)
+    params[:path].try :match, /ru\/departament\/.+/
   end
 end
