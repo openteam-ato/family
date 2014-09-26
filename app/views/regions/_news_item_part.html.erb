@@ -15,19 +15,12 @@
         <ul>
           <% object.more_like_this.each do |item| %>
             <li>
-              <div class="date">
-                <%= l item.since.to_date, :format => :long %>
-              </div>
               <%= link_to item.title, item.link %>
             </li>
           <% end %>
         </ul>
       </div>
     <% end %>
-  </div>
-
-  <div class="date">
-    <%= l object.since.to_date, :format => :long %>
   </div>
 
   <div class="annotation_on_show">

@@ -16,7 +16,6 @@
           </div>
         <% end %>
         <div class="description">
-          <span class="date"><%= l Date.parse(item.since), :format => :long %></span>
           <% unless item.source_link.blank? %>
             <h5><%= link_to item.title, item.source_link, :rel => "nofollow", :target => "_blank" %></h5>
           <% else %>

@@ -8,7 +8,6 @@
     <% object.items.each_slice(3) do |slice| %>
       <% slice.each_with_index do |item, index| %>
         <li class=<%= cycle('first', 'second', 'last') %>>
-          <span class="date"><%= l Date.parse(item.since), :format => :long %></span>
           <h5><%= link_to item.title.truncate(90, :separator => ' '), item.link, :title => item.title %></h5>
 
           <% if item.images.any? && item.images.first  %>

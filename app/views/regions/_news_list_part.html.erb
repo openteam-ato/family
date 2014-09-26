@@ -3,7 +3,6 @@
     <ul>
       <% object.items.each_with_index do |item, index| %>
         <li <%= 'class=last' if (index+1)%3 == 0 %>>
-          <span class="date"><%= l Date.parse(item.since), :format => :long %></span>
           <h5><%= link_to item.title, item.link, :title => item.title %></h5>
 
           <% if item.images.any? && item.images.first  %>

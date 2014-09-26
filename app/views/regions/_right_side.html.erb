@@ -39,7 +39,6 @@
     <ul>
       <% @right_side_smi_publications.content.items.each do |publication| %>
         <li>
-          <p class="date"><%= l publication.since.to_date, :format => "%d %B %Y" %></p>
           <p class="title">
             <% unless publication.source_link.blank? %>
               <%= link_to publication.title, publication.source_link, :rel => "nofollow", :target => "_blank" %>

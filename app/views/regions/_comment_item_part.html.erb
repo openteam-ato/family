@@ -1,7 +1,4 @@
 <% unless object.blank? %>
-  <div class="date">
-    <%= l object.since.to_date, :format => :long %>
-  </div>
 
   <% if object.images.any? %>
     <div class="comment_image">
