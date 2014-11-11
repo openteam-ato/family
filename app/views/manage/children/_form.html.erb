@@ -24,6 +24,16 @@
         <% end %>
       </div>
     <% end %>
+    <% if @child.video_url? %>
+      <div class='video_wrapper'>
+        <p>Видео</p>
+        <p><%= link_to @child.video_url, @child.video_url %></p>
+        <p><%= link_to t('commons.delete'), '#', :class => 'button icon remove danger delete_video' %></p>
+      </div>
+    <% else %>
+      <%= f.input :video %>
+      <%= content_tag :span, f.object.errors.messages[:video_content_type].join, :class => :error if f.object.errors.messages[:video_content_type].present? %>
+    <% end %>
 
     <div class="submit">
       <%= f.submit 'Сохранить' %>

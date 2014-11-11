@@ -35,6 +35,11 @@
       <div>
         <%= @child.living_arrangement.map(&:text).join(', ') %>
       </div>
+      <% if @child.video_url? %>
+        <div>
+          <p><%= link_to @child.video_url, @child.video_url %></p>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="relativities">

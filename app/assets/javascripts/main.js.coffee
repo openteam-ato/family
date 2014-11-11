@@ -16,6 +16,7 @@ $ ->
   init_colorbox()             if $('a.colorbox').length
   init_uppod()                if $('div.uppod').length
   init_iframe_resize()        if $('#autoIframe').length
+  init_delete_video()         if $('.delete_video').length
   init_datepicker()
 
   if $('.need_collapser').length

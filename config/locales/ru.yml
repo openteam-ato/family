@@ -88,6 +88,7 @@ ru:
         number: Номер
         relative_numbers_string: Родственники
         photo: Фотография
+        video: Видео
 
       request:
         name: ФИО

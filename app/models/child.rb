@@ -3,10 +3,10 @@
 class Child < ActiveRecord::Base
   extend Enumerize
 
-  attr_accessor :birth_year, :birth_month, :relative_numbers_string
+  attr_accessor :birth_year, :birth_month, :relative_numbers_string, :delete_video
 
   attr_accessible :sex, :name, :hair_color, :eyes_color, :living_arrangement, :birth_year,
-    :birth_month, :number, :relative_numbers, :relative_numbers_string, :photo
+    :birth_month, :number, :relative_numbers, :relative_numbers_string, :photo, :video, :delete_video
 
   validates_uniqueness_of :number
 
@@ -18,6 +18,20 @@ class Child < ActiveRecord::Base
                     :storage => :elvfs,
                     :elvfs_url => Settings['storage.url'],
                     :restricted_characters => /^.*(?=\.\w+$)/  # look ahead file extension
+
+  has_attached_file :video,
+                    :storage => :elvfs,
+                    :elvfs_url => Settings['storage.url']
+
+  validates_attachment_content_type :video, :content_type => /\Avideo.*flv\z/,
+    :message => 'Видео имеет неверный формат. Допускается только формат .flv'
+
+  before_update do
+    if delete_video == 'true'
+      video.destroy
+      video.clear
+    end
+  end
 
   validate :check_image_dimension
 
@@ -186,5 +200,10 @@ end
 #  photo_file_size    :integer
 #  photo_updated_at   :datetime
 #  photo_url          :text
+#  video_file_name    :string(255)
+#  video_content_type :string(255)
+#  video_file_size    :integer
+#  video_updated_at   :datetime
+#  video_url          :text
 #
 
