@@ -4,7 +4,7 @@
     <h2><%= @child.name %> <span class='number'>(<%= @child.number %>)</span></h2>
     <div class='information'>
       <div class='image'>
-        <%= link_to child_path(:number => @child.number) do %>
+        <%= link_to @child.photo_url, :class => :colorbox do %>
           <%= image_tag @child.photo_url.gsub(/\/\d+-\d+\//, '/150-200!/'), :size => '150x200', :alt => @child.name %>
         <% end %>
       </div>
