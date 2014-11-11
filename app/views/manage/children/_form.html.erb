@@ -17,15 +17,17 @@
     <%= f.input :eyes_color %>
     <%= f.input :relative_numbers_string, :input_html => { :value => @child.relative_numbers.try(:join, ' ') }, :hint => 'Номера дел братьев и сестер, разделенные пробелами.' %>
     <%= f.input :photo %>
+    <% if @child.persisted? %>
+      <div class='photo_wrapper'>
+        <%= link_to @child.photo_url, :class => :colorbox do %>
+          <%= image_tag @child.photo_url.gsub(/\/\d+-\d+\//, '/200-250!n/'), :size => '200x250', :alt => @child.name %>
+        <% end %>
+      </div>
+    <% end %>
 
     <div class="submit">
       <%= f.submit 'Сохранить' %>
       <%= link_to "Отмена", smart_resource_url %>
     </div>
-  <% end %>
-</div>
-<div class="photo_wrapper">
-  <% if @child.persisted? %>
-    <%= image_tag @child.photo_url, :alt => @child.name, :title => @child.name %>
   <% end %>
 </div>

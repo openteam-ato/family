@@ -17,4 +17,5 @@
     'maxHeight': '90%'
     'title': ->
       $(this).attr('title') || $('img', $(this)).attr('alt')
+
   return
