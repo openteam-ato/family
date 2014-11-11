@@ -1,0 +1,14 @@
+<object id='videoplayer<%= child.id %>' width='512' height='285'>
+  <param name='bgcolor' value='#f7f7f7' />
+  <param name='allowFullScreen' value='true' />
+  <param name='allowScriptAccess' value='always' />
+  <param name='movie' value='<%= image_path('player.swf') %>' />
+  <param name='flashvars' value='comment=<%= child.name %>&amp;st=<%= image_path('style.txt') %>&amp;file=<%= child.video_url %>' />
+  <embed src='<%= image_path('player.swf') %>' name='videoplayer<%= child.id %>' type='application/x-shockwave-flash'
+    allowscriptaccess='always'
+    allowfullscreen='true'
+    flashvars='comment=<%= child.name %>&amp;st=<%= image_path('style.txt') %>&amp;file=<%= child.video_url %>'
+    bgcolor='#f7f7f7'
+    width='512'
+    height='285'></embed>
+</object>

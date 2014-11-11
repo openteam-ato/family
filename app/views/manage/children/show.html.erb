@@ -36,8 +36,11 @@
         <%= @child.living_arrangement.map(&:text).join(', ') %>
       </div>
       <% if @child.video_url? %>
-        <div>
-          <p><%= link_to @child.video_url, @child.video_url %></p>
+        <div class='video'>
+          <p><strong>Видео:</strong> <%= link_to @child.video_url, @child.video_url %></p>
+          <p>
+            <%= render :partial => 'uppod', :locals => { :child => @child } %>
+          </p>
         </div>
       <% end %>
     </div>
