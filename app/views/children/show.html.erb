@@ -21,6 +21,11 @@
         <div class="living_arrangement">
           <p><strong>Форма жизнеустройства ребёнка:</strong> <%= @child.living_arrangement.map(&:text).join(', ') %></p>
         </div>
+        <% if @child.video_url? %>
+          <div class='video'>
+            <%= render :partial => 'uppod', :locals => { :child => @child } %>
+          </div>
+        <% end %>
       </div>
     </div>
     <% %w[brothers sisters].each do |relative| %>
