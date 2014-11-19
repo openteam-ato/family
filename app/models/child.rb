@@ -46,7 +46,7 @@ class Child < ActiveRecord::Base
 
   searchable do
     integer :age
-    integer(:number_i) { number.to_i }
+    double(:number_i) { number.to_i }
     integer(:relative_count) { relatives.count }
 
     string :number
