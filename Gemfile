@@ -22,12 +22,13 @@ group :default do
   gem 'kaminari'
   gem 'openteam-commons'
   gem 'paperclip-elvfs'
-  gem 'rails',                  '~> 3.2.15'
+  gem 'progress_bar',           :require => false
   gem 'rack-utf8_sanitizer'
+  gem 'rails',                  '~> 3.2.15'
   gem 'recaptcha',              :require => 'recaptcha/rails'
   gem 'russian'
-  gem 'simple_form'
   gem 'simple-navigation'
+  gem 'simple_form'
   gem 'stop_ie'
   gem 'sunspot_rails',          '~> 2.0.0'
   gem 'uuid'
@@ -40,7 +41,6 @@ group :development do
   gem 'capistrano-unicorn',     '~> 0.1.10', :require => false
   gem 'hirb',                   :require => false
   gem 'openteam-capistrano'
-  gem 'progress_bar',           :require => false
   gem 'quiet_assets'
   gem 'sqlite3',                :require => false
   gem 'sunspot_solr',           '~> 2.0.0'
