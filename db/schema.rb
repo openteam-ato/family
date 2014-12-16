@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141216101614) do
+ActiveRecord::Schema.define(:version => 20141216102224) do
 
   create_table "children", :force => true do |t|
     t.string   "number"
@@ -114,6 +114,17 @@ ActiveRecord::Schema.define(:version => 20141216101614) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "social_forms", :force => true do |t|
+    t.string   "kind"
+    t.integer  "places_number"
+    t.integer  "free_places_number"
+    t.integer  "social_provider_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "social_forms", ["social_provider_id"], :name => "index_social_forms_on_social_provider_id"
 
   create_table "social_providers", :force => true do |t|
     t.text     "title"
