@@ -103,6 +103,11 @@ ru:
         photo: Фотография
         work: Рисунок
 
+      user:
+        email: E-mail
+        password: Пароль
+        password_confirmation: Пароль ещё раз
+
     errors:
       messages:
         invalid: имеет неверный формат
@@ -112,6 +117,11 @@ ru:
           attributes:
             name:
               invalid: разрешены только русские буквы
+
+        user:
+          attributes:
+            email:
+              not_found: Указанный адрес электронной почты не найден
 
   contest_votes:
     zero: "Нет проголосовавших"

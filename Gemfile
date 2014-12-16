@@ -12,6 +12,7 @@ group :default do
   gem 'attribute_normalizer'
   gem 'curb'
   gem 'delayed_job_active_record'
+  gem 'devise'
   gem 'el_vfs_client'
   gem 'enumerize'
   gem 'esp-commons'
@@ -40,6 +41,7 @@ group :development do
   gem 'brakeman',               :require => false
   gem 'capistrano-unicorn',     '~> 0.1.10', :require => false
   gem 'hirb',                   :require => false
+  gem 'letter_opener'
   gem 'openteam-capistrano'
   gem 'quiet_assets'
   gem 'sqlite3',                :require => false

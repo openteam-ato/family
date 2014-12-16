@@ -1,4 +1,9 @@
 app:
+  host:         localhost
+  port:         3000
+  secret:       SECRET
+
+devise:
   secret:       SECRET
 
 errors:
