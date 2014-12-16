@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141216094857) do
+ActiveRecord::Schema.define(:version => 20141216101614) do
 
   create_table "children", :force => true do |t|
     t.string   "number"
@@ -91,6 +91,20 @@ ActiveRecord::Schema.define(:version => 20141216094857) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "licenses", :force => true do |t|
+    t.string   "seria"
+    t.string   "number"
+    t.text     "activity_kind"
+    t.text     "issuing_organization"
+    t.date     "issue_date"
+    t.date     "expiration_date"
+    t.integer  "social_provider_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "licenses", ["social_provider_id"], :name => "index_licenses_on_social_provider_id"
 
   create_table "requests", :force => true do |t|
     t.string   "name"
