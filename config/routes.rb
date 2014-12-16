@@ -22,7 +22,11 @@ Family::Application.routes.draw do
 
   get 'ru/dream-picture' => 'contest_works#index'
 
-  get '/ru/reestr-postavschikov-sotsialnyh-uslug' => 'register_providers#index', :as => :register_providers
+  resources :social_providers, :only => [:index, :show], :path => '/ru/reestr-postavschikov-sotsialnyh-uslug'
+
+  namespace :my do
+    resources :social_providers
+  end
 
   resources :contest_works, :only => [:index] do
     resources :contest_votes, :only => [:create]

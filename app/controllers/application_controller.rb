@@ -71,6 +71,8 @@ class ApplicationController < ActionController::Base
 
       request_path = request_path.gsub(/\A(.*)\z/, "/ru\\1") if request_path.match(/\A\/users.*/) # routes for devise
 
+      request_path = '/ru/my' if request_path.match(/\A\/my.*/) # routes for my register providers
+
       "#{cms_address}#{request_path.gsub('//', '/').split('/').compact.join('/')}.json?#{parts_params}"
     end
 
