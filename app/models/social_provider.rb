@@ -11,4 +11,12 @@ class SocialProvider < ActiveRecord::Base
   has_many :social_services, :dependent => :destroy
 
   accepts_nested_attributes_for :phones, :emails, :licenses, :social_forms, :social_services, :allow_destroy => true
+
+  def places_full_number
+    self.social_forms.map(&:places_number).compact.sum
+  end
+
+  def free_places_full_number
+    self.social_forms.map(&:free_places_number).compact.sum
+  end
 end

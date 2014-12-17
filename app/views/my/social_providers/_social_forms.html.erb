@@ -1,0 +1,19 @@
+<h2>Формы социального обслуживания</h2>
+<table>
+  <thead>
+    <tr>
+      <td>Форма обслуживаня</td>
+      <td>Общее количество мест</td>
+      <td>Свободное количество мест</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @social_provider.social_forms.each do |form| %>
+      <tr>
+        <td><%= form.kind_text %></td>
+        <td><%= form.places_number %></td>
+        <td><%= form.free_places_number %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

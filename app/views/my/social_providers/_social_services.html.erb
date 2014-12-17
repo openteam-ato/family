@@ -1,0 +1,19 @@
+<h2>Социальные услуги</h2>
+<table>
+  <thead>
+    <tr>
+      <td>Вид социальной услуги</td>
+      <td>Название</td>
+      <td>Стоимость</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @social_provider.social_services.each do |service| %>
+      <tr>
+        <td><%= service.kind_text %></td>
+        <td><%= service.title %></td>
+        <td><%= service.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

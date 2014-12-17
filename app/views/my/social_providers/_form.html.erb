@@ -13,22 +13,27 @@
     <%= f.link_to_add 'Добавить адрес электронной почты', :emails %>
   </div>
   <%= f.input :chief_fio %>
-  <div>
-    <%= f.simple_fields_for :licenses %>
-    <%= f.link_to_add 'Добавить информацию о лицензии', :licenses %>
-  </div>
-  <div>
-    <%= f.simple_fields_for :social_forms %>
-    <%= f.link_to_add 'Добавить форму социального обслуживания', :social_forms %>
-  </div>
-  <div>
-    <%= f.simple_fields_for :social_services %>
-    <%= f.link_to_add 'Добавить социальную услугу', :social_services %>
-  </div>
   <%= f.input :terms_of_service %>
   <%= f.input :audits %>
   <%= f.input :work_experience %>
   <%= f.input :additional_info %>
+
+  <div>
+    <h2>Информация о лицензиях</h2>
+    <%= f.simple_fields_for :licenses %>
+    <%= f.link_to_add 'Добавить информацию о лицензии', :licenses %>
+  </div>
+  <div>
+    <h2>Формы социального обслуживания</h2>
+    <%= f.simple_fields_for :social_forms %>
+    <%= f.link_to_add 'Добавить форму социального обслуживания', :social_forms %>
+  </div>
+  <div>
+    <h2>Социальные услуги</h2>
+    <%= f.simple_fields_for :social_services %>
+    <%= f.link_to_add 'Добавить социальную услугу', :social_services %>
+  </div>
+
   <%= f.submit 'Сохранить', :class => 'button' %>
 <% end %>
 <%= link_to 'Отмена', my_social_providers_path, :class => 'button' %>
