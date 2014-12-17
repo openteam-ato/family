@@ -21,6 +21,7 @@ group :default do
   gem 'inherited_resources'
   gem 'jquery-rails',           '2.1.4'
   gem 'kaminari'
+  gem 'nested_form'
   gem 'openteam-commons'
   gem 'paperclip-elvfs'
   gem 'progress_bar',           :require => false
