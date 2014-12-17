@@ -1,6 +1,5 @@
 class SocialProvidersController < MainController
+  inherit_resources
 
-  def index
-  end
-
+  actions :index, :show
 end

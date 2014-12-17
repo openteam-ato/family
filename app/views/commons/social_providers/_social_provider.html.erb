@@ -1,0 +1,5 @@
+<li>
+  <%= link_to social_provider.short_title, my_social_provider_path(social_provider) %>
+  <%= link_to "редактировать", edit_my_social_provider_path(social_provider) %>
+  <%= link_to "удалить", my_social_provider_path(social_provider), :method => :delete %>
+</li>

@@ -11,7 +11,7 @@
       Вы вошли как:
       <%= current_user.email %>
       |
-      <%= link_to 'Анкета поставщика социальных услуг' %>
+      <%= link_to 'Анкета поставщика социальных услуг', my_social_providers_path %>
       |
       <%= link_to 'Выход', destroy_user_session_path, :method => :delete %>
     <% else %>
@@ -21,6 +21,13 @@
       |
       <%= link_to 'Забыли пароль?', new_user_password_path %>
     <% end %>
+
+    <div class="social_providers list">
+      <ul>
+        <%= render @social_providers %>
+      </ul>
+    </div>
+
     <%= render_partial_for_region(@content_second) if @content_second %>
     <%= render_partial_for_region(@content_third)  if @content_third %>
     <%= render :partial => 'regions/reports_part', :locals => { :reports => @reports } if @reports %>
