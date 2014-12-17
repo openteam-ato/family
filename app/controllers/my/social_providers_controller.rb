@@ -1,4 +1,3 @@
 class My::SocialProvidersController < ApplicationController
-  def index
-  end
+  inherit_resources
 end
