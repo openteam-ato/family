@@ -1,0 +1,34 @@
+<%= simple_nested_form_for [:my, resource] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :short_title %>
+  <%= f.input :register_date %>
+  <%= f.input :incorporation_form %>
+  <%= f.input :address %>
+  <div>
+    <%= f.simple_fields_for :phones %>
+    <%= f.link_to_add 'Добавить телефон', :phones %>
+  </div>
+  <div>
+    <%= f.simple_fields_for :emails %>
+    <%= f.link_to_add 'Добавить адрес электронной почты', :emails %>
+  </div>
+  <%= f.input :chief_fio %>
+  <div>
+    <%= f.simple_fields_for :licenses %>
+    <%= f.link_to_add 'Добавить информацию о лицензии', :licenses %>
+  </div>
+  <div>
+    <%= f.simple_fields_for :social_forms %>
+    <%= f.link_to_add 'Добавить форму социального обслуживания', :social_forms %>
+  </div>
+  <div>
+    <%= f.simple_fields_for :social_services %>
+    <%= f.link_to_add 'Добавить социальную услугу', :social_services %>
+  </div>
+  <%= f.input :terms_of_service %>
+  <%= f.input :audits %>
+  <%= f.input :work_experience %>
+  <%= f.input :additional_info %>
+  <%= f.submit 'Сохранить', :class => 'button' %>
+<% end %>
+<%= link_to 'Отмена', my_social_providers_path, :class => 'button' %>

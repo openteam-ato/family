@@ -103,6 +103,43 @@ ru:
         photo: Фотография
         work: Рисунок
 
+      social_provider:
+        title: Полное наименование поставщика
+        short_title: Сокращенное наименование
+        register_date: Дата государственной регистрации
+        incorporation_form: Организационно-правовая форма
+        address: Адреса местонахождения
+        chief_fio: Фамилия, имя, отчество руководителя
+        terms_of_service: Условия предоставления социальных услуг
+        audits: Проверки и их результаты
+        work_experience: Опыт работы за последние 5 лет
+        additional_info: Иная информация, определенная Правительсвом РФ
+
+      email:
+        value: Адрес электронной почты
+
+      phone:
+        kind:  Тип
+        value: Номер
+
+      license:
+        seria:  Серия
+        number: Номер
+        activity_kind: Вид деятельности
+        issuing_organization: Выдавшая организация
+        issue_date: Дата выдачи
+        expiration_date: Срок действия
+
+      social_form:
+        kind: Форма обслуживания
+        places_number: Общее количество мест
+        free_places_number: Количество свободных мест
+
+      social_service:
+        kind: Вид социальной услуги
+        title: Название
+        price: Стоимость
+
       user:
         email: E-mail
         password: Пароль
@@ -156,6 +193,29 @@ ru:
       living_arrangement:
         adoption: усыновление
         custody: опека
+
+    phone:
+      kind:
+        personal: Персональный
+        work: Личный
+        fax: Факс
+
+    social_form:
+      kind:
+        home: Обслуживание на дому
+        stationary: Стационарная форма
+        semi_stationary: Полустационарная форма
+
+    social_service:
+      kind:
+        common: Социально-бытовые
+        medical: Социально-медицинские
+        psychological: Социально-психологические
+        pedagogical: Социально-медицинские
+        labor: Социально-трудовые
+        legal: Социально-правовые
+        communicative: В целях повышения коммуникативного потенциала получателей
+        urgent: срочные социальные услуги
 
   recaptcha:
     errors:
