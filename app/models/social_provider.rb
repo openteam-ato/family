@@ -4,6 +4,8 @@ class SocialProvider < ActiveRecord::Base
                   :phones_attributes, :emails_attributes, :licenses_attributes,
                   :social_forms_attributes, :social_services_attributes
 
+  belongs_to :user
+
   has_many :phones,          :dependent => :destroy
   has_many :emails,          :dependent => :destroy
   has_many :licenses,        :dependent => :destroy
