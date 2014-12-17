@@ -4,17 +4,22 @@
 
   <div class="article">
     <%= render_partial_for_region(@content_first)  if @content_first %>
+
+    <%= render :partial => 'flash', :locals => { :flash => flash } %>
+
     <% if current_user %>
       Вы вошли как:
       <%= current_user.email %>
       |
-      <%= link_to 'анкета поставщика социальных услуг' %>
+      <%= link_to 'Анкета поставщика социальных услуг' %>
       |
-      <%= link_to 'выход', destroy_user_session_path, :method => :delete %>
+      <%= link_to 'Выход', destroy_user_session_path, :method => :delete %>
     <% else %>
-      <%= link_to 'вход', new_user_session_path %>
+      <%= link_to 'Вход в систему', new_user_session_path %>
       |
-      <%= link_to 'регистрация', new_user_registration_path %>
+      <%= link_to 'Регистрация', new_user_registration_path %>
+      |
+      <%= link_to 'Забыли пароль?', new_user_password_path %>
     <% end %>
     <%= render_partial_for_region(@content_second) if @content_second %>
     <%= render_partial_for_region(@content_third)  if @content_third %>

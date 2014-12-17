@@ -1,13 +1,16 @@
 <% content_for :content do %>
   <h1>Забыли пароль?</h1>
 
-  <%= render :partial => 'flash' %>
+  <%= render :partial => 'flash', :locals => { :flash => flash } %>
 
   <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= f.error_notification %>
+
     <%= f.input :email, required: true, autofocus: true %>
 
-    <%= f.button :submit, 'Отправить мне унструкцию по сбросу пароля' %>
+    <div class='actions'>
+      <%= f.button :submit, 'Отправить инструкцию' %>
+    </div>
   <% end %>
 
   <%= render 'users/shared/links' %>

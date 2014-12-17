@@ -107,6 +107,7 @@ ru:
         email: E-mail
         password: Пароль
         password_confirmation: Пароль ещё раз
+        remember_me: Запомнить меня
 
     errors:
       messages:

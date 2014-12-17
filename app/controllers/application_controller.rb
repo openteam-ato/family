@@ -17,18 +17,6 @@ class ApplicationController < ActionController::Base
   alias_method :new, :show
   alias_method :create, :show
 
-  def after_sign_up_path_for(resource)
-    '/ru/reestr-postavschikov-sotsialnyh-uslug' || root_path
-  end
-
-  def after_sign_in_path_for(resource)
-    '/ru/reestr-postavschikov-sotsialnyh-uslug' || root_path
-  end
-
-  def after_sign_out_path_for(resource)
-    '/ru/reestr-postavschikov-sotsialnyh-uslug' || root_path
-  end
-
   private
 
     def prepare_cms

@@ -2,7 +2,8 @@ Family::Application.routes.draw do
   devise_for :users, controllers: {
     sessions:       'users/sessions',
     registrations:  'users/registrations',
-    passwords:      'users/passwords'
+    passwords:      'users/passwords',
+    confirmations:  'users/confirmations'
   }
 
   mount ElVfsClient::Engine => '/'

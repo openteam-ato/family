@@ -1,16 +1,18 @@
-<h2>Resend confirmation instructions</h2>
+<% content_for :content do %>
+  <h1>Отправка инструкции для подтверждения учетной записи</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-  <%= f.full_error :confirmation_token %>
+  <%= render :partial => 'flash', :locals => { :flash => flash } %>
 
-  <div class="form-inputs">
+  <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= f.error_notification %>
+    <%= f.full_error :confirmation_token %>
+
     <%= f.input :email, required: true, autofocus: true %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Resend confirmation instructions" %>
-  </div>
+    <div class='actions'>
+      <%= f.button :submit, 'Отправить инструкцию' %>
+    </div>
+  <% end %>
+
+  <%= render "users/shared/links" %>
 <% end %>
-
-<%= render "users/shared/links" %>
