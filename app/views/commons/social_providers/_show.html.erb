@@ -28,6 +28,10 @@
         <td><%= @social_provider.address %></td>
       </tr>
       <tr>
+        <td>Сайт</td>
+        <td><%= @social_provider.site %></td>
+      </tr>
+      <tr>
         <td>Контактные телефоны</td>
         <td><%= @social_provider.phones.map(&:to_s).join(', ') %></td>
       </tr>
