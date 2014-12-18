@@ -2,7 +2,7 @@
   <%= link_to social_provider.short_title, my_social_provider_path(social_provider) %>
   <%= link_to "редактировать", edit_my_social_provider_path(social_provider) if policy(social_provider).edit? %>
   <% if social_provider.draft? %>
-    <%= link_to "Отправить на публикацию", pending_my_social_provider_path(social_provider), :method => :put if policy(social_provider).to_pending? %>
+    <%= link_to "Отправить на публикацию", pending_my_social_provider_path(social_provider), :method => :post if policy(social_provider).to_pending? %>
   <% elsif social_provider.pending? %>
     <span>(отправлено на модерацию)</span>
   <% else %>

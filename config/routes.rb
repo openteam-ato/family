@@ -27,7 +27,7 @@ Family::Application.routes.draw do
 
   namespace :my do
     resources :social_providers do
-      put 'pending', :on => :member
+      post 'pending', :on => :member
     end
   end
 
