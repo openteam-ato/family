@@ -13,6 +13,11 @@ Family::Application.routes.draw do
     get 'adult_children' => 'children#adult'
     root :to => 'children#index'
     resources :contest_works
+
+    resources :social_providers, :only => [:index, :show, :destroy] do
+      post 'publish', :on => :member
+      post 'draft',   :on => :member
+    end
   end
 
   get 'ru/children' => 'children#index', :as => :children

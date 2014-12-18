@@ -1,88 +1,86 @@
-<% content_for :content do %>
-  <h1><%= @social_provider.short_title %></h1>
+<h1><%= @social_provider.short_title %></h1>
 
-  <p><%= render :partial => 'links', :locals => { :social_provider => @social_provider } %></p>
+<p><%= render :partial => 'links', :locals => { :social_provider => @social_provider } %></p>
 
-  <div class='social_provider'>
-    <table>
-      <tbody>
-        <tr>
-          <td>Регистрационный номер</td>
-          <td><%= @social_provider.id.to_s %></td>
-        </tr>
-        <tr>
-          <td>Полное наименование поставщика</td>
-          <td><%= @social_provider.title %></td>
-        </tr>
-        <tr>
-          <td>Сокращенное наименование</td>
-          <td><%= @social_provider.short_title %></td>
-        </tr>
-        <tr>
-          <td>Дата государственной регистрации</td>
-          <td><%= I18n.l(@social_provider.register_date) %></td>
-        </tr>
-        <tr>
-          <td>Организационно-правовая форма</td>
-          <td><%= @social_provider.incorporation_form %></td>
-        </tr>
-        <tr>
-          <td>Фамилия, имя, отчество руководителя</td>
-          <td><%= @social_provider.chief_fio %></td>
-        </tr>
-        <tr>
-          <td>Адреса местонахождения</td>
-          <td><%= @social_provider.address %></td>
-        </tr>
-        <tr>
-          <td>Сайт</td>
-          <td><%= link_to @social_provider.site, @social_provider.site, :target => '_blank' %></td>
-        </tr>
-        <tr>
-          <td>Контактные телефоны</td>
-          <td><%= @social_provider.phones.map(&:to_s).join(', ') %></td>
-        </tr>
-        <tr>
-          <td>Адреса электронной почты</td>
-          <td><%= @social_provider.emails.map{ |email| mail_to email.to_s }.join(', ').html_safe %></td>
-        </tr>
-        <tr>
-          <td>Условия предоставления социальных услуг</td>
-          <td><%= simple_format @social_provider.terms_of_service %></td>
-        </tr>
-        <tr>
-          <td>Проверки и их результаты</td>
-          <td><%= simple_format @social_provider.audits %></td>
-        </tr>
-        <tr>
-          <td>Опыт работы за последние 5 лет</td>
-          <td><%= simple_format @social_provider.work_experience %></td>
-        </tr>
-        <tr>
-          <td>Иная информция, определенная Правительством РФ</td>
-          <td><%= simple_format @social_provider.additional_info %></td>
-        </tr>
-        <tr>
-          <td>Общее количество мест</td>
-          <td><%= @social_provider.places_full_number %></td>
-        </tr>
-        <tr>
-          <td>Общее количество свободных мест</td>
-          <td><%= @social_provider.free_places_full_number %></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class='social_provider'>
+  <table>
+    <tbody>
+      <tr>
+        <td>Регистрационный номер</td>
+        <td><%= @social_provider.id.to_s %></td>
+      </tr>
+      <tr>
+        <td>Полное наименование поставщика</td>
+        <td><%= @social_provider.title %></td>
+      </tr>
+      <tr>
+        <td>Сокращенное наименование</td>
+        <td><%= @social_provider.short_title %></td>
+      </tr>
+      <tr>
+        <td>Дата государственной регистрации</td>
+        <td><%= I18n.l(@social_provider.register_date) %></td>
+      </tr>
+      <tr>
+        <td>Организационно-правовая форма</td>
+        <td><%= @social_provider.incorporation_form %></td>
+      </tr>
+      <tr>
+        <td>Фамилия, имя, отчество руководителя</td>
+        <td><%= @social_provider.chief_fio %></td>
+      </tr>
+      <tr>
+        <td>Адреса местонахождения</td>
+        <td><%= @social_provider.address %></td>
+      </tr>
+      <tr>
+        <td>Сайт</td>
+        <td><%= link_to @social_provider.site, @social_provider.site, :target => '_blank' %></td>
+      </tr>
+      <tr>
+        <td>Контактные телефоны</td>
+        <td><%= @social_provider.phones.map(&:to_s).join(', ') %></td>
+      </tr>
+      <tr>
+        <td>Адреса электронной почты</td>
+        <td><%= @social_provider.emails.map{ |email| mail_to email.to_s }.join(', ').html_safe %></td>
+      </tr>
+      <tr>
+        <td>Условия предоставления социальных услуг</td>
+        <td><%= simple_format @social_provider.terms_of_service %></td>
+      </tr>
+      <tr>
+        <td>Проверки и их результаты</td>
+        <td><%= simple_format @social_provider.audits %></td>
+      </tr>
+      <tr>
+        <td>Опыт работы за последние 5 лет</td>
+        <td><%= simple_format @social_provider.work_experience %></td>
+      </tr>
+      <tr>
+        <td>Иная информция, определенная Правительством РФ</td>
+        <td><%= simple_format @social_provider.additional_info %></td>
+      </tr>
+      <tr>
+        <td>Общее количество мест</td>
+        <td><%= @social_provider.places_full_number %></td>
+      </tr>
+      <tr>
+        <td>Общее количество свободных мест</td>
+        <td><%= @social_provider.free_places_full_number %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-  <div class="licenses">
-    <%= render :partial => 'commons/social_providers/licenses' %>
-  </div>
+<div class="licenses">
+  <%= render :partial => 'commons/social_providers/licenses' %>
+</div>
 
-  <div class="social_forms">
-    <%= render :partial => 'commons/social_providers/social_forms' %>
-  </div>
+<div class="social_forms">
+  <%= render :partial => 'commons/social_providers/social_forms' %>
+</div>
 
-  <div class="social_services">
-    <%= render :partial => 'commons/social_providers/social_services' %>
-  </div>
-<% end %>
+<div class="social_services">
+  <%= render :partial => 'commons/social_providers/social_services' %>
+</div>
