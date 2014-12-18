@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141218051643) do
+ActiveRecord::Schema.define(:version => 20141218060038) do
 
   create_table "children", :force => true do |t|
     t.string   "number"
@@ -141,6 +141,7 @@ ActiveRecord::Schema.define(:version => 20141218051643) do
     t.datetime "updated_at",         :null => false
     t.integer  "user_id"
     t.string   "site"
+    t.string   "state"
   end
 
   create_table "social_services", :force => true do |t|
