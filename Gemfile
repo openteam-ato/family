@@ -10,8 +10,8 @@ end
 
 group :default do
   gem 'attribute_normalizer'
-  gem 'pundit'
   gem 'curb'
+  gem 'default_value_for'
   gem 'delayed_job_active_record'
   gem 'devise'
   gem 'el_vfs_client'
@@ -26,6 +26,7 @@ group :default do
   gem 'openteam-commons'
   gem 'paperclip-elvfs'
   gem 'progress_bar',           :require => false
+  gem 'pundit'
   gem 'rack-utf8_sanitizer'
   gem 'rails',                  '~> 3.2.15'
   gem 'recaptcha',              :require => 'recaptcha/rails'

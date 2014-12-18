@@ -24,6 +24,9 @@
     border-bottom: none
 
   div.string,
+  div.select,
+  div.integer,
+  div.datepicker,
   div.email,
   div.password,
   div.text
@@ -33,8 +36,17 @@
       display: block
       margin-bottom: 5px
 
+  div.datepicker
+    input
+      width: 150px
+
   div.boolean
     margin: 10px 0
+
+  div.select
+    select
+      background-color: #fff
+      padding: 1px 0
 
   div.text
     textarea
@@ -63,3 +75,119 @@
     border-bottom: 1px solid #ccc
     margin-bottom: 10px
     padding-bottom: 10px
+
+  .phones
+    .fields
+      .input
+        +inline-block
+
+      .social_provider_phones_kind
+        margin-right: 5px
+
+      .social_provider_phones_value
+        margin-right: 5px
+
+        input
+          width: 150px
+
+      .remove_nested_fields
+        +inline-block
+        margin-top: 20px
+
+  .emails
+    .fields
+      .input
+        +inline-block
+
+      .social_provider_emails_value
+        margin-right: 5px
+
+        input
+          width: 245px
+
+      .remove_nested_fields
+        +inline-block
+        margin-top: 20px
+
+  .licenses
+    .fields
+      +clearfix
+
+    .social_provider_licenses_seria
+      float: left
+      margin-right: 10px
+
+      input
+        width: 100px
+
+    .social_provider_licenses_number
+      float: left
+      margin-right: 10px
+
+      input
+        width: 100px
+
+    .social_provider_licenses_issue_date
+      float: left
+      margin-right: 10px
+
+      input
+        width: 145px
+
+    .social_provider_licenses_expiration_date
+      float: left
+      margin-right: 10px
+
+      input
+        width: 145px
+
+    .remove_nested_fields
+      float: left
+      margin-top: 33px
+
+    .social_provider_licenses_activity_kind
+      clear: left
+      float: left
+      margin-right: 10px
+
+    .social_provider_licenses_issuing_organization
+      float: left
+
+    .social_provider_licenses_activity_kind,
+    .social_provider_licenses_issuing_organization
+      textarea
+        width: 538px
+
+  .social_forms
+    .input
+      +inline-block
+      margin-right: 5px
+
+    .remove_nested_fields
+      +inline-block
+      margin-top: 20px
+
+  .social_services
+    .fields
+      +clearfix
+
+    .input
+      float: left
+      margin-right: 10px
+
+    .social_provider_social_services_kind
+      select
+        width: 220px
+
+    .social_provider_social_services_title
+      textarea
+        width: 600px
+        height: 50px
+
+    .social_provider_social_services_price
+      input
+        width: 100px
+
+    .remove_nested_fields
+      float: left
+      margin-top: 33px

@@ -1,3 +1,6 @@
 @init_datepicker = () ->
-  $('input.datepicker').datepicker()
-  true
+  $('input.datepicker').datepicker
+    changeMonth: true
+    changeYear: true
+
+  return

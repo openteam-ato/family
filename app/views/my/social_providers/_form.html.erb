@@ -1,7 +1,7 @@
 <%= simple_nested_form_for [:my, @social_provider] do |f| %>
   <%= f.input :title %>
   <%= f.input :short_title %>
-  <%= f.input :register_date %>
+  <%= f.input :register_date, :as => :datepicker %>
   <%= f.input :incorporation_form %>
   <%= f.input :chief_fio %>
   <%= f.input :address %>
@@ -36,7 +36,7 @@
     <%= f.link_to_add 'Добавить форму социального обслуживания', :social_forms %>
   </fieldset>
 
-  <fieldset>
+  <fieldset class='social_services'>
     <legend>Социальные услуги</legend>
     <%= f.simple_fields_for :social_services %>
     <%= f.link_to_add 'Добавить социальную услугу', :social_services %>

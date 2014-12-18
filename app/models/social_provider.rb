@@ -6,11 +6,11 @@ class SocialProvider < ActiveRecord::Base
 
   belongs_to :user
 
-  has_many :phones,          :dependent => :destroy
-  has_many :emails,          :dependent => :destroy
-  has_many :licenses,        :dependent => :destroy
-  has_many :social_forms,    :dependent => :destroy
-  has_many :social_services, :dependent => :destroy
+  has_many :phones,          :order => 'created_at', :dependent => :destroy
+  has_many :emails,          :order => 'created_at', :dependent => :destroy
+  has_many :licenses,        :order => 'created_at', :dependent => :destroy
+  has_many :social_forms,    :order => 'created_at', :dependent => :destroy
+  has_many :social_services, :order => 'created_at', :dependent => :destroy
 
   accepts_nested_attributes_for :phones, :emails, :licenses, :social_forms, :social_services, :allow_destroy => true
 

@@ -5,10 +5,10 @@
       <tr>
         <th>Серия</th>
         <th>Номер</th>
-        <th>Вид деятельности</th>
-        <th>Выдавшая организация</th>
         <th>Дата выдачи</th>
         <th>Срок действия</th>
+        <th>Вид деятельности</th>
+        <th>Выдавшая организация</th>
       </tr>
     </thead>
     <tbody>
@@ -16,10 +16,10 @@
         <tr>
           <td><%= license.seria %></td>
           <td><%= license.number %></td>
-          <td><%= license.activity_kind %></td>
-          <td><%= license.issuing_organization %></td>
           <td><%= I18n.l(license.issue_date) %></td>
           <td><%= I18n.l(license.expiration_date) %></td>
+          <td><%= license.activity_kind %></td>
+          <td><%= license.issuing_organization %></td>
         </tr>
       <% end %>
     </tbody>
