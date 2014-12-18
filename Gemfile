@@ -10,6 +10,7 @@ end
 
 group :default do
   gem 'attribute_normalizer'
+  gem 'pundit'
   gem 'curb'
   gem 'delayed_job_active_record'
   gem 'devise'
