@@ -13,13 +13,19 @@
 
 .simple_form
 
+  fieldset
+    border: 1px solid #ccc
+    margin: 10px 0
+    padding: 10px 10px 15px
+
   label abbr
     cursor: help
     color: #880000
     border-bottom: none
 
   div.email,
-  div.password
+  div.password,
+  div.text
     margin: 10px 0
 
     label
@@ -28,6 +34,11 @@
 
   div.boolean
     margin: 10px 0
+
+  div.text
+    textarea
+      width: 1115px
+      height: 100px
 
   div.error
     color: #d9534f
@@ -41,3 +52,10 @@
 
   div.actions
     margin: 10px 0
+
+  // nested forms
+
+  .fields
+    border-bottom: 1px solid #ccc
+    margin-bottom: 10px
+    padding-bottom: 10px

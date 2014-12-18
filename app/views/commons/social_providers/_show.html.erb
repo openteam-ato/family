@@ -24,6 +24,10 @@
         <td><%= @social_provider.incorporation_form %></td>
       </tr>
       <tr>
+        <td>Фамилия, имя, отчество руководителя</td>
+        <td><%= @social_provider.chief_fio %></td>
+      </tr>
+      <tr>
         <td>Адреса местонахождения</td>
         <td><%= @social_provider.address %></td>
       </tr>
@@ -37,27 +41,23 @@
       </tr>
       <tr>
         <td>Адреса электронной почты</td>
-        <td><%= @social_provider.emails.map(&:to_s).join(', ') %></td>
-      </tr>
-      <tr>
-        <td>Фамилия, имя, отчество руководителя</td>
-        <td><%= @social_provider.chief_fio %></td>
+        <td><%= @social_provider.emails.map{ |email| mail_to email.to_s }.join(', ').html_safe %></td>
       </tr>
       <tr>
         <td>Условия предоставления социальных услуг</td>
-        <td><%= @social_provider.terms_of_service %></td>
+        <td><%= simple_format @social_provider.terms_of_service %></td>
       </tr>
       <tr>
         <td>Проверки и их результаты</td>
-        <td><%= @social_provider.audits %></td>
+        <td><%= simple_format @social_provider.audits %></td>
       </tr>
       <tr>
         <td>Опыт работы за последние 5 лет</td>
-        <td><%= @social_provider.work_experience %></td>
+        <td><%= simple_format @social_provider.work_experience %></td>
       </tr>
       <tr>
         <td>Иная информция, определенная Правительством РФ</td>
-        <td><%= @social_provider.additional_info %></td>
+        <td><%= simple_format @social_provider.additional_info %></td>
       </tr>
       <tr>
         <td>Общее количество мест</td>

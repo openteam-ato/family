@@ -1,19 +1,23 @@
 <h2>Социальные услуги</h2>
-<table>
-  <thead>
-    <tr>
-      <td>Вид социальной услуги</td>
-      <td>Название</td>
-      <td>Стоимость</td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @social_provider.social_services.each do |service| %>
+<% if @social_provider.social_services.any? %>
+  <table>
+    <thead>
       <tr>
-        <td><%= service.kind_text %></td>
-        <td><%= service.title %></td>
-        <td><%= service.price %></td>
+        <th>Вид социальной услуги</th>
+        <th>Название</th>
+        <th>Стоимость</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @social_provider.social_services.each do |service| %>
+        <tr>
+          <td><%= service.kind_text %></td>
+          <td><%= service.title %></td>
+          <td><%= service.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Нет информации</p>
+<% end %>

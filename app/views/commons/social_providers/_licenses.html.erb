@@ -1,25 +1,29 @@
 <h2>Информация о лицензиях</h2>
-<table>
-  <thead>
-    <tr>
-      <td>Серия</td>
-      <td>Номер</td>
-      <td>Вид деятельности</td>
-      <td>Выдавшая организация</td>
-      <td>Дата выдачи</td>
-      <td>Срок действия</td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @social_provider.licenses.each do |license| %>
+<% if @social_provider.licenses.any? %>
+  <table>
+    <thead>
       <tr>
-        <td><%= license.seria %></td>
-        <td><%= license.number %></td>
-        <td><%= license.activity_kind %></td>
-        <td><%= license.issuing_organization %></td>
-        <td><%= I18n.l(license.issue_date) %></td>
-        <td><%= I18n.l(license.expiration_date) %></td>
+        <th>Серия</th>
+        <th>Номер</th>
+        <th>Вид деятельности</th>
+        <th>Выдавшая организация</th>
+        <th>Дата выдачи</th>
+        <th>Срок действия</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @social_provider.licenses.each do |license| %>
+        <tr>
+          <td><%= license.seria %></td>
+          <td><%= license.number %></td>
+          <td><%= license.activity_kind %></td>
+          <td><%= license.issuing_organization %></td>
+          <td><%= I18n.l(license.issue_date) %></td>
+          <td><%= I18n.l(license.expiration_date) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Нет информации</p>
+<% end %>

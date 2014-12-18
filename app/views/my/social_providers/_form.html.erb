@@ -3,38 +3,47 @@
   <%= f.input :short_title %>
   <%= f.input :register_date %>
   <%= f.input :incorporation_form %>
+  <%= f.input :chief_fio %>
   <%= f.input :address %>
   <%= f.input :site %>
-  <div>
+
+  <fieldset class='phones'>
+    <legend>Телефоны</legend>
     <%= f.simple_fields_for :phones %>
     <%= f.link_to_add 'Добавить телефон', :phones %>
-  </div>
-  <div>
+  </fieldset>
+
+  <fieldset class='emails'>
+    <legend>Адреса электронной почты</legend>
     <%= f.simple_fields_for :emails %>
     <%= f.link_to_add 'Добавить адрес электронной почты', :emails %>
-  </div>
-  <%= f.input :chief_fio %>
+  </fieldset>
+
   <%= f.input :terms_of_service %>
   <%= f.input :audits %>
   <%= f.input :work_experience %>
   <%= f.input :additional_info %>
 
-  <div>
-    <h2>Информация о лицензиях</h2>
+  <fieldset class='licenses'>
+    <legend>Информация о лицензиях</legend>
     <%= f.simple_fields_for :licenses %>
     <%= f.link_to_add 'Добавить информацию о лицензии', :licenses %>
-  </div>
-  <div>
-    <h2>Формы социального обслуживания</h2>
+  </fieldset>
+
+  <fieldset class='social_forms'>
+    <legend>Формы социального обслуживания</legend>
     <%= f.simple_fields_for :social_forms %>
     <%= f.link_to_add 'Добавить форму социального обслуживания', :social_forms %>
-  </div>
-  <div>
-    <h2>Социальные услуги</h2>
+  </fieldset>
+
+  <fieldset>
+    <legend>Социальные услуги</legend>
     <%= f.simple_fields_for :social_services %>
     <%= f.link_to_add 'Добавить социальную услугу', :social_services %>
-  </div>
+  </fieldset>
 
-  <%= f.submit 'Сохранить', :class => 'button' %>
+  <div class='actions'>
+    <%= f.submit 'Сохранить', :class => 'button' %>
+    <%= link_to 'Отмена', my_social_providers_path, :class => 'button' %>
+  </div>
 <% end %>
-<%= link_to 'Отмена', my_social_providers_path, :class => 'button' %>
