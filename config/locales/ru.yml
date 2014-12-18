@@ -197,8 +197,7 @@ ru:
 
     phone:
       kind:
-        personal: Персональный
-        work: Личный
+        phone: Телефон
         fax: Факс
 
     social_form:
