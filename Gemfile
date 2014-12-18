@@ -32,6 +32,7 @@ group :default do
   gem 'russian'
   gem 'simple-navigation'
   gem 'simple_form'
+  gem 'state_machine'
   gem 'stop_ie'
   gem 'sunspot_rails',          '~> 2.0.0'
   gem 'uuid'
