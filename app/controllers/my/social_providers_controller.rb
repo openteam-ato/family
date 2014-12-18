@@ -31,12 +31,12 @@ class My::SocialProvidersController < ApplicationController
 
   def edit
     @social_provider = SocialProvider.find(params[:id])
-    authorize @social_provider, :manage?
+    authorize @social_provider
   end
 
   def update
     @social_provider = SocialProvider.find(params[:id])
-    authorize @social_provider, :manage?
+    authorize @social_provider, :edit?
     if @social_provider.update_attributes(params[:social_provider])
       redirect_to my_social_provider_path(@social_provider)
     else
@@ -46,9 +46,17 @@ class My::SocialProvidersController < ApplicationController
 
   def destroy
     @social_provider = SocialProvider.find(params[:id])
-    authorize @social_provider, :manage?
+    authorize @social_provider
 
     @social_provider.destroy
+    redirect_to my_social_providers_path
+  end
+
+  def pending
+    @social_provider = SocialProvider.find(params[:id])
+    authorize @social_provider, :to_pending?
+
+    @social_provider.pending!
     redirect_to my_social_providers_path
   end
 

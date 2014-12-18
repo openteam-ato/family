@@ -14,7 +14,21 @@ class SocialProvider < ActiveRecord::Base
 
   accepts_nested_attributes_for :phones, :emails, :licenses, :social_forms, :social_services, :allow_destroy => true
 
-  validates_presence_of :title, :short_title, :register_date, :address, :chief_fio
+  #validates_presence_of :title, :short_title, :register_date, :address, :chief_fio
+
+  state_machine :initial => :draft do
+    event :pending do
+      transition :draft => :pending
+    end
+
+    event :publish do
+      transition :pending => :published
+    end
+
+    event :draft do
+      transition [:pending, :published] => :draft
+    end
+  end
 
   def places_full_number
     self.social_forms.map(&:places_number).compact.sum

@@ -26,7 +26,9 @@ Family::Application.routes.draw do
   resources :social_providers, :only => [:index, :show], :path => '/ru/reestr-postavschikov-sotsialnyh-uslug'
 
   namespace :my do
-    resources :social_providers
+    resources :social_providers do
+      put 'pending', :on => :member
+    end
   end
 
   resources :contest_works, :only => [:index] do

@@ -12,4 +12,16 @@ class SocialProviderPolicy < Struct.new(:user, :social_provider)
   def index?
     user.present?
   end
+
+  def to_pending?
+    manage? && social_provider.draft?
+  end
+
+  def edit?
+    manage? && (social_provider.draft? || social_provider.published?)
+  end
+
+  def destroy?
+    manage? && social_provider.draft?
+  end
 end
