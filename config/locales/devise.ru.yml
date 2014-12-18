@@ -1,4 +1,5 @@
-# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+# Русский перевод для https://github.com/plataformatec/devise/blob/6b0d11ed7a457ef1a338718e2e1819aeb25e943d/config/locales/en.yml (3.4.0)
+# Другие переводы на http://github.com/plataformatec/devise/wiki/I18n
 
 ru:
   devise:
@@ -10,57 +11,59 @@ ru:
       other: "минимум %{count} символа"
     confirmations:
       confirmed: "Ваш адрес электронной почты успешно подтвержден."
-      send_instructions: "На указанный адрес электронной почты отправлено письмо с инструкцией подтверждения учетной записи."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      send_instructions: "В течение нескольких минут Вы получите письмо с инструкциями по подтверждению Вашего адреса электронной почты."
+      send_paranoid_instructions: "Если Ваш адрес email есть в нашей базе данных, то в течение нескольких минут Вы получите письмо с инструкциями по подтверждению Вашего адреса электронной почты."
     failure:
-      already_authenticated: "Вы уже авторизовались."
-      inactive: "Your account is not activated yet."
-      invalid: "Неверный адрес электронной почты или пароль."
-      locked: "Ваша учетная запись заблокирована."
-      last_attempt: "You have one more attempt before your account is locked."
-      not_found_in_database: "Неверный адрес электронной почты или пароль."
-      timeout: "Ваша сессия закончилась, авторизуйтесь заново."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "Учетная запись ещё не подтверждена. На указанный адрес электронной почты было выслано письмо со ссылкой для подтверждения."
+      already_authenticated: "Вы уже вошли в систему."
+      inactive: "Ваша учётная запись ещё не активирована."
+      invalid: "Неверные %{authentication_keys} или пароль."
+      locked: "Ваша учётная запись заблокирована."
+      last_attempt: "У Вас осталась еще одна попытка ввести пароль до блокировки."
+      not_found_in_database: "Неверный %{authentication_keys} или пароль."
+      timeout: "Ваш сеанс закончился. Пожалуйста, войдите в систему снова."
+      unauthenticated: "Вам необходимо войти в систему или зарегистрироваться."
+      unconfirmed: "Вы должны подтвердить Ваш адрес электронной почты."
     mailer:
       confirmation_instructions:
-        subject: "Подтверждение учетной записи"
+        subject: "Инструкции по подтверждению учётной записи"
       reset_password_instructions:
-        subject: "Сброс пароля"
+        subject: "Инструкции по восстановлению пароля"
       unlock_instructions:
-        subject: "Разблокировка учетной записи"
+        subject: "Инструкции по разблокировке учётной записи"
     omniauth_callbacks:
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
+      failure: "Вы не можете войти в систему с учётной записью из %{kind}, так как \"%{reason}\"."
+      success: "Вход в систему выполнен с учётной записью из %{kind}."
     passwords:
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "На указанный адрес электронной почты отправлено письмо с инструкцией по сбросу пароля."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Пароль успешно изменен. Вы авторизованы в системе."
-      updated_not_active: "Пароль успешно изменен."
+      no_token: "Эта страница доступна только при переходе по ссылке из письма с инструкциями для сброса пароля. Если Вы перешли по ссылке из письма, пожалуйста, убедитесь, что Вы использовали полный URL."
+      send_instructions: "В течение нескольких минут Вы получите письмо с инструкциями по восстановлению Вашего пароля."
+      send_paranoid_instructions: "Если Ваш адрес электронной почты есть в нашей базе данных, то в течение нескольких минут Вы получите письмо с инструкциями по восстановлению Вашего пароля."
+      updated: "Ваш пароль успешно изменён. Теперь Вы вошли в систему."
+      updated_not_active: "Ваш пароль успешно изменён."
     registrations:
-      destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "Письмо со ссылкой для подтверждения учетной записи отправлено на указанный адрес электронной почты. Для активации перейдите по ссылке из письма."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
-      updated: "Your account has been updated successfully."
+      destroyed: "До свидания! Ваша учётная запись удалена. Надеемся вскоре снова увидеть Вас."
+      signed_up: "Добро пожаловать! Вы успешно зарегистрировались."
+      signed_up_but_inactive: "Вы успешно зарегистрировались. Тем не менее, Вы не можете войти, потому что Ваша учетная запись еще не активирована."
+      signed_up_but_locked: "Вы успешно зарегистрировались. Тем не менее, Вы не можете войти, потому что Ваша учетная запись заблокирована."
+      signed_up_but_unconfirmed: "На Ваш адрес электронной почты было отправлено сообщение с инструкциями по подтверждению Вашей учётной записи. Пожалуйста, проследуйте по ссылке из этого письма для активации Вашей учетной записи."
+      update_needs_confirmation: "Ваш аккаунт успешно обновлен, но нам необходимо проверить Ваш новый адрес электронной почты. Пожалуйста, проверьте свою электронную почту и проследуйте по ссылке для того чтобы подтвердить ваш адрес электронной почты."
+      updated: "Ваша учётная запись успешно обновлена."
     sessions:
-      signed_in: "Вход выполнен успешно."
-      signed_out: "Выход выполнен успешно."
-      already_signed_out: "Выход выполнен успешно."
+      signed_in: "Вход в систему выполнен."
+      signed_out: "Выход из системы выполнен."
+      already_signed_out: "Выход из системы выполнен."
     unlocks:
-      send_instructions: "На ваш адрес электронной почты отправлено письмо с инструкцией по разблокировке учетной записи."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      send_instructions: "В течение нескольких минут Вы получите письмо с инструкциями по разблокировке Вашей учётной записи."
+      send_paranoid_instructions: "Если Ваша учётная запись существует, то в течение нескольких минут Вы получите письмо с инструкциями по её разблокировке."
+      unlocked: "Ваша учётная запись разблокирована. Теперь Вы вошли в систему."
   errors:
     messages:
-      already_confirmed: "адрес уже подтвержден, попробуйте войти в систему"
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
-      not_found: "не найдено"
-      not_locked: "was not locked"
+      already_confirmed: "уже подтверждена. Пожалуйста, попробуйте войти в систему"
+      confirmation_period_expired: "должен быть подтвержден в течении %{period}, пожалуйста, запросите заново"
+      expired: "устарела. Пожалуйста, запросите новую"
+      not_found: "не найдена"
+      not_locked: "не заблокирована"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: "%{resource}: сохранение не удалось из-за %{count} ошибки"
+        few: "%{resource}: сохранение не удалось из-за %{count} ошибок"
+        many: "%{resource}: сохранение не удалось из-за %{count} ошибок"
+        other: "%{resource}: сохранение не удалось из-за %{count} ошибки"
