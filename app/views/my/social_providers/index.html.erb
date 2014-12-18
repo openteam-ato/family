@@ -1,8 +1,8 @@
 <% content_for :content do %>
   <h1>Мой реестр</h1>
-  <p><%= link_to "Добавить запись", new_my_social_provider_path %></p>
+  <p><%= link_to 'Добавить информацию о поставщике социальных услуг', new_my_social_provider_path %></p>
 
-  <div class="social_providers list">
+  <div class='social_providers list'>
     <ul>
       <%= render @social_providers %>
     </ul>
