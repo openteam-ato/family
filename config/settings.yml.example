@@ -28,6 +28,7 @@ mail:
   port:         22
   to:           client@example.com
   from:         server@example.com
+  recipient:    mail@mail
 
 recaptcha:
   public:       KEY

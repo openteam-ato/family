@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    На сайте Департамента по вопросам семьи и детей Томской области пользователь
+    <%= mail_to @social_provider.user.email %>
+    разместил заявку на публикацию поставщика социальных услуг
+    '<%= link_to @social_provider.short_title, manage_social_provider_url(@social_provider) %>'
+  </body>
+</html>
