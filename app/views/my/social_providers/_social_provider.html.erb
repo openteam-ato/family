@@ -1,4 +1,5 @@
 <li>
   <%= link_to social_provider.short_title, my_social_provider_path(social_provider) %>
-  <span class='state <%= social_provider.state %>'><%= social_provider.human_state_name %></span>
+  <span class='social_provider_state <%= social_provider.state %>'><%= social_provider.human_state_name %></span>
+  <span class='social_provider_last_update'>Изменено: <%= I18n.l social_provider.updated_at %></span>
 </li>

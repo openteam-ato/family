@@ -6,32 +6,44 @@
     +inline-block
     margin-right: 10px
 
-.social_providers
-  .state
-    position: relative
-    margin-left: 10px
-    padding-left: 21px
+.social_providers ul li
+  margin: 10px 0
 
-    &:before
-      float: left
-      display: block
-      content: ''
-      width: 16px
-      height: 16px
-      position: absolute
-      +border-radius(10px)
-      top: 2px
-      left: 0
-      background-color: #880000
+.social_provider_state
+  font-size: 12px
+  position: relative
+  margin-left: 10px
+  padding-left: 17px
 
-    &.draft:before
-      background-color: #999999
+  &:before
+    display: block
+    content: ''
+    width: 12px
+    height: 12px
+    position: absolute
+    +border-radius(10px)
+    top: 2px
+    left: 0
+    background-color: #880000
 
-    &.pending:before
-      background-color: #d4aa00
+  &.small:before
+    top: 0
 
-    &.published:before
-      background-color: #44aa00
+  &.draft:before
+    background-color: #999999
+
+  &.pending:before
+    background-color: #d4aa00
+
+  &.published:before
+    background-color: #44aa00
+
+.social_provider_last_update
+  font-size: 12px
+  margin-left: 10px
+
+  &.without_margin
+    margin-left: 0
 
 .social_provider,
 .licenses,

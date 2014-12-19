@@ -1,5 +1,6 @@
 <% content_for :social_provider_links do %>
-  <span><%= @social_provider.human_state_name %></span>
+  <span class='social_provider_state small <%= @social_provider.state %>'><%= @social_provider.human_state_name %></span>
+  <span class='social_provider_last_update without_margin'>Изменено: <%= I18n.l @social_provider.updated_at %></span>
   <%= render :partial => 'links', :locals => { :social_provider => @social_provider } %>
   <%= link_to 'вернуться к списку', my_social_providers_path %>
 <% end %>
