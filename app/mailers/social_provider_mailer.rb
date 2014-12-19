@@ -3,16 +3,16 @@ class SocialProviderMailer < ActionMailer::Base
 
   def pending_email(social_provider)
     @social_provider = social_provider
-    mail(:to => Settings['mail']['recipient'], :subject => 'Поступил новый запрос на публикацию поставщика услуг')
+    mail(:to => Settings['mail']['recipient'], :subject => 'Поступил новый запрос на публикацию информации о поставщике социальных услуг')
   end
 
   def draft_email(social_provider)
     @social_provider = social_provider
-    mail(:to => @social_provider.user.email, :subject => "Отазано в публикации записи '#{@social_provider.short_title}'")
+    mail(:to => @social_provider.user.email, :subject => "Отазано в публикации информации о '#{@social_provider.short_title}'")
   end
 
   def publish_email(social_provider)
     @social_provider = social_provider
-    mail(:to => @social_provider.user.email, :subject => "Запись '#{@social_provider.short_title}' опубликована")
+    mail(:to => @social_provider.user.email, :subject => "Информация о поставщике социальных услуг опубликована")
   end
 end

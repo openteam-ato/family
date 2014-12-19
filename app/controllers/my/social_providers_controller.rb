@@ -56,7 +56,9 @@ class My::SocialProvidersController < ApplicationController
     @social_provider = SocialProvider.find(params[:id])
     authorize @social_provider, :to_pending?
 
+    updated_at = @social_provider.updated_at
     @social_provider.pending!
+    @social_provider.update_column :updated_at, updated_at
     redirect_to my_social_providers_path
   end
 

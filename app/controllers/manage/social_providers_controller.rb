@@ -10,14 +10,18 @@ class Manage::SocialProvidersController < Manage::ApplicationController
   def publish
     @social_provider = SocialProvider.find(params[:id])
 
+    updated_at = @social_provider.updated_at
     @social_provider.publish!
+    @social_provider.update_column :updated_at, updated_at
     redirect_to manage_social_providers_path
   end
 
   def draft
     @social_provider = SocialProvider.find(params[:id])
 
+    updated_at = @social_provider.updated_at
     @social_provider.draft!
+    @social_provider.update_column :updated_at, updated_at
     redirect_to manage_social_providers_path
   end
 
