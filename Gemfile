@@ -19,6 +19,7 @@ group :default do
   gem 'esp-commons'
   gem 'formtastic'
   gem 'hashie'
+  gem 'has_scope'
   gem 'inherited_resources'
   gem 'jquery-rails',           '2.1.4'
   gem 'kaminari'
