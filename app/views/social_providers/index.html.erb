@@ -28,6 +28,7 @@
       <ul>
         <%= render @social_providers %>
       </ul>
+      <%= paginate @social_providers %>
     </div>
 
     <%= render_partial_for_region(@content_second) if @content_second %>

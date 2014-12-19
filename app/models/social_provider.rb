@@ -17,6 +17,7 @@ class SocialProvider < ActiveRecord::Base
   validates_presence_of :title, :short_title, :register_date, :address, :chief_fio
 
   scope :not_draft, -> { where(:state => [:pending, :published]) }
+  scope :published, ->(_) { where(:state => :published) }
 
   state_machine :initial => :draft do
     event :pending do
