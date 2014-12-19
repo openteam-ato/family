@@ -18,6 +18,7 @@ class SocialProvider < ActiveRecord::Base
 
   scope :not_draft, -> { where(:state => [:pending, :published]) }
   scope :published, ->(_) { where(:state => :published) }
+  scope :by_update, -> { order('updated_at desc') }
 
   state_machine :initial => :draft do
     event :pending do

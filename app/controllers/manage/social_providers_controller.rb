@@ -1,6 +1,6 @@
 class Manage::SocialProvidersController < Manage::ApplicationController
   def index
-    @social_providers = SocialProvider.not_draft
+    @social_providers = SocialProvider.not_draft.by_update
   end
 
   def show
