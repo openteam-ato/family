@@ -1,10 +1,5 @@
 <li>
+  <span class='social_provider_state <%= social_provider.state %>'><%= social_provider.human_state_name %></span>
+  <span class='social_provider_last_update'>Изменено: <%= I18n.l social_provider.updated_at %></span>
   <%= link_to social_provider.short_title, manage_social_provider_path(social_provider) %>
-  <% if social_provider.pending? %>
-    <%= link_to "Опубликовать", publish_manage_social_provider_path(social_provider), :method => :post if social_provider.pending? %>
-  <% else %>
-    <span>Опубликовано</span>
-  <% end %>
-  <%= link_to "Вернуть в черновики", draft_manage_social_provider_path(social_provider), :method => :post %>
-  <%= link_to "удалить", manage_social_provider_path(social_provider), :method => :delete %>
 </li>
