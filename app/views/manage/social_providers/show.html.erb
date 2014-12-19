@@ -1,12 +1,14 @@
 <% content_for :social_provider_links do %>
   <% if @social_provider.pending? %>
-    <%= link_to "Опубликовать", publish_manage_social_provider_path(@social_provider), :method => :post %>
+    <%= link_to 'Опубликовать', publish_manage_social_provider_path(@social_provider), :method => :post %>
   <% else %>
     <span>Опубликовано</span>
   <% end %>
-  <%= link_to "Вернуть в черновики", draft_manage_social_provider_path(@social_provider), :method => :post %>
-  <%= link_to "Удалить", manage_social_provider_path(@social_provider), :method => :delete, :confirm => 'Вы уверены что хотите удалить?' %>
-  <%= link_to 'вернуться к списку', manage_social_providers_path %>
+  <%= link_to 'Вернуть в черновики', draft_manage_social_provider_path(@social_provider), :method => :post %>
+  <%= link_to 'Удалить', manage_social_provider_path(@social_provider), :method => :delete, :confirm => 'Вы уверены что хотите удалить?' %>
+  <%= link_to 'Вернуться к списку', manage_social_providers_path %>
 <% end %>
 
-<%= render :partial => 'commons/social_providers/show' %>
+<div class='show_social_provider'>
+  <%= render :partial => 'commons/social_providers/show' %>
+</div>
