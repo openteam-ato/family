@@ -1,4 +1,4 @@
 <li>
   <%= link_to social_provider.short_title, my_social_provider_path(social_provider) %>
-  <%= render :partial => 'links', :locals => { :social_provider => social_provider } %>
+  <span class='state <%= social_provider.state %>'><%= social_provider.human_state_name %></span>
 </li>

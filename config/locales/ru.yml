@@ -3,6 +3,7 @@ ru:
   title:
     manage/children: 'Банк данных детей–сирот'
     manage/contest_works: 'Акция «Нарисуй свою мечту»'
+    manage/social_providers: 'Реестр поставщиков социальных услуг'
 
   locale:
     ru: 'РУ'
@@ -146,6 +147,14 @@ ru:
         password: Пароль
         password_confirmation: Пароль ещё раз
         remember_me: Запомнить меня
+
+    state_machines:
+      social_provider:
+        state:
+          states:
+            draft: 'Черновик'
+            pending: 'Ожидает публикации'
+            published: 'Опубликовано'
 
     errors:
       messages:

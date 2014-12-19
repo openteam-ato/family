@@ -1,3 +1,38 @@
+.social_provider_links
+  font-size: 12px
+  margin: 20px 0
+
+  a, span
+    +inline-block
+    margin-right: 10px
+
+.social_providers
+  .state
+    position: relative
+    margin-left: 10px
+    padding-left: 21px
+
+    &:before
+      float: left
+      display: block
+      content: ''
+      width: 16px
+      height: 16px
+      position: absolute
+      +border-radius(10px)
+      top: 2px
+      left: 0
+      background-color: #880000
+
+    &.draft:before
+      background-color: #999999
+
+    &.pending:before
+      background-color: #d4aa00
+
+    &.published:before
+      background-color: #44aa00
+
 .social_provider,
 .licenses,
 .social_forms,

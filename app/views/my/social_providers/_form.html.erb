@@ -44,6 +44,10 @@
 
   <div class='actions'>
     <%= f.submit 'Сохранить', :class => 'button' %>
-    <%= link_to 'Отмена', my_social_providers_path, :class => 'button' %>
+    <% if f.object.new_record? %>
+      <%= link_to 'Отмена', my_social_providers_path, :class => 'button' %>
+    <% else %>
+      <%= link_to 'Отмена', my_social_provider_path(f.object), :class => 'button' %>
+    <% end %>
   </div>
 <% end %>

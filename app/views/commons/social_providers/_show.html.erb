@@ -1,6 +1,8 @@
-<h1><%= @social_provider.short_title %></h1>
-
-<p><%= render :partial => 'links', :locals => { :social_provider => @social_provider } %></p>
+<% if content_for? :social_provider_links %>
+  <div class='social_provider_links'>
+    <%= yield :social_provider_links %>
+  </div>
+<% end %>
 
 <div class='social_provider'>
   <table>

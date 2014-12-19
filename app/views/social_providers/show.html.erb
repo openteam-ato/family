@@ -1,3 +1,8 @@
+<% content_for :social_provider_links do %>
+  <%= link_to 'вернуться к списку', social_providers_path %>
+<% end %>
+
 <% content_for :content do %>
+  <h2><%= @social_provider.short_title %></h2>
   <%= render :partial => 'commons/social_providers/show' %>
 <% end %>

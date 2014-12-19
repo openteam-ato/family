@@ -1,3 +1,10 @@
+<% content_for :social_provider_links do %>
+  <span><%= @social_provider.human_state_name %></span>
+  <%= render :partial => 'links', :locals => { :social_provider => @social_provider } %>
+  <%= link_to 'вернуться к списку', my_social_providers_path %>
+<% end %>
+
 <% content_for :content do %>
+  <h1><%= @social_provider.short_title %></h1>
   <%= render :partial => 'commons/social_providers/show' %>
 <% end %>
