@@ -18,6 +18,7 @@
  * = require reports
  * = require collapser
  * = require slider_age_range
+ * = require social_provider
  * = require tabs
  * = require upload_files
  * = require archive_collapser

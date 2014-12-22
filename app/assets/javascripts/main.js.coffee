@@ -12,6 +12,7 @@ $ ->
   init_contest()              if $('.contest_thumbnails').length
   init_contest_votes()        if $('.votes a.vote_link').length
   init_reports_list()         if $('div.reports').length
+  init_social_provider()      if $('.revert_to_draft').length
   init_right_side_colorbox()  if $('.right_side .entry_image img').length
   init_colorbox()             if $('a.colorbox').length
   init_uppod()                if $('div.uppod').length

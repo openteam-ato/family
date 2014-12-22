@@ -13,3 +13,17 @@ class SocialForm < ActiveRecord::Base
   default_value_for :places_number, 0
   default_value_for :free_places_number, 0
 end
+
+# == Schema Information
+#
+# Table name: social_forms
+#
+#  id                 :integer          not null, primary key
+#  kind               :string(255)
+#  places_number      :integer
+#  free_places_number :integer
+#  social_provider_id :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+

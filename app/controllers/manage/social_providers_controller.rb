@@ -18,6 +18,8 @@ class Manage::SocialProvidersController < Manage::ApplicationController
 
   def draft
     @social_provider = SocialProvider.find(params[:id])
+    @social_provider.revert_to_draft_reason = params[:reason]
+    @social_provider.save
 
     updated_at = @social_provider.updated_at
     @social_provider.draft!

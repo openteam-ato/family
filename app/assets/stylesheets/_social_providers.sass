@@ -1,10 +1,28 @@
 .social_provider_links
   font-size: 12px
+  position: relative
   margin: 20px 0
 
   a, span
     +inline-block
     margin-right: 10px
+
+  .revert_to_draft_reason
+    display: none
+    top: 100%
+    left: 480px
+    position: absolute
+    background-color: #f7f7f7
+    border: 1px solid #ccc
+    border-top: none
+    padding: 10px 10px 0
+
+    p
+      margin-bottom: 10px
+
+    textarea
+      width: 300px
+      height: 200px
 
 .social_providers ul li
   margin: 10px 0

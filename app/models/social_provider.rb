@@ -2,7 +2,8 @@ class SocialProvider < ActiveRecord::Base
   attr_accessible :additional_info, :address, :audits, :chief_fio, :incorporation_form, :site,
                   :register_date, :short_title, :terms_of_service, :title, :work_experience,
                   :phones_attributes, :emails_attributes, :licenses_attributes,
-                  :social_forms_attributes, :social_services_attributes
+                  :social_forms_attributes, :social_services_attributes,
+                  :revert_to_draft_reason
 
   belongs_to :user
 
@@ -42,3 +43,27 @@ class SocialProvider < ActiveRecord::Base
     self.social_forms.map(&:free_places_number).compact.sum
   end
 end
+
+# == Schema Information
+#
+# Table name: social_providers
+#
+#  id                     :integer          not null, primary key
+#  title                  :text
+#  short_title            :text
+#  register_date          :date
+#  incorporation_form     :text
+#  address                :text
+#  chief_fio              :text
+#  terms_of_service       :text
+#  audits                 :text
+#  work_experience        :text
+#  additional_info        :text
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  user_id                :integer
+#  site                   :string(255)
+#  state                  :string(255)
+#  revert_to_draft_reason :text
+#
+

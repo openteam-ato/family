@@ -8,3 +8,17 @@ class SocialService < ActiveRecord::Base
 
   validates_presence_of :kind, :price, :title
 end
+
+# == Schema Information
+#
+# Table name: social_services
+#
+#  id                 :integer          not null, primary key
+#  kind               :string(255)
+#  title              :text
+#  price              :string(255)
+#  social_provider_id :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
