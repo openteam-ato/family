@@ -12,7 +12,7 @@
         Вы вошли как:
         <%= current_user.email %>
         |
-        <%= link_to 'Анкета поставщика социальных услуг', my_social_providers_path %>
+        <%= link_to 'Анкеты поставщика социальных услуг', my_social_providers_path %>
         |
         <%= link_to 'Выход', destroy_user_session_path, :method => :delete %>
       <% else %>
