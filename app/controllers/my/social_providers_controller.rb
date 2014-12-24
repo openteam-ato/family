@@ -22,7 +22,7 @@ class My::SocialProvidersController < ApplicationController
     @social_provider = current_user.social_providers.new(params[:social_provider])
     authorize @social_provider, :manage?
 
-    if @social_provider.save!
+    if @social_provider.save
       redirect_to my_social_provider_path(@social_provider)
     else
       render :new
