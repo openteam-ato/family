@@ -12,7 +12,7 @@
       <% @social_provider.social_services.each do |service| %>
         <tr>
           <td><%= service.kind_text %></td>
-          <td><%= service.title %></td>
+          <td><%= simple_format(service.title) %></td>
           <td><%= service.price %></td>
         </tr>
       <% end %>

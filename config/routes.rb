@@ -28,7 +28,7 @@ Family::Application.routes.draw do
 
   get 'ru/dream-picture' => 'contest_works#index'
 
-  resources :social_providers, :only => [:index, :show], :path => '/ru/reestr-postavschikov-sotsialnyh-uslug'
+  resources :social_providers, :only => [:index, :show], :path => '/ru/na-povestke-dnya/reestr-postavschikov-sotsialnyh-uslug'
 
   namespace :my do
     resources :social_providers do
