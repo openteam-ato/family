@@ -25,11 +25,11 @@ class Users::SessionsController < Devise::SessionsController
 
   # The path used after sign in
   def after_sign_in_path_for(resource)
-    '/ru/reestr-postavschikov-sotsialnyh-uslug' || root_path
+    '/ru/na-povestke-dnya/reestr-postavschikov-sotsialnyh-uslug' || root_path
   end
 
   # The path used after sign out
   def after_sign_out_path_for(resource)
-    '/ru/reestr-postavschikov-sotsialnyh-uslug' || root_path
+    '/ru/na-povestke-dnya/reestr-postavschikov-sotsialnyh-uslug' || root_path
   end
 end
