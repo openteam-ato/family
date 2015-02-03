@@ -70,41 +70,43 @@
           +box-shadow(#5b7d5c 0 1px 2px inset)
 
   .local_banners_wrapper
-    float: left
-    width: 635px
+    text-align: center
 
     ul
 
       li
         +single-box-shadow(#b3b3b3, 0, 0, 10px, 2px)
-        +border-radius(4px)
+        +inline-block
         background: transparent
-        float: left
+        margin: 0 7px 15px 7px
 
         a
           display: block
           height: 100px
           text-indent: -9999px
           width: 310px
+          +border-radius(4px)
 
-        &.adv_draw_dream
-          margin: 0 15px 15px 0
-
+        &.adv_survey
           a
             background: transparent image_url('local_bg.png') no-repeat 0 0
 
-        &.adv_without_orphan
-          margin: 0 0 15px 0
-
+        &.adv_children_rest
           a
             background: transparent image_url('local_bg.png') no-repeat -310px 0
 
-        &.adv_regional_bank
-          margin: 0 15px 0 0
+        &.adv_without_orphan
+          a
+            background: transparent image_url('local_bg.png') no-repeat -620px 0
 
+        &.adv_large_family
           a
             background: transparent image_url('local_bg.png') no-repeat 0 -100px
 
-        &.adv_help
+        &.adv_regional_bank
           a
             background: transparent image_url('local_bg.png') no-repeat -310px -100px
+
+        &.adv_help
+          a
+            background: transparent image_url('local_bg.png') no-repeat -620px -100px
