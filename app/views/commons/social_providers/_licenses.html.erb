@@ -17,7 +17,13 @@
           <td><%= license.seria %></td>
           <td><%= license.number %></td>
           <td><%= I18n.l(license.issue_date) %></td>
-          <td><%= I18n.l(license.expiration_date) %></td>
+          <td>
+            <% if license.expiration_date? %>
+              <%= I18n.l(license.expiration_date) %>
+            <% else %>
+              бессрочно
+            <% end %>
+          </td>
           <td><%= license.activity_kind %></td>
           <td><%= license.issuing_organization %></td>
         </tr>
