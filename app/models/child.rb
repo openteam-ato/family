@@ -23,8 +23,10 @@ class Child < ActiveRecord::Base
                     :storage => :elvfs,
                     :elvfs_url => Settings['storage.url']
 
-  validates_attachment_content_type :video, :content_type => /\Avideo.*flv\z/,
-    :message => 'Видео имеет неверный формат. Допускается только формат .flv'
+  validates_attachment_content_type :video, :content_type => /\Avideo\/(x-flv|mp4)\z/,
+    :message => 'Видео имеет неверный формат. Допускаются форматы .flv, .mp4'
+
+  before_post_process :rename_video
 
   before_update do
     if delete_video == 'true'
@@ -177,6 +179,10 @@ class Child < ActiveRecord::Base
     set_new_relations
     self.class.set_callback :save, :after, :set_relations
     self.class.set_callback :save, :before, :set_relative_numbers
+  end
+
+  def rename_video
+    self.video.instance_write :file_name, Russian.transliterate(video_file_name.gsub(/\s+/, '_'))
   end
 end
 

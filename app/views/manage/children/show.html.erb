@@ -39,7 +39,7 @@
         <div class='video'>
           <p><strong>Видео:</strong> <%= link_to @child.video_url, @child.video_url %></p>
           <p>
-            <%= render :partial => 'uppod', :locals => { :child => @child } %>
+            <%= render :partial => 'application/uppod', :locals => { :child => @child } %>
           </p>
         </div>
       <% end %>
