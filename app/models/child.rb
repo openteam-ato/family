@@ -182,6 +182,8 @@ class Child < ActiveRecord::Base
   end
 
   def rename_video
+    return if video_file_name.blank?
+
     self.video.instance_write :file_name, Russian.transliterate(video_file_name.gsub(/\s+/, '_'))
   end
 end
