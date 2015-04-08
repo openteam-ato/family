@@ -1,8 +1,14 @@
 <% unless object.blank? %>
   <div class="right_side noindex" style='overflow: hidden'>
-    <%  if object.images.any? %>
+    <% if object.images.any? %>
       <div class="entry_image">
-        <%= image_tag object.images.first.thumbnail.url, :alt => object.images.first.description, :width => object.images.first.thumbnail.width, :height => object.images.first.thumbnail.height %>
+        <% if object.images.many? %>
+          <%= image_tag object.images.first.thumbnail.url, :alt => object.images.first.description, :width => object.images.first.thumbnail.width, :height => object.images.first.thumbnail.height %>
+        <% else %>
+          <%= link_to object.images.first.url, :target => '_blank', :class => 'colorbox' do %>
+            <%= image_tag object.images.first.thumbnail.url, :alt => object.images.first.description, :width => object.images.first.thumbnail.width, :height => object.images.first.thumbnail.height %>
+          <% end %>
+        <% end %>
         <div class="description">
           <%= object.images.first.description %>
         </div>

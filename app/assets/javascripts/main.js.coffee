@@ -13,8 +13,7 @@ $ ->
   init_contest_votes()        if $('.votes a.vote_link').length
   init_reports_list()         if $('div.reports').length
   init_social_provider()      if $('.revert_to_draft').length
-  init_right_side_colorbox()  if $('.right_side .entry_image img').length
-  init_colorbox()             if $('a.colorbox').length
+  init_link_colorbox()        if $('a.colorbox').length
   init_uppod()                if $('div.uppod').length
   init_iframe_resize()        if $('#autoIframe').length
   init_delete_video()         if $('.delete_video').length
